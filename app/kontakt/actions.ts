@@ -59,7 +59,7 @@ export async function sendContactEmail(
     const validatedData = result.data;
 
     const emailResult = await resend.emails.send({
-      from: 'Kontakt Forma <onboarding@resend.dev>', // Update this with your verified domain
+      from: 'Kontakt Forma <noreply@contact.bazapilates.com>',
       to: 'bazapilates@gmail.com',
       subject: `Nova poruka od ${validatedData.firstName} ${validatedData.lastName}`,
       react: ContactEmailTemplate({
