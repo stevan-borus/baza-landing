@@ -59,7 +59,7 @@ export default async function News() {
                     src={featured.image}
                     alt={featured.title}
                     fill
-                    className='object-cover'
+                    className='rounded-br-[50.5px] object-cover'
                     sizes='(max-width: 1280px) 100vw, 50vw'
                     placeholder='blur'
                     blurDataURL={BLUR_DATA_URL}

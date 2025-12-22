@@ -38,7 +38,10 @@ export default async function Programmes() {
                     src={programme.image}
                     alt={programme.title}
                     fill
-                    className={cn('object-cover', programme.imagePosition)}
+                    className={cn(
+                      'rounded-br-[50.5px] object-cover',
+                      programme.imagePosition,
+                    )}
                     sizes='(max-width: 640px) 100vw, 50vw'
                     placeholder='blur'
                     blurDataURL={BLUR_DATA_URL}

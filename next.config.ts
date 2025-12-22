@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
   },
   images: {
     unoptimized: process.env.NODE_ENV === 'development' ? true : false,
-    deviceSizes: [640, 1080, 1920],
+    deviceSizes: [640, 1920],
     imageSizes: [64, 128, 256],
   },
 };

@@ -46,19 +46,24 @@ export function GalleryThumbnails({
     }
   }, [currentImageId]);
 
+  const currentIndex = allImages.findIndex(img => img.id === currentImageId);
+
   return (
     <div
       ref={scrollContainerRef}
       className='relative z-10 flex w-full flex-nowrap items-center justify-start gap-2 overflow-x-auto scroll-smooth px-2'
     >
-      {allImages.map(image => {
+      {allImages.map((image, index) => {
         const isCurrentImage = image.id === currentImageId;
+        // Only prefetch adjacent images (prev, current, next)
+        const shouldPrefetch = Math.abs(index - currentIndex) <= 1;
+
         return (
           <Link
             key={image.id}
             ref={isCurrentImage ? currentThumbnailRef : null}
             href={`/galerija/${image.id}`}
-            prefetch={true}
+            prefetch={shouldPrefetch}
             className={`relative aspect-square shrink-0 overflow-hidden rounded-lg transition-all ${
               isCurrentImage ? 'h-28' : 'h-24 opacity-60 hover:opacity-100'
             }`}
@@ -80,6 +85,7 @@ export function GalleryThumbnails({
                   fill
                   className='object-cover'
                   sizes='96px'
+                  loading='lazy'
                   placeholder='blur'
                   blurDataURL={BLUR_DATA_URL}
                 />
