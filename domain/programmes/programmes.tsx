@@ -87,7 +87,7 @@ const programmes: Programme[] = [
         <span>
           Kako polaznici ističu, glavni benefiti pilatesa se vide i kada
           napustite studio - vaše držanje će biti bolje, vaši obrasci disanja
-          unapređeni a um smiren, fokusiran i spreman za nove izazove.
+          unapređeni, a um smiren, fokusiran i spreman za nove izazove.
         </span>
       </>
     ),
@@ -99,7 +99,7 @@ const programmes: Programme[] = [
     mobileImage: '/energy-pilates-mobile.webp',
     imagePosition: 'object-center xl:object-[center_30%]',
     excerpt:
-      'Za sve one koji vole izazove, dinamične treninge a opet teže preciznom pokretu, fokusu na svaki mišić i fleksibilnosti.',
+      'Za sve one koji vole izazove, dinamične treninge, a opet teže preciznom pokretu, fokusu na svaki mišić i fleksibilnosti.',
     schedule: [
       {
         frequency: '3 puta nedeljno',
@@ -124,9 +124,9 @@ const programmes: Programme[] = [
     description: (
       <>
         <span>
-          Za sve one koji vole izazove, dinamične treninge a opet teže preciznom
-          pokretu, fokusu na svaki mišić i fleksibilnosti, Energy pilates
-          program je tu da vam to ispuni.
+          Za sve one koji vole izazove, dinamične treninge, a opet teže
+          preciznom pokretu, fokusu na svaki mišić i fleksibilnosti, Energy
+          pilates program je tu da vam to ispuni.
         </span>
         <span>
           Kombinujući trening snage kao osnov za izgradnju mišića, elemente kick
@@ -174,13 +174,12 @@ const programmes: Programme[] = [
           Dok mame treniraju na reformerima, deca razvijaju svoje vijuge kroz
           radionice koje prate NTC program učenja. Ovaj program za decu obuhvata
           psihomotorne vežbe koje stimulišu kognitivni razvoj dece i odvijaju se
-          kroz igru. Na ovaj, način, u Bazi i mame i deca provode kvalitetno
-          ispunjeno vreme radeći na fizičkom i ali i psihološkom aspektu
-          zdravlja.
+          kroz igru. Na ovaj način, u Bazi i mame i deca provode kvalitetno
+          ispunjeno vreme radeći na fizičkom i na psihološkom aspektu zdravlja.
         </span>
         <span>
           Rad sa decom je poveren jednoj od osnivačica Baze koja je prošla obuku
-          NTC učenja ali i &quot;obuku roditeljstva&quot; što joj omogućava da
+          NTC učenja i &quot;obuku roditeljstva&quot; što joj omogućava da
           stečena znanja lako primeni u praksi.
         </span>
       </>
@@ -188,7 +187,7 @@ const programmes: Programme[] = [
     additionalInfo: (
       <>
         <span>
-          Ntc radionice su uključene u paket. Cena ostaje nepromenjena bez
+          NTC radionice su uključene u paket. Cena ostaje nepromenjena bez
           obzira da li dolazite sa jednim detetom ili sa više dece.
         </span>
       </>
