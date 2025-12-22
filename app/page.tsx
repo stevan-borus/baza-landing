@@ -12,6 +12,8 @@ export default function Home() {
             alt='Naslovna slika'
             fill
             className='object-cover'
+            sizes='100vw'
+            priority
           />
         </section>
 
@@ -45,6 +47,7 @@ export default function Home() {
               alt='Donja slika'
               fill
               className='object-cover'
+              sizes='(max-width: 640px) 328px, 568px'
             />
           </div>
         </section>

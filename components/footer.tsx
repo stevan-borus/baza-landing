@@ -17,6 +17,7 @@ export function Footer() {
               alt='Baza Pilates Logo'
               fill
               className='object-cover'
+              sizes='(max-width: 768px) 108px, 240px'
             />
           </Link>
         </div>

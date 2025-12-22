@@ -6,12 +6,10 @@ const nextConfig: NextConfig = {
   experimental: {
     viewTransition: true,
   },
-  // Disable image optimization cache for development
-  // This helps when replacing images with the same name
   images: {
-    // In development, images are not cached as aggressively
-    // In production, you may want to keep caching enabled
     unoptimized: process.env.NODE_ENV === 'development' ? true : false,
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
 };
 

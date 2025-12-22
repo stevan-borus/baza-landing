@@ -74,6 +74,8 @@ export default async function ProgrammePage({
                   'object-cover lg:hidden',
                   programme.imagePosition,
                 )}
+                sizes='100vw'
+                priority
               />
             </ViewTransition>
           </div>
@@ -88,6 +90,8 @@ export default async function ProgrammePage({
                   'hidden object-cover lg:block',
                   programme.imagePosition,
                 )}
+                sizes='100vw'
+                priority
               />
             </ViewTransition>
           </div>

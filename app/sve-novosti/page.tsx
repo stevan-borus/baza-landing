@@ -57,6 +57,7 @@ export default async function AllNews() {
                         alt={article.title}
                         fill
                         className='object-cover'
+                        sizes='(max-width: 768px) 120px, 276px'
                       />
                     </div>
                   </ViewTransition>

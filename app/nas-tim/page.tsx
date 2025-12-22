@@ -37,6 +37,7 @@ export default async function Team() {
                     alt={member.name}
                     fill
                     className='object-cover'
+                    sizes='(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw'
                   />
                 </ViewTransition>
                 <div className='absolute right-0 bottom-0 left-0 flex items-center justify-between rounded-br-[50px] bg-white px-5 py-1 pr-8 sm:py-3 sm:pr-5'>

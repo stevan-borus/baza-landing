@@ -59,6 +59,7 @@ export default async function News() {
                     alt={featured.title}
                     fill
                     className='object-cover'
+                    sizes='(max-width: 1280px) 100vw, 50vw'
                   />
                 </div>
               </ViewTransition>
@@ -89,6 +90,7 @@ export default async function News() {
                         alt={article.title}
                         fill
                         className='object-cover'
+                        sizes='(max-width: 768px) 120px, 276px'
                       />
                     </div>
                   </ViewTransition>

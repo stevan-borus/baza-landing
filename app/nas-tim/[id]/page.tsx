@@ -85,6 +85,8 @@ export default async function TeamMemberPage({
               alt={member.name}
               fill
               className='object-cover'
+              sizes='(max-width: 640px) 100vw, (max-width: 1024px) 440px, 520px'
+              priority
             />
           </ViewTransition>
         </section>

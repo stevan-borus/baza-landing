@@ -24,6 +24,8 @@ export default async function Blog() {
               alt='Blog'
               fill
               className='object-cover'
+              sizes='100vw'
+              priority
             />
           </section>
           <section className='flex flex-col gap-8 px-4 py-8 xl:gap-12 xl:px-20 xl:py-12'>
@@ -53,6 +55,8 @@ export default async function Blog() {
             alt='Blog'
             fill
             className='object-cover'
+            sizes='100vw'
+            priority
           />
         </section>
 
@@ -87,6 +91,7 @@ export default async function Blog() {
                       alt={post.title}
                       fill
                       className='object-cover'
+                      sizes='(max-width: 768px) 160px, 200px'
                     />
                   </div>
                 </ViewTransition>

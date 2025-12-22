@@ -29,6 +29,7 @@ export default async function Gallery() {
                     alt={image.alt}
                     fill
                     className='object-cover transition-transform duration-300 group-hover:scale-110'
+                    sizes='(max-width: 1024px) 33vw, 25vw'
                   />
                 </ViewTransition>
                 <div className='bg-brand/0 group-hover:bg-brand/20 absolute inset-0 transition-colors duration-300' />

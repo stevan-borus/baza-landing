@@ -30,6 +30,7 @@ export function Header() {
               alt='Baza Pilates Logo'
               width={108}
               height={44}
+              priority
             />
           </Link>
         </div>

@@ -53,6 +53,8 @@ export default async function GalleryImagePage({
                   alt={currentImage.alt}
                   fill
                   className='object-cover'
+                  sizes='100vw'
+                  priority
                 />
               </div>
             </ViewTransition>
@@ -90,6 +92,7 @@ export default async function GalleryImagePage({
                         alt={image.alt}
                         fill
                         className='object-cover'
+                        sizes='112px'
                       />
                     : <ViewTransition name={`gallery-image-${image.id}`}>
                         <Image
@@ -97,6 +100,7 @@ export default async function GalleryImagePage({
                           alt={image.alt}
                           fill
                           className='object-cover'
+                          sizes='96px'
                         />
                       </ViewTransition>
                     }
