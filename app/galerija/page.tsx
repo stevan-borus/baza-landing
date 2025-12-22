@@ -18,7 +18,7 @@ export default async function Gallery() {
 
         <section className='mx-auto w-full max-w-7xl px-6 lg:px-8'>
           <div className='gallery-grid grid grid-cols-3 lg:grid-cols-4'>
-            {images.map(image => (
+            {images.map((image, index) => (
               <Link
                 key={image.id}
                 href={`/galerija/${image.id}`}
@@ -31,7 +31,7 @@ export default async function Gallery() {
                     fill
                     className='object-cover transition-transform duration-300 group-hover:scale-110'
                     sizes='(max-width: 1024px) 33vw, 25vw'
-                    priority
+                    priority={index < 4}
                     placeholder='blur'
                     blurDataURL={BLUR_DATA_URL}
                   />

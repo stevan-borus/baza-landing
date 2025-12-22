@@ -57,8 +57,8 @@ export function Header() {
             </Dialog.Trigger>
 
             <Dialog.Portal>
-              <Dialog.Backdrop className='bg-foreground/20 fixed inset-0 z-40 backdrop-blur-sm lg:hidden' />
-              <Dialog.Popup className='bg-header border-border animate-in slide-in-from-right fixed inset-0 z-50 border-l-2 shadow-xl duration-300 sm:left-auto sm:w-full sm:max-w-sm lg:hidden'>
+              <Dialog.Backdrop className='fixed inset-0 z-50 bg-black/70 lg:hidden' />
+              <Dialog.Popup className='bg-header border-border animate-in slide-in-from-right fixed inset-0 z-60 border-l-2 shadow-xl duration-300 sm:left-auto sm:w-full sm:max-w-sm lg:hidden'>
                 <div className='px-4 py-4'>
                   <div className='mb-6 flex items-center justify-between'>
                     <Link
