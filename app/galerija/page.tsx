@@ -2,6 +2,7 @@ import { ViewTransition } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { getGalleryImages } from '@/domain/gallery/gallery';
+import { BLUR_DATA_URL } from '@/lib/image-utils';
 
 export const dynamic = 'force-static';
 
@@ -31,6 +32,8 @@ export default async function Gallery() {
                     className='object-cover transition-transform duration-300 group-hover:scale-110'
                     sizes='(max-width: 1024px) 33vw, 25vw'
                     priority
+                    placeholder='blur'
+                    blurDataURL={BLUR_DATA_URL}
                   />
                 </ViewTransition>
                 <div className='bg-brand/0 group-hover:bg-brand/20 pointer-events-none absolute inset-0 transition-colors duration-300' />

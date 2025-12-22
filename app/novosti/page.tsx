@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from 'next';
 import { getNewsArticles } from '@/domain/news/news';
+import { BLUR_DATA_URL } from '@/lib/image-utils';
 
 export const dynamic = 'force-static';
 
@@ -60,6 +61,8 @@ export default async function News() {
                     fill
                     className='object-cover'
                     sizes='(max-width: 1280px) 100vw, 50vw'
+                    placeholder='blur'
+                    blurDataURL={BLUR_DATA_URL}
                   />
                 </div>
               </ViewTransition>
@@ -91,6 +94,8 @@ export default async function News() {
                         fill
                         className='object-cover'
                         sizes='(max-width: 768px) 120px, 276px'
+                        placeholder='blur'
+                        blurDataURL={BLUR_DATA_URL}
                       />
                     </div>
                   </ViewTransition>

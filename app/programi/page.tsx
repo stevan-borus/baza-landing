@@ -5,6 +5,7 @@ import { ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 import { getProgrammes } from '@/domain/programmes/programmes';
 import { cn } from '@/lib/utils';
+import { BLUR_DATA_URL } from '@/lib/image-utils';
 
 export const dynamic = 'force-static';
 
@@ -39,6 +40,8 @@ export default async function Programmes() {
                     fill
                     className={cn('object-cover', programme.imagePosition)}
                     sizes='(max-width: 640px) 100vw, 50vw'
+                    placeholder='blur'
+                    blurDataURL={BLUR_DATA_URL}
                   />
                 </ViewTransition>
                 <div className='absolute right-0 bottom-0 left-0 flex items-center justify-between rounded-br-[50px] bg-white px-5 py-1 pr-8 sm:py-3 sm:pr-5'>

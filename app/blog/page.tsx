@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from 'next';
 import { getBlogPosts } from '@/domain/blog/blog';
+import { BLUR_DATA_URL } from '@/lib/image-utils';
 
 export const dynamic = 'force-static';
 
@@ -26,6 +27,8 @@ export default async function Blog() {
               className='object-cover'
               sizes='100vw'
               priority
+              placeholder='blur'
+              blurDataURL={BLUR_DATA_URL}
             />
           </section>
           <section className='flex flex-col gap-8 px-4 py-8 xl:gap-12 xl:px-20 xl:py-12'>
@@ -92,6 +95,8 @@ export default async function Blog() {
                       fill
                       className='object-cover'
                       sizes='(max-width: 768px) 160px, 200px'
+                      placeholder='blur'
+                      blurDataURL={BLUR_DATA_URL}
                     />
                   </div>
                 </ViewTransition>

@@ -4,6 +4,8 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { ViewTransition } from 'react';
 import { getGalleryImageIds, getGalleryImages } from '@/domain/gallery/gallery';
 import { redirect } from 'next/navigation';
+import { BLUR_DATA_URL } from '@/lib/image-utils';
+import { GalleryThumbnails } from '@/components/gallery-thumbnails';
 
 export const dynamic = 'force-static';
 
@@ -55,67 +57,39 @@ export default async function GalleryImagePage({
                   className='object-contain'
                   sizes='100vw'
                   priority
+                  placeholder='blur'
+                  blurDataURL={BLUR_DATA_URL}
                 />
               </div>
             </ViewTransition>
           </div>
 
           {/* Thumbnails */}
-          <div className='relative flex w-full shrink-0 items-center justify-center gap-2 px-4 pt-8 md:px-20 md:pt-12'>
+          <div className='relative flex w-full shrink-0 items-center justify-center gap-2 overflow-hidden px-4 pt-8 md:px-20 md:pt-12'>
             {/* Previous button */}
             {previousImage && (
               <Link
                 href={`/galerija/${previousImage.id}`}
                 prefetch={true}
-                className='bg-brand/80 text-brand-foreground hover:bg-brand z-20 flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-colors md:h-12 md:w-12'
+                className='bg-brand/80 text-brand-foreground hover:bg-brand relative z-30 flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-colors md:h-12 md:w-12'
                 aria-label='Prethodna slika'
               >
                 <ChevronLeft className='size-6 md:size-8' />
               </Link>
             )}
 
-            <div className='flex w-full flex-nowrap items-center justify-start gap-2 overflow-x-auto scroll-smooth px-2'>
-              {allImages.map(image => {
-                const isCurrentImage = image.id === currentImage.id;
-                return (
-                  <Link
-                    key={image.id}
-                    href={`/galerija/${image.id}`}
-                    prefetch={true}
-                    className={`relative aspect-square shrink-0 overflow-hidden rounded-lg transition-all ${
-                      isCurrentImage ? 'h-28' : (
-                        'h-24 opacity-60 hover:opacity-100'
-                      )
-                    }`}
-                  >
-                    {isCurrentImage ?
-                      <Image
-                        src={image.src || '/placeholder.svg'}
-                        alt={image.alt}
-                        fill
-                        className='object-cover'
-                        sizes='112px'
-                      />
-                    : <ViewTransition name={`gallery-image-${image.id}`}>
-                        <Image
-                          src={image.src || '/placeholder.svg'}
-                          alt={image.alt}
-                          fill
-                          className='object-cover'
-                          sizes='96px'
-                        />
-                      </ViewTransition>
-                    }
-                  </Link>
-                );
-              })}
+            <div className='relative z-10 flex min-w-0 flex-1 overflow-hidden'>
+              <GalleryThumbnails
+                allImages={allImages}
+                currentImageId={currentImage.id}
+              />
             </div>
 
             {nextImage && (
               <Link
                 href={`/galerija/${nextImage.id}`}
                 prefetch={true}
-                className='bg-brand/80 text-brand-foreground hover:bg-brand z-20 flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-colors md:h-12 md:w-12'
+                className='bg-brand/80 text-brand-foreground hover:bg-brand relative z-30 flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-colors md:h-12 md:w-12'
                 aria-label='Sledeća slika'
               >
                 <ChevronRight className='size-6 md:size-8' />

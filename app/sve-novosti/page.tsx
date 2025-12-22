@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { ChevronLeft } from 'lucide-react';
 import type { Metadata } from 'next';
 import { getNewsArticles } from '@/domain/news/news';
+import { BLUR_DATA_URL } from '@/lib/image-utils';
 
 export const dynamic = 'force-static';
 
@@ -58,6 +59,8 @@ export default async function AllNews() {
                         fill
                         className='object-cover'
                         sizes='(max-width: 768px) 120px, 276px'
+                        placeholder='blur'
+                        blurDataURL={BLUR_DATA_URL}
                       />
                     </div>
                   </ViewTransition>

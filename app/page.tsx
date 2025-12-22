@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { BLUR_DATA_URL } from '@/lib/image-utils';
 
 export const dynamic = 'force-static';
 
@@ -14,6 +15,8 @@ export default function Home() {
             className='object-cover'
             sizes='100vw'
             priority
+            placeholder='blur'
+            blurDataURL={BLUR_DATA_URL}
           />
         </section>
 
@@ -48,6 +51,8 @@ export default function Home() {
               fill
               className='object-cover'
               sizes='(max-width: 640px) 328px, 568px'
+              placeholder='blur'
+              blurDataURL={BLUR_DATA_URL}
             />
           </div>
         </section>

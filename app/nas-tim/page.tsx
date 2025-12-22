@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 import { getTeamMembers } from '@/domain/team/team';
+import { BLUR_DATA_URL } from '@/lib/image-utils';
 
 export const dynamic = 'force-static';
 
@@ -38,6 +39,8 @@ export default async function Team() {
                     fill
                     className='object-cover'
                     sizes='(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw'
+                    placeholder='blur'
+                    blurDataURL={BLUR_DATA_URL}
                   />
                 </ViewTransition>
                 <div className='absolute right-0 bottom-0 left-0 flex items-center justify-between rounded-br-[50px] bg-white px-5 py-1 pr-8 sm:py-3 sm:pr-5'>

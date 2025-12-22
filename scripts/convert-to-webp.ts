@@ -46,6 +46,7 @@ async function processDirectory(dir: string, stats: ImageStats): Promise<void> {
       console.log(`🔄 Processing: ${path.relative(publicDir, fullPath)}`);
 
       await sharp(fullPath)
+        .rotate() // Auto-rotate based on EXIF orientation
         .resize({ width: maxWidth, withoutEnlargement: true })
         .webp({ quality })
         .toFile(webpPath);
@@ -109,4 +110,11 @@ async function main() {
   console.log('\n✨ Done!');
 }
 
-main().catch(console.error);
+main().catch(error => {
+  console.error('Fatal error:', error);
+  if (error instanceof Error) {
+    console.error('Error message:', error.message);
+    console.error('Stack:', error.stack);
+  }
+  process.exit(1);
+});

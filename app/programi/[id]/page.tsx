@@ -10,6 +10,7 @@ import {
 import { redirect } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/button';
+import { BLUR_DATA_URL } from '@/lib/image-utils';
 
 export const dynamic = 'force-static';
 
@@ -76,6 +77,8 @@ export default async function ProgrammePage({
                 )}
                 sizes='100vw'
                 priority
+                placeholder='blur'
+                blurDataURL={BLUR_DATA_URL}
               />
             </ViewTransition>
           </div>
@@ -92,6 +95,8 @@ export default async function ProgrammePage({
                 )}
                 sizes='100vw'
                 priority
+                placeholder='blur'
+                blurDataURL={BLUR_DATA_URL}
               />
             </ViewTransition>
           </div>
