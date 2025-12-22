@@ -66,7 +66,7 @@ export default async function News() {
                   />
                 </div>
               </ViewTransition>
-              <div className='flex flex-col gap-4 bg-white p-6'>
+              <div className='flex flex-col gap-4 bg-white/90 p-6 group-hover:bg-white'>
                 <h1 className='group-hover:text-brand-light text-left transition-colors'>
                   {featured.title}
                 </h1>
