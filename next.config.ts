@@ -7,9 +7,7 @@ const nextConfig: NextConfig = {
     viewTransition: true,
   },
   images: {
-    unoptimized: process.env.NODE_ENV === 'development' ? true : false,
-    deviceSizes: [640, 1920],
-    imageSizes: [64, 128, 256],
+    unoptimized: true,
   },
 };
 

@@ -1,10 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
+import { OptimizedImage } from '@/components/optimized-image';
 import { useLayoutEffect, useRef } from 'react';
 import { ViewTransition } from 'react';
-import { BLUR_DATA_URL } from '@/lib/image-utils';
 
 interface GalleryThumbnailsProps {
   allImages: Array<{ id: string; src?: string; alt: string }>;
@@ -69,25 +68,21 @@ export function GalleryThumbnails({
             }`}
           >
             {isCurrentImage ?
-              <Image
+              <OptimizedImage
                 src={image.src || '/placeholder.svg'}
                 alt={image.alt}
                 fill
                 className='object-cover'
                 sizes='112px'
-                placeholder='blur'
-                blurDataURL={BLUR_DATA_URL}
               />
             : <ViewTransition name={`gallery-image-${image.id}`}>
-                <Image
+                <OptimizedImage
                   src={image.src || '/placeholder.svg'}
                   alt={image.alt}
                   fill
                   className='object-cover'
                   sizes='96px'
                   loading='lazy'
-                  placeholder='blur'
-                  blurDataURL={BLUR_DATA_URL}
                 />
               </ViewTransition>
             }

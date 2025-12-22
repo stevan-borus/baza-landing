@@ -1,10 +1,9 @@
 import Link from 'next/link';
-import Image from 'next/image';
+import { OptimizedImage } from '@/components/optimized-image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { ViewTransition } from 'react';
 import { getGalleryImageIds, getGalleryImages } from '@/domain/gallery/gallery';
 import { redirect } from 'next/navigation';
-import { BLUR_DATA_URL } from '@/lib/image-utils';
 import { GalleryThumbnails } from '@/components/gallery-thumbnails';
 
 export const dynamic = 'force-static';
@@ -50,15 +49,13 @@ export default async function GalleryImagePage({
           <div className='relative flex h-[calc(100svh-240px)] overflow-hidden'>
             <ViewTransition name={`gallery-image-${currentImage.id}`}>
               <div className='relative h-full w-full'>
-                <Image
+                <OptimizedImage
                   src={currentImage.src || '/placeholder.svg'}
                   alt={currentImage.alt}
                   fill
                   className='object-contain'
                   sizes='100vw'
-                  priority
-                  placeholder='blur'
-                  blurDataURL={BLUR_DATA_URL}
+                  loading='eager'
                 />
               </div>
             </ViewTransition>

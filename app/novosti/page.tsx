@@ -1,9 +1,8 @@
 import { ViewTransition } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import { OptimizedImage } from '@/components/optimized-image';
 import type { Metadata } from 'next';
 import { getNewsArticles } from '@/domain/news/news';
-import { BLUR_DATA_URL } from '@/lib/image-utils';
 
 export const dynamic = 'force-static';
 
@@ -55,14 +54,12 @@ export default async function News() {
             >
               <ViewTransition name={`news-image-${featured.id}`}>
                 <div className='relative h-46 w-full md:h-83'>
-                  <Image
+                  <OptimizedImage
                     src={featured.image}
                     alt={featured.title}
                     fill
                     className='rounded-br-[50.5px] object-cover'
                     sizes='(max-width: 1280px) 100vw, 50vw'
-                    placeholder='blur'
-                    blurDataURL={BLUR_DATA_URL}
                   />
                 </div>
               </ViewTransition>
@@ -88,14 +85,12 @@ export default async function News() {
                 >
                   <ViewTransition name={`news-image-${article.id}`}>
                     <div className='relative h-22 w-30 shrink-0 md:h-42 md:w-69'>
-                      <Image
+                      <OptimizedImage
                         src={article.image}
                         alt={article.title}
                         fill
                         className='object-cover'
                         sizes='(max-width: 768px) 120px, 276px'
-                        placeholder='blur'
-                        blurDataURL={BLUR_DATA_URL}
                       />
                     </div>
                   </ViewTransition>

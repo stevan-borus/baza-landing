@@ -1,9 +1,8 @@
 import { ViewTransition } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import { OptimizedImage } from '@/components/optimized-image';
 import type { Metadata } from 'next';
 import { getBlogPosts } from '@/domain/blog/blog';
-import { BLUR_DATA_URL } from '@/lib/image-utils';
 
 export const dynamic = 'force-static';
 
@@ -20,15 +19,13 @@ export default async function Blog() {
       <ViewTransition>
         <main className='flex flex-1 flex-col justify-center gap-8 xl:gap-12'>
           <section className='relative h-120 w-full 2xl:h-150'>
-            <Image
+            <OptimizedImage
               src='/blog-banner.webp'
               alt='Blog'
               fill
               className='object-cover'
               sizes='100vw'
-              priority
-              placeholder='blur'
-              blurDataURL={BLUR_DATA_URL}
+              loading='eager'
             />
           </section>
           <section className='flex flex-col gap-8 px-4 py-8 xl:gap-12 xl:px-20 xl:py-12'>
@@ -53,13 +50,13 @@ export default async function Blog() {
     <ViewTransition>
       <main className='flex flex-1 flex-col justify-center gap-8 xl:gap-12'>
         <section className='relative h-120 w-full 2xl:h-150'>
-          <Image
+          <OptimizedImage
             src='/blog-banner.webp'
             alt='Blog'
             fill
             className='object-cover'
             sizes='100vw'
-            priority
+            loading='eager'
           />
         </section>
 
@@ -89,14 +86,12 @@ export default async function Blog() {
               >
                 <ViewTransition name={`blog-image-${post.id}`}>
                   <div className='relative h-full w-40 shrink-0 md:w-50'>
-                    <Image
+                    <OptimizedImage
                       src={post.image}
                       alt={post.title}
                       fill
                       className='object-cover'
                       sizes='(max-width: 768px) 160px, 200px'
-                      placeholder='blur'
-                      blurDataURL={BLUR_DATA_URL}
                     />
                   </div>
                 </ViewTransition>

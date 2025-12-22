@@ -1,11 +1,10 @@
 import { ViewTransition } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import { OptimizedImage } from '@/components/optimized-image';
 import { ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 import { getProgrammes } from '@/domain/programmes/programmes';
 import { cn } from '@/lib/utils';
-import { BLUR_DATA_URL } from '@/lib/image-utils';
 
 export const dynamic = 'force-static';
 
@@ -34,7 +33,7 @@ export default async function Programmes() {
                 className='group custom-card relative h-45 overflow-hidden sm:h-100'
               >
                 <ViewTransition name={`programme-image-${programme.id}`}>
-                  <Image
+                  <OptimizedImage
                     src={programme.image}
                     alt={programme.title}
                     fill
@@ -43,8 +42,6 @@ export default async function Programmes() {
                       programme.imagePosition,
                     )}
                     sizes='(max-width: 640px) 100vw, 50vw'
-                    placeholder='blur'
-                    blurDataURL={BLUR_DATA_URL}
                   />
                 </ViewTransition>
                 <div className='absolute right-0 bottom-0 left-0 flex items-center justify-between rounded-br-[50px] bg-white/90 px-5 py-1 pr-8 group-hover:bg-white sm:py-3 sm:pr-5'>
