@@ -34,8 +34,6 @@ export async function sendContactEmail(
     // Validate the data
     const result = contactFormDataSchema.safeParse(data);
 
-    console.log(result);
-
     if (!result.success) {
       const errors: Record<string, string> = {};
 

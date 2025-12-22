@@ -8,16 +8,31 @@ export default function Home() {
     <>
       <main className='flex flex-1 flex-col justify-center gap-8 lg:gap-12'>
         <section className='relative h-120 w-full 2xl:h-150'>
-          <Image
-            src='/home-banner.gif'
-            alt='Naslovna slika'
-            fill
-            className='object-cover'
-            sizes='100vw'
-            priority
-            placeholder='blur'
-            blurDataURL={BLUR_DATA_URL}
-          />
+          <div className='sm:hidden'>
+            <Image
+              src='/home-banner-mobile.webp'
+              alt='Naslovna slika'
+              fill
+              className='object-cover'
+              sizes='100vw'
+              priority
+              placeholder='blur'
+              blurDataURL={BLUR_DATA_URL}
+            />
+          </div>
+
+          <div className='hidden sm:block'>
+            <Image
+              src='/home-banner.webp'
+              alt='Naslovna slika'
+              fill
+              className='object-cover'
+              sizes='100vw'
+              priority
+              placeholder='blur'
+              blurDataURL={BLUR_DATA_URL}
+            />
+          </div>
         </section>
 
         <section className='flex flex-col gap-8 px-4 lg:gap-12 lg:px-20'>
