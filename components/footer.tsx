@@ -169,16 +169,16 @@ export function Footer() {
 
         <div className='flex flex-col gap-3'>
           <Link
-            href='/nas-tim'
-            className='text-brand-foreground text-base hover:underline'
-          >
-            Naš tim
-          </Link>
-          <Link
             href='/programi'
             className='text-brand-foreground text-base hover:underline'
           >
             Programi
+          </Link>
+          <Link
+            href='/nas-tim'
+            className='text-brand-foreground text-base hover:underline'
+          >
+            Naš tim
           </Link>
           <Link
             href='/blog'
