@@ -200,6 +200,14 @@ export default async function ProgrammePage({
         </section>
 
         <section className='flex flex-col items-center justify-center gap-8 px-4 lg:gap-12 lg:px-18'>
+          {programme.additionalInfo && (
+            <div className='flex flex-col items-center justify-center gap-6'>
+              <p className='text-foreground text-center text-lg'>
+                {programme.additionalInfo}
+              </p>
+            </div>
+          )}
+
           <div className='flex justify-center'>
             <Button href='/kontakt' className='text-lg lg:text-xl'>
               Zakaži svoj prvi probni trening BESPLATNO

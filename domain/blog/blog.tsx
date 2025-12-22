@@ -1,49 +1,49 @@
 import { BlogPost } from '@/domain/blog/blog-schema';
 
 const blogPosts: BlogPost[] = [
-  {
-    id: 'milica-gardasevic',
-    title: 'Moja baza',
-    subtitle: 'Milica Gardašević',
-    author: 'Olimpijska skakačica u dalj',
-    date: '12.06.2025.',
-    image: '/blog-1.webp',
-    excerpt: 'Moja baza',
-    content: (
-      <>
-        <span>
-          Atletika je sport brzine, snage i izdržljivosti, ali vrhunski
-          rezultati ne zavise samo od sprinteva, skokova ili bacanja. Temelj
-          svakog atletskog uspeha je stabilno, snažno i svesno telo. Iz drugog
-          ugla lako je fokusirati se na spektakularne performanse - brzinu,
-          snagu, skokove i medalje. Međutim, osnova svega toga često je
-          nevidljiva: BAZNI trening. Sigurno ste čuli već ovaj izraz, ali šta je
-          zapravo &apos;baza&apos; u našem, sportskom, rečniku?
-        </span>
-        <span>
-          Bazni trening podrazumeva rad na stabilnosti, snazi „centra“ tela
-          (core), pokretljivosti i koordinaciji - elementima koji čine telo
-          spremnim da efikasno i sigurno izvede sve specifične sportske pokrete.
-          Bez jake baze, telo postaje podložno povredama, a umor se brže javlja.
-          Sve što pokušavam da, kroz karijeru, izbegnem. Prednosti baznog
-          treninga su pre svega prevencija od povreda, brži oporavak i samim tim
-          dugovečnost u sportu kojoj težim. Za mene, rad na bazi nije dodatak
-          nego osnov i ključ za bolji rezultat.
-        </span>
-        <span>
-          U sportu, kao i u životu, čvrsta osnova omogućava stabilan i siguran
-          rast. Bazni trening je upravo ta osnova.
-        </span>
-        <span>Jaka baza = jak sportista</span>
-      </>
-    ),
-  },
+  // {
+  //   id: 'milica-gardasevic',
+  //   title: 'Moja baza',
+  //   subtitle: 'Milica Gardašević',
+  //   author: 'Olimpijska skakačica u dalj',
+  //   date: '12.06.2025.',
+  //   image: '/blog-1.webp',
+  //   excerpt: 'Moja baza',
+  //   content: (
+  //     <>
+  //       <span>
+  //         Atletika je sport brzine, snage i izdržljivosti, ali vrhunski
+  //         rezultati ne zavise samo od sprinteva, skokova ili bacanja. Temelj
+  //         svakog atletskog uspeha je stabilno, snažno i svesno telo. Iz drugog
+  //         ugla lako je fokusirati se na spektakularne performanse - brzinu,
+  //         snagu, skokove i medalje. Međutim, osnova svega toga često je
+  //         nevidljiva: BAZNI trening. Sigurno ste čuli već ovaj izraz, ali šta je
+  //         zapravo &apos;baza&apos; u našem, sportskom, rečniku?
+  //       </span>
+  //       <span>
+  //         Bazni trening podrazumeva rad na stabilnosti, snazi „centra“ tela
+  //         (core), pokretljivosti i koordinaciji - elementima koji čine telo
+  //         spremnim da efikasno i sigurno izvede sve specifične sportske pokrete.
+  //         Bez jake baze, telo postaje podložno povredama, a umor se brže javlja.
+  //         Sve što pokušavam da, kroz karijeru, izbegnem. Prednosti baznog
+  //         treninga su pre svega prevencija od povreda, brži oporavak i samim tim
+  //         dugovečnost u sportu kojoj težim. Za mene, rad na bazi nije dodatak
+  //         nego osnov i ključ za bolji rezultat.
+  //       </span>
+  //       <span>
+  //         U sportu, kao i u životu, čvrsta osnova omogućava stabilan i siguran
+  //         rast. Bazni trening je upravo ta osnova.
+  //       </span>
+  //       <span>Jaka baza = jak sportista</span>
+  //     </>
+  //   ),
+  // },
   {
     id: 'olja-piper',
     title: 'Baza zdrave ishrane',
     subtitle: 'Olja Piper',
     author: 'Doktor medicine i sertifikovani nutricionista',
-    date: '12.06.2025.',
+    date: '21.12.2025.',
     image: '/blog-2.webp',
     excerpt: 'Baza zdrave ishrane',
     content: (

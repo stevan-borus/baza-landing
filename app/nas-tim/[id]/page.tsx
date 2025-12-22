@@ -6,6 +6,7 @@ import type { Metadata } from 'next';
 import { getTeamMemberById, getTeamMemberIds } from '@/domain/team/team';
 import { redirect } from 'next/navigation';
 import { BLUR_DATA_URL } from '@/lib/image-utils';
+import { cn } from '@/lib/utils';
 
 export const dynamic = 'force-static';
 
@@ -85,7 +86,7 @@ export default async function TeamMemberPage({
               src={member.image}
               alt={member.name}
               fill
-              className='object-cover'
+              className={cn('object-cover', member.imagePosition)}
               sizes='(max-width: 640px) 100vw, (max-width: 1024px) 440px, 520px'
               priority
               placeholder='blur'

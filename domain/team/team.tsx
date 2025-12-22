@@ -36,45 +36,46 @@ const teamMembers: TeamMember[] = [
       </>
     ),
   },
-  // {
-  //   id: 'snezana-kragovic',
-  //   name: 'Snežana Kragović',
-  //   role: 'Instruktorka',
-  //   image: '/snezana-kragovic.webp',
-  //   excerpt:
-  //     'Serfitikovana pilates instruktorka metode "Balanced body" i iskustvo stiče već 18 godina kroz držanje MAT pilatesa a sada i pilatesa na reformeru.',
-  //   description: (
-  //     <>
-  //       <span>
-  //         Snežana je serfitikovana pilates instruktorka metode &quot;Balanced
-  //         body&quot; i iskustvo stiče već 18 godina kroz držanje MAT pilatesa a
-  //         sada i pilatesa na reformeru.
-  //       </span>
-  //       <span>
-  //         Kao neko čije je osnovno zanimanje viši fizioterapeut I čiji je cilj
-  //         da pomogne ljudima koji osećaju bol, u pilatesu je otkrila moć kojom
-  //         to može i da ostvari. Kroz treninge pilatesa obuhvatila je ljubav
-  //         prema radu sa ljudima i posao fizioterapeuta. Topao osmeh, stručan I
-  //         temeljan rad I znanje koje se prenosi sa mnogo ljubavi su sastavni deo
-  //         Snežaninog pristupa.
-  //       </span>
-  //       <span>
-  //         Osim kao pilates instruktorka, Snežana se usavršavala I na drugim
-  //         poljima. Godinu dana je bila na poziciji rukovodioca dnevnog centra za
-  //         stara lica pri Gerontoloskom centru Novi Sad (2007/2008), da bi
-  //         kasnije uplivala i u preduzetničke vode gde se bavila kozmetičkim
-  //         uslugama i masažom, kao maserka ali I edukatorka.
-  //       </span>
-  //       <span>
-  //         Slobodno vreme provodi putujući I družeći se sa najmilijima a
-  //         kreativnost iskazuje kuvanjem jer veruje da &quot;U zdravom telu,
-  //         zdrav duh&quot; nije samo fraza već odlična BAZA čovečije dobrobiti.
-  //         Pilates je tu da bude baza funkcionalnog i snažnog tela a Snežana je
-  //         tu da olakša put ka tome.
-  //       </span>
-  //     </>
-  //   ),
-  // },
+  {
+    id: 'snezana-kragovic',
+    name: 'Snežana Kragović',
+    role: 'Instruktorka',
+    image: '/snezana-kragovic.webp',
+    imagePosition: 'object-center object-[center_10%]',
+    excerpt:
+      'Serfitikovana pilates instruktorka metode "Balanced body" i iskustvo stiče već 18 godina kroz držanje MAT pilatesa a sada i pilatesa na reformeru.',
+    description: (
+      <>
+        <span>
+          Snežana je serfitikovana pilates instruktorka metode &quot;Balanced
+          body&quot; i iskustvo stiče već 18 godina kroz držanje MAT pilatesa a
+          sada i pilatesa na reformeru.
+        </span>
+        <span>
+          Kao neko čije je osnovno zanimanje viši fizioterapeut I čiji je cilj
+          da pomogne ljudima koji osećaju bol, u pilatesu je otkrila moć kojom
+          to može i da ostvari. Kroz treninge pilatesa obuhvatila je ljubav
+          prema radu sa ljudima i posao fizioterapeuta. Topao osmeh, stručan I
+          temeljan rad I znanje koje se prenosi sa mnogo ljubavi su sastavni deo
+          Snežaninog pristupa.
+        </span>
+        <span>
+          Osim kao pilates instruktorka, Snežana se usavršavala I na drugim
+          poljima. Godinu dana je bila na poziciji rukovodioca dnevnog centra za
+          stara lica pri Gerontoloskom centru Novi Sad (2007/2008), da bi
+          kasnije uplivala i u preduzetničke vode gde se bavila kozmetičkim
+          uslugama i masažom, kao maserka ali I edukatorka.
+        </span>
+        <span>
+          Slobodno vreme provodi putujući I družeći se sa najmilijima a
+          kreativnost iskazuje kuvanjem jer veruje da &quot;U zdravom telu,
+          zdrav duh&quot; nije samo fraza već odlična BAZA čovečije dobrobiti.
+          Pilates je tu da bude baza funkcionalnog i snažnog tela a Snežana je
+          tu da olakša put ka tome.
+        </span>
+      </>
+    ),
+  },
   {
     id: 'tamara-basic',
     name: 'Tamara Bašic',
@@ -252,13 +253,16 @@ const teamMembers: TeamMember[] = [
 ];
 
 export async function getTeamMembers() {
-  return teamMembers.map(({ id, name, role, image, excerpt }) => ({
-    id,
-    name,
-    role,
-    image,
-    excerpt,
-  }));
+  return teamMembers.map(
+    ({ id, name, role, image, imagePosition, excerpt }) => ({
+      id,
+      name,
+      role,
+      image,
+      imagePosition,
+      excerpt,
+    }),
+  );
 }
 
 export async function getTeamMemberById(id: string) {
@@ -270,6 +274,7 @@ export async function getTeamMemberById(id: string) {
     id: member.id,
     name: member.name,
     image: member.image,
+    imagePosition: member.imagePosition,
     excerpt: member.excerpt,
     description: member.description,
     role: member.role,

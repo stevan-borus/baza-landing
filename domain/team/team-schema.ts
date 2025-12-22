@@ -6,6 +6,7 @@ export const teamMemberSchema = z.object({
   name: z.string(),
   role: z.string(),
   image: z.string(),
+  imagePosition: z.string().optional(),
   excerpt: z.string(),
 });
 

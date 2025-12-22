@@ -185,6 +185,14 @@ const programmes: Programme[] = [
         </span>
       </>
     ),
+    additionalInfo: (
+      <>
+        <span>
+          Ntc radionice su uključene u paket. Cena ostaje nepromenjena bez
+          obzira da li dolazite sa jednim detetom ili sa više dece.
+        </span>
+      </>
+    ),
   },
   {
     id: 'golden-age-pilates',
@@ -254,6 +262,7 @@ export async function getProgrammeById(id: string) {
     imagePosition: programme.imagePosition,
     excerpt: programme.excerpt,
     description: programme.description,
+    additionalInfo: programme.additionalInfo,
     schedule: programme.schedule,
   };
 }

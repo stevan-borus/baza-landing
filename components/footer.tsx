@@ -68,10 +68,10 @@ export function Footer() {
             <div className='flex flex-col'>
               <p className='text-sm font-bold'>Telefon:</p>
               <a
-                href='tel:+381621234567'
+                href='tel:+381600451316'
                 className='text-brand-foreground text-base hover:underline'
               >
-                +381621234567
+                +381600451316
               </a>
             </div>
 
@@ -142,10 +142,10 @@ export function Footer() {
           <div className='flex flex-col'>
             <p className='text-sm font-bold'>Telefon:</p>
             <a
-              href='tel:+381621234567'
+              href='tel:+381600451316'
               className='text-brand-foreground text-base hover:underline'
             >
-              +381621234567
+              +381600451316
             </a>
           </div>
 

@@ -27,4 +27,5 @@ export type ProgrammeScheduleDay = z.infer<typeof programmeScheduleDaySchema>;
 export type ProgrammeScheduleItem = z.infer<typeof programmeScheduleItemSchema>;
 export interface Programme extends z.infer<typeof programmeSchema> {
   description: ReactNode;
+  additionalInfo?: ReactNode;
 }

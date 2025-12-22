@@ -27,12 +27,12 @@ async function processDirectory(dir: string, stats: ImageStats): Promise<void> {
     }
 
     const ext = path.extname(file.name).toLowerCase();
-    if (!['.jpg', '.jpeg', '.png'].includes(ext)) {
+    if (!['.jpg', '.jpeg'].includes(ext)) {
       continue;
     }
 
     // Skip if WebP version already exists
-    const webpPath = fullPath.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+    const webpPath = fullPath.replace(/\.(jpg|jpeg)$/i, '.webp');
     if (fs.existsSync(webpPath)) {
       console.log(`⏭️  Skipping ${file.name} (WebP already exists)`);
       stats.skipped++;
