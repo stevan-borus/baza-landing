@@ -20,7 +20,7 @@ export default async function Blog() {
         <main className='flex flex-1 flex-col justify-center gap-8 xl:gap-12'>
           <section className='relative h-120 w-full 2xl:h-150'>
             <Image
-              src='/blog-banner.jpg'
+              src='/blog-banner.webp'
               alt='Blog'
               fill
               className='object-cover'
@@ -51,7 +51,7 @@ export default async function Blog() {
       <main className='flex flex-1 flex-col justify-center gap-8 xl:gap-12'>
         <section className='relative h-120 w-full 2xl:h-150'>
           <Image
-            src='/blog-banner.jpg'
+            src='/blog-banner.webp'
             alt='Blog'
             fill
             className='object-cover'

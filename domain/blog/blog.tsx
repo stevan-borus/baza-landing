@@ -7,7 +7,7 @@ const blogPosts: BlogPost[] = [
     subtitle: 'Milica Gardašević',
     author: 'Olimpijska skakačica u dalj',
     date: '12.06.2025.',
-    image: '/blog-1.jpg',
+    image: '/blog-1.webp',
     excerpt: 'Moja baza',
     content: (
       <>
@@ -44,7 +44,7 @@ const blogPosts: BlogPost[] = [
     subtitle: 'Olja Piper',
     author: 'Doktor medicine i sertifikovani nutricionista',
     date: '12.06.2025.',
-    image: '/blog-2.jpg',
+    image: '/blog-2.webp',
     excerpt: 'Baza zdrave ishrane',
     content: (
       <>

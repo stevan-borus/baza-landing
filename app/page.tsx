@@ -43,7 +43,7 @@ export default function Home() {
         <section className='relative flex items-center justify-center px-4 sm:mx-auto sm:px-0'>
           <div className='h-82 w-82 sm:h-80 sm:w-142'>
             <Image
-              src='/home-bottom.jpg'
+              src='/home-bottom.webp'
               alt='Donja slika'
               fill
               className='object-cover'

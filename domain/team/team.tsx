@@ -5,7 +5,7 @@ const teamMembers: TeamMember[] = [
     id: 'danica-piper',
     name: 'Danica Piper',
     role: 'Instruktorka',
-    image: '/danica-piper.jpg',
+    image: '/danica-piper.webp',
     excerpt:
       'Sertifikovana Reformer Pilates instruktorka, fitnes trener sa višegodišnjim iskustvom i jedna od osnovačica Baza pilates studija.',
     description: (
@@ -40,7 +40,7 @@ const teamMembers: TeamMember[] = [
     id: 'snezana-kragovic',
     name: 'Snežana Kragović',
     role: 'Instruktorka',
-    image: '/snezana-kragovic.png',
+    image: '/snezana-kragovic.webp',
     excerpt:
       'Serfitikovana pilates instruktorka metode "Balanced body" i iskustvo stiče već 18 godina kroz držanje MAT pilatesa a sada i pilatesa na reformeru.',
     description: (
@@ -79,7 +79,7 @@ const teamMembers: TeamMember[] = [
     id: 'tamara-basic',
     name: 'Tamara Bašic',
     role: 'NTC saradnica',
-    image: '/tamara-basic.jpg',
+    image: '/tamara-basic.webp',
     excerpt:
       'Jedna od osnivačica BAZA pilates studija. Sertifikovana je saradnica NTC škole učenja, koja u svom radu sa decom primenjuje znanja iz neuronauke.',
     description: (
@@ -113,7 +113,7 @@ const teamMembers: TeamMember[] = [
     id: 'milica-gardasevic',
     name: 'Milica Gardašević',
     role: 'Saradnica',
-    image: '/milica-gardasevic.jpg',
+    image: '/milica-gardasevic.webp',
     excerpt:
       'Olimpijka, šampionka i sportistkinja čiji rezultati govore o disciplini, posvećenosti i veri u sebe. Jedna od osnivačica Baze.',
     description: (
@@ -145,7 +145,7 @@ const teamMembers: TeamMember[] = [
     id: 'sonja-basic',
     name: 'Dr Sonja Bašić',
     role: 'Saradnica',
-    image: '/sonja-basic.jpg',
+    image: '/sonja-basic.webp',
     excerpt:
       'Specijalista pedijatrije sa višedecenijskim iskustvom u radu sa decom. Kao saradnik u Bazi, dr Sonja ima za cilj da isprati razvoj naših mališana.',
     description: (
@@ -180,7 +180,7 @@ const teamMembers: TeamMember[] = [
     id: 'olja-piper',
     name: 'Dr Olja Piper',
     role: 'Saradnica',
-    image: '/olja-piper.jpg',
+    image: '/olja-piper.webp',
     excerpt:
       'Doktor medicine, sepcijalizant pedijatrije, sertifikovani nutricionista, sertifikovani lekar estetske i anti-aging medicine i ponosna mama jedne devojčice.',
     description: (
@@ -223,7 +223,7 @@ const teamMembers: TeamMember[] = [
     id: 'suzana-bosnjakovic',
     name: 'Suzana Bošnjaković',
     role: 'Saradnica',
-    image: '/suzana-bosnjakovic.jpg',
+    image: '/suzana-bosnjakovic.webp',
     excerpt:
       'Diplomirani fizioterapeut sa završenim studijama Medicinske rehabilitacije. Posebnu stručnost razvila je u radu sa profesionalnim sportistima.',
     description: (

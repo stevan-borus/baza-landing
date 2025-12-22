@@ -7,7 +7,7 @@ const newsArticles: NewsArticle[] = [
   //   excerpt:
   //     'Organizujemo posebnu radionicu posvećenu naprednim pilates tehnikama i pravilnom izvođenju vežbi.',
   //   date: '12.06.2025.',
-  //   image: '/novosti-rest.jpg',
+  //   image: '/novosti-rest.webp',
   //   content: (
   //     <>
   //       <span>
@@ -30,7 +30,7 @@ const newsArticles: NewsArticle[] = [
   //   excerpt:
   //     'Proširili smo našu ponudu sa novim programima prilagođenim različitim nivoima i potrebama.',
   //   date: '12.06.2025.',
-  //   image: '/novosti-rest.jpg',
+  //   image: '/novosti-rest.webp',
   //   content: (
   //     <>
   //       <span>
@@ -54,7 +54,7 @@ const newsArticles: NewsArticle[] = [
   //   excerpt:
   //     'Sa ponosom najavljujemo otvaranje našeg novog studija sa najsavremenijom opremom.',
   //   date: '12.06.2025.',
-  //   image: '/novosti-rest.jpg',
+  //   image: '/novosti-rest.webp',
   //   content: (
   //     <>
   //       <span>
@@ -75,7 +75,7 @@ const newsArticles: NewsArticle[] = [
   //   excerpt:
   //     'Ažurirali smo raspored termina za novu godinu. Proverite naše nove termine i rezervišite svoje mesto.',
   //   date: '12.06.2025.',
-  //   image: '/novosti-rest.jpg',
+  //   image: '/novosti-rest.webp',
   //   content: (
   //     <>
   //       <span>
@@ -98,7 +98,7 @@ const newsArticles: NewsArticle[] = [
   //   excerpt:
   //     'U studio nam se pridružila nova instruktorka koja donosi svežu energiju i strast prema vežbanju.',
   //   date: '12.06.2025.',
-  //   image: '/novosti-1.jpg',
+  //   image: '/novosti-1.webp',
   //   content: (
   //     <>
   //       <span>

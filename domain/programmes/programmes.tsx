@@ -4,8 +4,8 @@ const programmes: Programme[] = [
   {
     id: 'reformer-pilates',
     title: 'Reformer pilates',
-    image: '/reformer-pilates.jpg',
-    mobileImage: '/reformer-pilates-mobile.jpg',
+    image: '/reformer-pilates.webp',
+    mobileImage: '/reformer-pilates-mobile.webp',
     imagePosition: 'object-center',
     excerpt:
       'Sigurno najtraženiji trening danas, pilates na reformeru je trening koji će probuditi svaki vaš mišić i podsetiti vas koliko je telo snažno i moćno.',
@@ -95,8 +95,8 @@ const programmes: Programme[] = [
   {
     id: 'energy-pilates',
     title: 'Energy pilates',
-    image: '/energy-pilates.jpg',
-    mobileImage: '/energy-pilates-mobile.jpg',
+    image: '/energy-pilates.webp',
+    mobileImage: '/energy-pilates-mobile.webp',
     imagePosition: 'object-center xl:object-[center_30%]',
     excerpt:
       'Za sve one koji vole izazove, dinamične treninge a opet teže preciznom pokretu, fokusu na svaki mišić i fleksibilnosti.',
@@ -142,8 +142,8 @@ const programmes: Programme[] = [
   {
     id: 'moms-minis',
     title: 'Moms&Minis',
-    image: '/moms-minis.jpg',
-    mobileImage: '/moms-minis-mobile.jpg',
+    image: '/moms-minis.webp',
+    mobileImage: '/moms-minis-mobile.webp',
     imagePosition: 'object-center xl:object-[center_20%]',
     excerpt:
       'Osluškujući potrebe roditelja, Moms and Minis je program osmišljen tako da u isto vreme mame i deca treniraju, ali različite stvari!',
@@ -189,8 +189,8 @@ const programmes: Programme[] = [
   {
     id: 'golden-age-pilates',
     title: 'Golden age pilates',
-    image: '/golden-age.jpg',
-    mobileImage: '/golden-age-mobile.jpg',
+    image: '/golden-age.webp',
+    mobileImage: '/golden-age-mobile.webp',
     imagePosition: 'object-center xl:object-[center_60%]',
     excerpt:
       'Za pilates koji se trenira na reformeru se kaže da je za sve uzraste. Mudre godine neretko donesu i poneku povredu ili bol i upravo ta stanja znaju da budu prepreka treningu. Ne i kod nas!',

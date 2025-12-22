@@ -11,7 +11,8 @@
     "format:check": "prettier --check .",
     "clean": "rm -rf .next",
     "dev:clean": "npm run clean && next dev",
-    "build:clean": "npm run clean && next build"
+    "build:clean": "npm run clean && next build",
+    "convert:webp": "bun scripts/convert-to-webp.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.0.0",
@@ -63,6 +64,7 @@
     "react-resizable-panels": "^4.0.13",
     "recharts": "3.6.0",
     "resend": "^6.6.0",
+    "sharp": "^0.34.5",
     "sonner": "^2.0.7",
     "tailwind-merge": "^3.4.0",
     "tailwindcss-animate": "^1.0.7",

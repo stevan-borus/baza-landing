@@ -52,7 +52,7 @@ export default async function GalleryImagePage({
                   src={currentImage.src || '/placeholder.svg'}
                   alt={currentImage.alt}
                   fill
-                  className='object-cover'
+                  className='object-contain'
                   sizes='100vw'
                   priority
                 />
@@ -66,6 +66,7 @@ export default async function GalleryImagePage({
             {previousImage && (
               <Link
                 href={`/galerija/${previousImage.id}`}
+                prefetch={true}
                 className='bg-brand/80 text-brand-foreground hover:bg-brand z-20 flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-colors md:h-12 md:w-12'
                 aria-label='Prethodna slika'
               >
@@ -73,13 +74,14 @@ export default async function GalleryImagePage({
               </Link>
             )}
 
-            <div className='flex w-full items-center justify-center gap-2 overflow-x-auto'>
+            <div className='flex w-full flex-nowrap items-center justify-start gap-2 overflow-x-auto scroll-smooth px-2'>
               {allImages.map(image => {
                 const isCurrentImage = image.id === currentImage.id;
                 return (
                   <Link
                     key={image.id}
                     href={`/galerija/${image.id}`}
+                    prefetch={true}
                     className={`relative aspect-square shrink-0 overflow-hidden rounded-lg transition-all ${
                       isCurrentImage ? 'h-28' : (
                         'h-24 opacity-60 hover:opacity-100'
@@ -109,14 +111,16 @@ export default async function GalleryImagePage({
               })}
             </div>
 
-            <Link
-              href={`/galerija/${nextImage?.id}`}
-              className='bg-brand/80 text-brand-foreground hover:bg-brand z-20 flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-colors md:h-12 md:w-12'
-              aria-label='Sledeća slika'
-              aria-disabled={!nextImage}
-            >
-              <ChevronRight className='size-6 md:size-8' />
-            </Link>
+            {nextImage && (
+              <Link
+                href={`/galerija/${nextImage.id}`}
+                prefetch={true}
+                className='bg-brand/80 text-brand-foreground hover:bg-brand z-20 flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-colors md:h-12 md:w-12'
+                aria-label='Sledeća slika'
+              >
+                <ChevronRight className='size-6 md:size-8' />
+              </Link>
+            )}
           </div>
         </div>
       </main>
