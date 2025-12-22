@@ -78,7 +78,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     id: 'tamara-basic',
-    name: 'Tamara Bašic',
+    name: 'Tamara Bašić',
     role: 'NTC saradnica',
     image: '/tamara-basic.webp',
     excerpt:
