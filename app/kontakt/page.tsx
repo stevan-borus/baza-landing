@@ -220,9 +220,9 @@ function ContactForm({ onReset }: { onReset: () => void }) {
         nativeButton
         type='submit'
         disabled={isPending}
-        className='bg-accent text-accent-foreground hover:bg-accent/90 w-full rounded-lg px-6 py-3 text-base font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-50'
+        className='bg-accent text-accent-foreground hover:bg-accent/90 w-full self-center rounded-full px-6 py-3 text-base font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-50 sm:w-75'
       >
-        {isPending ? 'Slanje...' : 'POŠALJI'}
+        {isPending ? 'Slanje...' : 'Pošalji'}
       </BaseButton>
     </Form>
   );

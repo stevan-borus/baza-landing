@@ -1,27 +1,10 @@
 import { GalleryImage } from '@/domain/gallery/gallery-schema';
 
-const galleryImages: GalleryImage[] = [
-  {
-    id: 'gallery-1',
-    src: '/gallery-1.jpg',
-    alt: 'Galerija 1',
-  },
-  {
-    id: 'gallery-2',
-    src: '/gallery-2.jpg',
-    alt: 'Galerija 2',
-  },
-  {
-    id: 'gallery-3',
-    src: '/gallery-3.jpg',
-    alt: 'Galerija 3',
-  },
-  {
-    id: 'gallery-4',
-    src: '/gallery-4.jpg',
-    alt: 'Galerija 4',
-  },
-];
+const galleryImages: GalleryImage[] = Array.from({ length: 32 }, (_, i) => ({
+  id: `gallery-${i + 1}`,
+  src: `/gal/galerija-${i + 1}.jpg`,
+  alt: `Galerija ${i + 1}`,
+}));
 
 export async function getGalleryImages() {
   return galleryImages;

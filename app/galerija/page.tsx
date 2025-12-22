@@ -16,12 +16,12 @@ export default async function Gallery() {
         </section>
 
         <section className='mx-auto w-full max-w-7xl px-6 lg:px-8'>
-          <div className='grid grid-cols-3 lg:grid-cols-4'>
-            {images.map(image => (
+          <div className='gallery-grid grid grid-cols-3 lg:grid-cols-4'>
+            {images.map((image, index) => (
               <Link
                 key={image.id}
                 href={`/galerija/${image.id}`}
-                className='group relative aspect-square cursor-pointer overflow-hidden'
+                className='gallery-item group relative aspect-square cursor-pointer overflow-hidden will-change-transform'
               >
                 <ViewTransition name={`gallery-image-${image.id}`}>
                   <Image
@@ -30,9 +30,11 @@ export default async function Gallery() {
                     fill
                     className='object-cover transition-transform duration-300 group-hover:scale-110'
                     sizes='(max-width: 1024px) 33vw, 25vw'
+                    loading={index < 12 ? 'eager' : 'lazy'}
+                    fetchPriority={index < 4 ? 'high' : 'auto'}
                   />
                 </ViewTransition>
-                <div className='bg-brand/0 group-hover:bg-brand/20 absolute inset-0 transition-colors duration-300' />
+                <div className='bg-brand/0 group-hover:bg-brand/20 pointer-events-none absolute inset-0 transition-colors duration-300' />
               </Link>
             ))}
           </div>

@@ -77,6 +77,9 @@ export function ContactEmailTemplate({
             .email-text-strong {
               color: ${colors.dark.foreground} !important;
             }
+            .email-value {
+              color: ${colors.dark.foreground} !important;
+            }
             .email-section {
               background-color: ${colors.dark.muted} !important;
             }
@@ -95,15 +98,16 @@ export function ContactEmailTemplate({
           style={{ backgroundColor: colors.light.background }}
         >
           <Container
-            className='email-container mx-auto max-w-2xl rounded-lg p-8 shadow-sm'
+            className='email-container mx-auto max-w-2xl rounded-lg shadow-sm'
             style={{
               backgroundColor: colors.light.card,
               fontFamily:
                 "'Metropolis', 'Metropolis Fallback', system-ui, sans-serif",
+              padding: '32px',
             }}
           >
             <Heading
-              className='email-heading mb-6 border-b-2 pb-3 text-2xl font-bold'
+              className='email-heading mb-8 border-b-2 pb-4 text-2xl font-bold'
               style={{
                 color: colors.light.foreground,
                 borderColor: colors.light.brand,
@@ -112,7 +116,7 @@ export function ContactEmailTemplate({
               Nova poruka sa kontakt forme
             </Heading>
 
-            <Section className='mt-5 space-y-3'>
+            <Section className='mt-6 space-y-4'>
               <Text
                 className='email-text m-0'
                 style={{ color: colors.light.mutedForeground }}
@@ -123,7 +127,12 @@ export function ContactEmailTemplate({
                 >
                   Ime:
                 </strong>{' '}
-                {firstName}
+                <span
+                  className='email-value'
+                  style={{ color: colors.light.foreground }}
+                >
+                  {firstName}
+                </span>
               </Text>
               <Text
                 className='email-text m-0'
@@ -135,7 +144,12 @@ export function ContactEmailTemplate({
                 >
                   Prezime:
                 </strong>{' '}
-                {lastName}
+                <span
+                  className='email-value'
+                  style={{ color: colors.light.foreground }}
+                >
+                  {lastName}
+                </span>
               </Text>
               <Text
                 className='email-text m-0'
@@ -147,7 +161,12 @@ export function ContactEmailTemplate({
                 >
                   Email:
                 </strong>{' '}
-                {email}
+                <span
+                  className='email-value'
+                  style={{ color: colors.light.foreground }}
+                >
+                  {email}
+                </span>
               </Text>
               <Text
                 className='email-text m-0'
@@ -159,7 +178,12 @@ export function ContactEmailTemplate({
                 >
                   Broj telefona:
                 </strong>{' '}
-                {phoneNumber}
+                <span
+                  className='email-value'
+                  style={{ color: colors.light.foreground }}
+                >
+                  {phoneNumber}
+                </span>
               </Text>
               <Text
                 className='email-text m-0'
@@ -171,17 +195,25 @@ export function ContactEmailTemplate({
                 >
                   Način kontakta:
                 </strong>{' '}
-                {contactMethodLabels[contactMethod]}
+                <span
+                  className='email-value'
+                  style={{ color: colors.light.foreground }}
+                >
+                  {contactMethodLabels[contactMethod]}
+                </span>
               </Text>
             </Section>
 
             <Section
-              className='email-section mt-8 rounded-md p-4'
-              style={{ backgroundColor: colors.light.muted }}
+              className='email-section mt-10 rounded-md'
+              style={{
+                backgroundColor: colors.light.muted,
+                padding: '20px',
+              }}
             >
               <Heading
                 as='h2'
-                className='email-section-heading mt-0 mb-3 text-xl font-semibold'
+                className='email-section-heading mt-0 mb-4 text-xl font-semibold'
                 style={{ color: colors.light.foreground }}
               >
                 Poruka:

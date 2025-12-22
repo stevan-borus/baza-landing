@@ -181,3 +181,19 @@
     animation-timing-function: ease-in-out;
   }
 }
+
+/* Performance optimizations for gallery */
+.gallery-grid {
+  contain: layout style paint;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.gallery-item {
+  contain: layout style paint;
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+  content-visibility: auto;
+}
