@@ -48,7 +48,7 @@ export default async function NewsArticlePage({
 
   return (
     <ViewTransition>
-      <main className='flex flex-1 flex-col items-start justify-center gap-8 px-4 py-8 lg:gap-20 lg:py-12 xl:flex-row'>
+      <main className='flex flex-1 flex-col items-center justify-center gap-8 px-4 py-8 lg:gap-20 lg:py-12 xl:flex-row xl:items-start'>
         <section className='relative h-120 min-w-full sm:h-110 sm:min-w-110 md:h-147 md:min-w-130'>
           <Link
             href='/novosti'
