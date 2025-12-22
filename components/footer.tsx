@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Image from 'next/image';
+import { OptimizedImage } from '@/components/optimized-image';
 import Instagram from '@/resources/icons/instagram';
 import Tiktok from '@/resources/icons/tiktok';
 import Facebook from '@/resources/icons/facebook';
@@ -12,7 +12,7 @@ export function Footer() {
       <section className='order-1 flex flex-col items-center gap-6 md:order-2 md:justify-between'>
         <div className='relative h-11 w-27 md:h-25 md:w-60'>
           <Link href='/'>
-            <Image
+            <OptimizedImage
               src='/logo-white.png'
               alt='Baza Pilates Logo'
               fill

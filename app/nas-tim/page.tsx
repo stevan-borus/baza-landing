@@ -1,10 +1,9 @@
 import { ViewTransition } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import { OptimizedImage } from '@/components/optimized-image';
 import { ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 import { getTeamMembers } from '@/domain/team/team';
-import { BLUR_DATA_URL } from '@/lib/image-utils';
 import { cn } from '@/lib/utils';
 
 export const dynamic = 'force-static';
@@ -31,20 +30,21 @@ export default async function Team() {
               <Link
                 key={member.id}
                 href={`/nas-tim/${member.id}`}
-                className='group custom-card relative h-93 overflow-hidden sm:h-116'
+                className='group custom-card relative h-93 overflow-hidden bg-white sm:h-116'
               >
                 <ViewTransition name={`team-image-${member.id}`}>
-                  <Image
+                  <OptimizedImage
                     src={member.image || '/placeholder.svg'}
                     alt={member.name}
                     fill
-                    className={cn('object-cover', member.imagePosition)}
+                    className={cn(
+                      'rounded-br-[50.5px] object-cover',
+                      member.imagePosition,
+                    )}
                     sizes='(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw'
-                    placeholder='blur'
-                    blurDataURL={BLUR_DATA_URL}
                   />
                 </ViewTransition>
-                <div className='absolute right-0 bottom-0 left-0 flex items-center justify-between rounded-br-[50px] bg-white/90 px-5 py-1 pr-8 group-hover:bg-white sm:py-3 sm:pr-5'>
+                <div className='absolute right-0 bottom-0 left-0 flex items-center justify-between bg-white/90 px-5 py-1 pr-8 group-hover:bg-white sm:py-3 sm:pr-5'>
                   <div className='flex flex-col'>
                     <h2 className='group-hover:text-brand-light transition-colors'>
                       {member.name}

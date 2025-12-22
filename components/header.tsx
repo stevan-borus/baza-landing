@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
+import { OptimizedImage } from '@/components/optimized-image';
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { Dialog } from '@base-ui/react/dialog';
@@ -25,12 +25,12 @@ export function Header() {
         {/* Logo */}
         <div className='flex lg:flex-1'>
           <Link href='/' className='-m-1.5 p-1.5'>
-            <Image
+            <OptimizedImage
               src='/baza-logo.png'
               alt='Baza Pilates Logo'
               width={108}
               height={44}
-              priority
+              loading='eager'
             />
           </Link>
         </div>
@@ -66,12 +66,12 @@ export function Header() {
                       className='-m-1.5 p-1.5'
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      <Image
+                      <OptimizedImage
                         src='/baza-logo.png'
                         alt='Baza Pilates Logo'
                         width={108}
                         height={44}
-                        priority
+                        loading='eager'
                       />
                     </Link>
                     <Dialog.Close className='text-brand -m-2.5 rounded-md p-2.5'>

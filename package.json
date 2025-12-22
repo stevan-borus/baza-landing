@@ -1,6 +1,6 @@
 {
   "name": "baza-landing",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -12,7 +12,7 @@
     "clean": "rm -rf .next",
     "dev:clean": "npm run clean && next dev",
     "build:clean": "npm run clean && next build",
-    "convert:webp": "bun scripts/convert-to-webp.ts"
+    "process:images": "bun scripts/process-images.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.0.0",

@@ -1,11 +1,10 @@
 import Link from 'next/link';
-import Image from 'next/image';
+import { OptimizedImage } from '@/components/optimized-image';
 import { ChevronLeft } from 'lucide-react';
 import { ViewTransition } from 'react';
 import type { Metadata } from 'next';
 import { getNewsArticleById, getNewsArticleIds } from '@/domain/news/news';
 import { redirect } from 'next/navigation';
-import { BLUR_DATA_URL } from '@/lib/image-utils';
 
 export const dynamic = 'force-static';
 
@@ -59,15 +58,13 @@ export default async function NewsArticlePage({
           </Link>
 
           <ViewTransition name={`news-image-${article.id}`}>
-            <Image
+            <OptimizedImage
               src={article.image}
               alt={article.title}
               fill
               className='object-cover'
               sizes='(max-width: 640px) 100vw, (max-width: 1024px) 440px, 520px'
-              priority
-              placeholder='blur'
-              blurDataURL={BLUR_DATA_URL}
+              loading='eager'
             />
           </ViewTransition>
         </section>

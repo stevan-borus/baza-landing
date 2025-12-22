@@ -1,10 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
+import { OptimizedImage } from '@/components/optimized-image';
 import { useLayoutEffect, useRef } from 'react';
 import { ViewTransition } from 'react';
-import { BLUR_DATA_URL } from '@/lib/image-utils';
 
 interface GalleryThumbnailsProps {
   allImages: Array<{ id: string; src?: string; alt: string }>;
@@ -46,42 +45,44 @@ export function GalleryThumbnails({
     }
   }, [currentImageId]);
 
+  const currentIndex = allImages.findIndex(img => img.id === currentImageId);
+
   return (
     <div
       ref={scrollContainerRef}
       className='relative z-10 flex w-full flex-nowrap items-center justify-start gap-2 overflow-x-auto scroll-smooth px-2'
     >
-      {allImages.map(image => {
+      {allImages.map((image, index) => {
         const isCurrentImage = image.id === currentImageId;
+        // Only prefetch adjacent images (prev, current, next)
+        const shouldPrefetch = Math.abs(index - currentIndex) <= 1;
+
         return (
           <Link
             key={image.id}
             ref={isCurrentImage ? currentThumbnailRef : null}
             href={`/galerija/${image.id}`}
-            prefetch={true}
+            prefetch={shouldPrefetch}
             className={`relative aspect-square shrink-0 overflow-hidden rounded-lg transition-all ${
               isCurrentImage ? 'h-28' : 'h-24 opacity-60 hover:opacity-100'
             }`}
           >
             {isCurrentImage ?
-              <Image
+              <OptimizedImage
                 src={image.src || '/placeholder.svg'}
                 alt={image.alt}
                 fill
                 className='object-cover'
                 sizes='112px'
-                placeholder='blur'
-                blurDataURL={BLUR_DATA_URL}
               />
             : <ViewTransition name={`gallery-image-${image.id}`}>
-                <Image
+                <OptimizedImage
                   src={image.src || '/placeholder.svg'}
                   alt={image.alt}
                   fill
                   className='object-cover'
                   sizes='96px'
-                  placeholder='blur'
-                  blurDataURL={BLUR_DATA_URL}
+                  loading='lazy'
                 />
               </ViewTransition>
             }

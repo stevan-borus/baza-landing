@@ -1,5 +1,4 @@
-import Image from 'next/image';
-import { BLUR_DATA_URL } from '@/lib/image-utils';
+import { OptimizedImage } from '@/components/optimized-image';
 
 export const dynamic = 'force-static';
 
@@ -9,28 +8,24 @@ export default function Home() {
       <main className='flex flex-1 flex-col justify-center gap-8 lg:gap-12'>
         <section className='relative h-120 w-full 2xl:h-150'>
           <div className='sm:hidden'>
-            <Image
+            <OptimizedImage
               src='/home-banner-mobile.webp'
               alt='Naslovna slika'
               fill
               className='object-cover'
               sizes='100vw'
-              priority
-              placeholder='blur'
-              blurDataURL={BLUR_DATA_URL}
+              loading='eager'
             />
           </div>
 
           <div className='hidden sm:block'>
-            <Image
+            <OptimizedImage
               src='/home-banner.webp'
               alt='Naslovna slika'
               fill
               className='object-cover'
               sizes='100vw'
-              priority
-              placeholder='blur'
-              blurDataURL={BLUR_DATA_URL}
+              loading='eager'
             />
           </div>
         </section>
@@ -60,14 +55,12 @@ export default function Home() {
 
         <section className='relative flex items-center justify-center px-4 sm:mx-auto sm:px-0'>
           <div className='h-82 w-82 sm:h-80 sm:w-142'>
-            <Image
+            <OptimizedImage
               src='/home-bottom.webp'
               alt='Donja slika'
               fill
               className='object-cover'
               sizes='(max-width: 640px) 328px, 568px'
-              placeholder='blur'
-              blurDataURL={BLUR_DATA_URL}
             />
           </div>
         </section>

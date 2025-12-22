@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Image from 'next/image';
+import { OptimizedImage } from '@/components/optimized-image';
 import { ChevronLeft } from 'lucide-react';
 import { ViewTransition } from 'react';
 import type { Metadata } from 'next';
@@ -10,7 +10,6 @@ import {
 import { redirect } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/button';
-import { BLUR_DATA_URL } from '@/lib/image-utils';
 
 export const dynamic = 'force-static';
 
@@ -67,7 +66,7 @@ export default async function ProgrammePage({
 
           <div className='lg:hidden'>
             <ViewTransition>
-              <Image
+              <OptimizedImage
                 src={programme.mobileImage}
                 alt={programme.title}
                 fill
@@ -76,16 +75,14 @@ export default async function ProgrammePage({
                   programme.imagePosition,
                 )}
                 sizes='100vw'
-                priority
-                placeholder='blur'
-                blurDataURL={BLUR_DATA_URL}
+                loading='eager'
               />
             </ViewTransition>
           </div>
 
           <div className='hidden lg:block'>
             <ViewTransition name={`programme-image-${programme.id}`}>
-              <Image
+              <OptimizedImage
                 src={programme.image}
                 alt={programme.title}
                 fill
@@ -94,9 +91,7 @@ export default async function ProgrammePage({
                   programme.imagePosition,
                 )}
                 sizes='100vw'
-                priority
-                placeholder='blur'
-                blurDataURL={BLUR_DATA_URL}
+                loading='eager'
               />
             </ViewTransition>
           </div>
