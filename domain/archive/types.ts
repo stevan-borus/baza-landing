@@ -14,4 +14,3 @@ export const ArchiveYearGroupSchema = z.object({
 
 export type ArchiveItem = z.infer<typeof ArchiveItemSchema>;
 export type ArchiveYearGroup = z.infer<typeof ArchiveYearGroupSchema>;
-

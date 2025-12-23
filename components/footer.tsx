@@ -3,6 +3,7 @@ import { OptimizedImage } from '@/components/optimized-image';
 import Instagram from '@/resources/icons/instagram';
 import Tiktok from '@/resources/icons/tiktok';
 import Facebook from '@/resources/icons/facebook';
+import { SocialLink, MapLink } from '@/components/tracked-external-links';
 
 export function Footer() {
   return (
@@ -23,27 +24,32 @@ export function Footer() {
         </div>
 
         <div className='flex justify-center gap-6 md:w-full md:justify-between md:px-11'>
-          <a
+          <SocialLink
+            platform='facebook'
             href='https://www.facebook.com/people/Baza-Pilates-Studio/61584067745610/#'
-            target='_blank'
           >
             <Facebook className='text-brand-foreground size-6' />
-          </a>
-          <a href='https://www.instagram.com/bazapilates/' target='_blank'>
+          </SocialLink>
+          <SocialLink
+            platform='instagram'
+            href='https://www.instagram.com/bazapilates/'
+          >
             <Instagram className='text-brand-foreground size-6' />
-          </a>
-          <a href='https://www.tiktok.com/@bazapilates' target='_blank'>
+          </SocialLink>
+          <SocialLink
+            platform='tiktok'
+            href='https://www.tiktok.com/@bazapilates'
+          >
             <Tiktok className='text-brand-foreground size-6' />
-          </a>
+          </SocialLink>
         </div>
 
-        <a
+        <MapLink
           href='https://maps.app.goo.gl/ZptCRSMK9J5bjAYR9'
-          target='_blank'
           className='text-brand-foreground hidden text-center text-base hover:underline md:block'
         >
           Prikaži na mapi
-        </a>
+        </MapLink>
       </section>
 
       {/* Mobile: Kontakt and Navigacija side by side */}
@@ -197,13 +203,12 @@ export function Footer() {
 
       {/* Mobile: Show on Map at bottom */}
       <div className='order-3 flex justify-center md:hidden'>
-        <a
+        <MapLink
           href='https://maps.app.goo.gl/ZptCRSMK9J5bjAYR9'
-          target='_blank'
           className='text-brand-foreground text-center text-base hover:underline'
         >
           Prikaži na mapi
-        </a>
+        </MapLink>
       </div>
     </footer>
   );

@@ -1,8 +1,8 @@
 import { ViewTransition } from 'react';
-import Link from 'next/link';
 import { OptimizedImage } from '@/components/optimized-image';
 import type { Metadata } from 'next';
 import { getBlogPosts } from '@/domain/blog/blog';
+import { BlogPostCard } from '@/components/blog-post-card';
 
 export const dynamic = 'force-static';
 
@@ -79,41 +79,15 @@ export default async function Blog() {
 
           <div className='grid grid-cols-1 gap-3 sm:mx-auto xl:grid-cols-2 xl:gap-6'>
             {blogPosts.map(post => (
-              <Link
+              <BlogPostCard
                 key={post.id}
-                href={`/blog/${post.id}`}
-                className='group custom-card flex h-45 overflow-hidden sm:h-40 md:h-50'
-              >
-                <ViewTransition name={`blog-image-${post.id}`}>
-                  <div className='relative h-full w-40 shrink-0 md:w-50'>
-                    <OptimizedImage
-                      src={post.image}
-                      alt={post.title}
-                      fill
-                      className='object-cover'
-                      sizes='(max-width: 768px) 160px, 200px'
-                    />
-                  </div>
-                </ViewTransition>
-                <div className='flex flex-1 flex-col justify-between gap-2 bg-white px-4 py-3 md:px-8 md:py-4'>
-                  <div className='flex flex-col gap-2'>
-                    <div className='flex flex-col gap-1'>
-                      <p className='text-foreground group-hover:text-brand text-left text-xs transition-colors md:text-lg'>
-                        {post.author}
-                      </p>
-                      <p className='text-foreground group-hover:text-brand text-left text-sm transition-colors md:text-base'>
-                        {post.subtitle}
-                      </p>
-                    </div>
-                    <h3 className='group-hover:text-brand-light text-left text-base transition-colors md:text-2xl'>
-                      {post.title}
-                    </h3>
-                  </div>
-                  <span className='text-foreground group-hover:text-brand-light text-sm font-light transition-colors md:text-base'>
-                    {post.date}
-                  </span>
-                </div>
-              </Link>
+                id={post.id}
+                title={post.title}
+                subtitle={post.subtitle}
+                author={post.author}
+                date={post.date}
+                image={post.image}
+              />
             ))}
           </div>
         </section>
