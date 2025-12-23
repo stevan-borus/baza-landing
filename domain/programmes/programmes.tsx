@@ -81,7 +81,7 @@ const programmes: Programme[] = [
           kroz koje će vas iskusni instruktori pažljivo voditi, dovodeći vašu
           formu na potpuno novi nivo. Pored aktivacije tela, pilates na
           reformerima je tu da vam pomogne da nađete balans, fokusirate se na
-          svaki pokret i izađete sa osmehom na licu. Jer pilates se ne završava
+          svaki pokret i izađete sa osmehom na licu. Jer se pilates ne završava
           na treningu!
         </span>
         <span>
@@ -132,7 +132,7 @@ const programmes: Programme[] = [
           Kombinujući trening snage kao osnov za izgradnju mišića, elemente kik
           boksa za podizanje samopouzdanja, kardio vežbe za poboljšanje
           kondicije i pilates na reformeru za stabilnost i aktivaciju dubokih
-          mišića, ovaj program pažljivo osmišljenih intenzivnih treniga će vam
+          mišića, ovaj program pažljivo osmišljenih intenzivnih treninga će vam
           omogućiti da testirate i pomerite svoje granice. Instruktori su tu da
           vam pomognu da otkrijete svoju snagu.
         </span>
@@ -174,8 +174,8 @@ const programmes: Programme[] = [
           Dok mame treniraju na reformerima, deca razvijaju svoje vijuge kroz
           radionice koje prate NTC program učenja. Ovaj program za decu obuhvata
           psihomotorne vežbe koje stimulišu kognitivni razvoj dece i odvijaju se
-          kroz igru. Na ovaj način, u Bazi, i mame i deca provode kvalitetno
-          ispunjeno vreme radeći na fizičkom i na psihološkom aspektu zdravlja.
+          kroz igru. Na ovaj način, u Bazi, i mame i deca provode kvalitetno i
+          ispunjeno vreme radeći na fizičkom i psihološkom aspektu zdravlja.
         </span>
         <span>
           Rad sa decom je poveren jednoj od osnivačica Baze koja je prošla obuku

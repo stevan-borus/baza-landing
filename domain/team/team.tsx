@@ -43,11 +43,11 @@ const teamMembers: TeamMember[] = [
     image: '/snezana-kragovic.webp',
     imagePosition: 'object-center object-[center_10%]',
     excerpt:
-      'Serfitikovana pilates instruktorka metode "Balanced body" i iskustvo stiče već 18 godina kroz držanje MAT pilatesa, a sada i pilatesa na reformeru.',
+      'Sertifikovana pilates instruktorka metode "Balanced body" i iskustvo stiče već 18 godina kroz držanje MAT pilatesa, a sada i pilatesa na reformeru.',
     description: (
       <>
         <span>
-          Snežana je serfitikovana pilates instruktorka metode &quot;Balanced
+          Snežana je sertifikovana pilates instruktorka metode &quot;Balanced
           body&quot; i iskustvo stiče već 18 godina kroz držanje MAT pilatesa, a
           sada i pilatesa na reformeru.
         </span>
@@ -60,9 +60,9 @@ const teamMembers: TeamMember[] = [
           Snežaninog pristupa.
         </span>
         <span>
-          Osim kao pilates instruktorka, Snežana se usavršavala I na drugim
+          Osim kao pilates instruktorka, Snežana se usavršavala i na drugim
           poljima. Godinu dana je bila na poziciji rukovodioca dnevnog centra za
-          stara lica pri Gerontoloskom centru Novi Sad (2007/2008), da bi
+          stara lica pri Gerontološkom centru Novi Sad (2007/2008), da bi
           kasnije uplivala i u preduzetničke vode gde se bavila kozmetičkim
           uslugama i masažom, kao maserka i edukatorka.
         </span>
@@ -183,7 +183,7 @@ const teamMembers: TeamMember[] = [
     role: 'Saradnica',
     image: '/olja-piper.webp',
     excerpt:
-      'Doktor medicine, sepcijalizant pedijatrije, sertifikovani nutricionista, sertifikovani lekar estetske i anti-aging medicine i ponosna mama jedne devojčice.',
+      'Doktor medicine, specijalizant pedijatrije, sertifikovani nutricionista, sertifikovani lekar estetske i anti-aging medicine i ponosna mama jedne devojčice.',
     description: (
       <>
         <span>
@@ -198,7 +198,7 @@ const teamMembers: TeamMember[] = [
           medicinom.
         </span>
         <span>
-          Obzirom na iskustvo u radu sa pacijentima svih uzrasta i sopstveno
+          S obzirom na iskustvo u radu sa pacijentima svih uzrasta i sopstveno
           iskustvo balansiranja između profesionalnih obaveza, majčinstva i
           brige o sebi odlično razume izazove savremenog života i potrebe ljudi.
         </span>
