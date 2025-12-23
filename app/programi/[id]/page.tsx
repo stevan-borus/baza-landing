@@ -9,7 +9,10 @@ import {
 } from '@/domain/programmes/programmes';
 import { redirect } from 'next/navigation';
 import { cn } from '@/lib/utils';
-import { Button } from '@/components/button';
+import {
+  BookTrialButton,
+  ContactUsButton,
+} from '@/components/programme-cta-buttons';
 
 export const dynamic = 'force-static';
 
@@ -204,9 +207,10 @@ export default async function ProgrammePage({
           )}
 
           <div className='flex justify-center'>
-            <Button href='/kontakt' className='text-lg lg:text-xl'>
-              Zakaži svoj BESPLATAN probni trening
-            </Button>
+            <BookTrialButton
+              programmeId={programme.id}
+              programmeTitle={programme.title}
+            />
           </div>
           {programme.id !== 'moms-minis' && (
             <div className='bg-card flex max-w-275 flex-col items-center justify-center gap-6 rounded-lg p-3 lg:flex-row lg:gap-8 lg:px-20 lg:py-12'>
@@ -240,9 +244,11 @@ export default async function ProgrammePage({
                 </div>
 
                 <div className='flex justify-center'>
-                  <Button href='/kontakt' className='w-full sm:w-75'>
-                    Kontaktiraj nas
-                  </Button>
+                  <ContactUsButton
+                    programmeId={programme.id}
+                    programmeTitle={programme.title}
+                    className='w-full sm:w-75'
+                  />
                 </div>
               </div>
 
@@ -287,7 +293,10 @@ export default async function ProgrammePage({
                     Za personalne i duo programe, slobodno nas kontaktirajte
                     kako bismo zajedno pronašli idealan termin.
                   </p>
-                  <Button href='/kontakt'>Kontaktiraj nas</Button>
+                  <ContactUsButton
+                    programmeId={programme.id}
+                    programmeTitle={programme.title}
+                  />
                 </div>
               </div>
             </div>

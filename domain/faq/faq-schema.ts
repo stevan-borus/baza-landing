@@ -6,4 +6,3 @@ export const faqItemSchema = z.object({
 });
 
 export type FAQItem = z.infer<typeof faqItemSchema>;
-

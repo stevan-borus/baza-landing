@@ -6,6 +6,7 @@ import {
   type ContactFormData,
 } from '@/domain/contact/contact-schema';
 import { ContactEmailTemplate } from '@/components/contact-email-template';
+import { getPostHogClient } from '@/lib/posthog-server';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -72,11 +73,46 @@ export async function sendContactEmail(
 
     if (emailResult.error) {
       console.error('Resend error:', emailResult.error);
+
+      // Track contact form error with PostHog
+      const posthog = getPostHogClient();
+      posthog.capture({
+        distinctId: validatedData.email,
+        event: 'contact_form_error',
+        properties: {
+          error_type: 'email_send_failed',
+          contact_method: validatedData.contactMethod,
+        },
+      });
+
       return {
         success: false,
         error: 'Greška pri slanju e-maila',
       };
     }
+
+    // Track successful contact form submission with PostHog
+    const posthog = getPostHogClient();
+    posthog.capture({
+      distinctId: validatedData.email,
+      event: 'contact_form_submitted',
+      properties: {
+        contact_method: validatedData.contactMethod,
+        has_message: Boolean(validatedData.message),
+      },
+    });
+
+    // Identify user with their contact details
+    posthog.identify({
+      distinctId: validatedData.email,
+      properties: {
+        email: validatedData.email,
+        first_name: validatedData.firstName,
+        last_name: validatedData.lastName,
+        phone: validatedData.phoneNumber,
+        preferred_contact_method: validatedData.contactMethod,
+      },
+    });
 
     return {
       success: true,
@@ -84,6 +120,18 @@ export async function sendContactEmail(
     };
   } catch (error) {
     console.error('Error sending email:', error);
+
+    // Track contact form error with PostHog
+    const posthog = getPostHogClient();
+    posthog.capture({
+      distinctId: 'anonymous',
+      event: 'contact_form_error',
+      properties: {
+        error_type: 'exception',
+        error_message: error instanceof Error ? error.message : 'Unknown error',
+      },
+    });
+
     if (error instanceof Error) {
       return {
         success: false,

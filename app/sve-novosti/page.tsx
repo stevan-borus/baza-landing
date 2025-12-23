@@ -1,9 +1,9 @@
 import { ViewTransition } from 'react';
 import Link from 'next/link';
-import { OptimizedImage } from '@/components/optimized-image';
 import { ChevronLeft } from 'lucide-react';
 import type { Metadata } from 'next';
 import { getNewsArticles } from '@/domain/news/news';
+import { NewsArticleCard } from '@/components/news-article-card';
 
 export const dynamic = 'force-static';
 
@@ -45,31 +45,13 @@ export default async function AllNews() {
             </div>
           : <div className='flex flex-col gap-3 md:gap-6'>
               {allNews.map(article => (
-                <Link
+                <NewsArticleCard
                   key={article.id}
-                  href={`/novosti/${article.id}`}
-                  className='group custom-card flex overflow-hidden'
-                >
-                  <ViewTransition name={`news-image-${article.id}`}>
-                    <div className='relative h-22 w-30 shrink-0 md:h-42 md:w-69'>
-                      <OptimizedImage
-                        src={article.image}
-                        alt={article.title}
-                        fill
-                        className='object-cover'
-                        sizes='(max-width: 768px) 120px, 276px'
-                      />
-                    </div>
-                  </ViewTransition>
-                  <div className='flex flex-1 flex-col justify-between gap-2 bg-white px-4 py-3 md:px-8 md:py-4'>
-                    <h3 className='group-hover:text-brand-light text-left text-base transition-colors md:text-3xl'>
-                      {article.title}
-                    </h3>
-                    <span className='text-foreground group-hover:text-brand-light text-sm font-light transition-colors md:text-xl'>
-                      {article.date}
-                    </span>
-                  </div>
-                </Link>
+                  id={article.id}
+                  title={article.title}
+                  date={article.date}
+                  image={article.image}
+                />
               ))}
             </div>
           }
