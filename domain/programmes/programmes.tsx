@@ -129,7 +129,7 @@ const programmes: Programme[] = [
           pilates program je tu da vam to ispuni.
         </span>
         <span>
-          Kombinujući trening snage kao osnov za izgradnju mišića, elemente kick
+          Kombinujući trening snage kao osnov za izgradnju mišića, elemente kik
           boksa za podizanje samopouzdanja, kardio vežbe za poboljšanje
           kondicije i pilates na reformeru za stabilnost i aktivaciju dubokih
           mišića, ovaj program pažljivo osmišljenih intenzivnih treniga će vam
@@ -174,7 +174,7 @@ const programmes: Programme[] = [
           Dok mame treniraju na reformerima, deca razvijaju svoje vijuge kroz
           radionice koje prate NTC program učenja. Ovaj program za decu obuhvata
           psihomotorne vežbe koje stimulišu kognitivni razvoj dece i odvijaju se
-          kroz igru. Na ovaj način, u Bazi i mame i deca provode kvalitetno
+          kroz igru. Na ovaj način, u Bazi, i mame i deca provode kvalitetno
           ispunjeno vreme radeći na fizičkom i na psihološkom aspektu zdravlja.
         </span>
         <span>
@@ -226,10 +226,10 @@ const programmes: Programme[] = [
           stanja znaju da budu prepreka treningu. Ne i kod nas!
         </span>
         <span>
-          BAZA je mislila na vas i stoga smo osmilili sistem kroz koji vas
+          Baza je mislila na vas i stoga smo osmislili sistem kroz koji vas
           bezbedno sprovodimo do vaše forme na reformeru. U našem timu su
           iskusni fizioterapeuti koji su tu da prevashodno urade dijagnostiku i
-          procenu a onda i da pomognu instruktorima da prilagode trening svakoj
+          procenu, a onda i da pomognu instruktorima da prilagode trening svakoj
           od vas.
         </span>
         <span>Zato bez straha, čekamo vas da pomeramo granice!</span>

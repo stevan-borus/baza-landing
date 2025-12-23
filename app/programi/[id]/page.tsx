@@ -205,7 +205,7 @@ export default async function ProgrammePage({
 
           <div className='flex justify-center'>
             <Button href='/kontakt' className='text-lg lg:text-xl'>
-              Zakaži svoj prvi probni trening BESPLATNO
+              Zakaži svoj BESPLATAN probni trening
             </Button>
           </div>
           {programme.id !== 'moms-minis' && (

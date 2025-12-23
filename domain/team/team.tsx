@@ -7,16 +7,16 @@ const teamMembers: TeamMember[] = [
     role: 'Instruktorka',
     image: '/danica-piper.webp',
     excerpt:
-      'Sertifikovana Reformer Pilates instruktorka, fitnes trener sa višegodišnjim iskustvom i jedna od osnovačica Baza pilates studija.',
+      'Sertifikovana Reformer Pilates instruktorka, fitnes trener sa višegodišnjim iskustvom i jedna od osnivačica Baza pilates studija.',
     description: (
       <>
         <span>
           Danica je sertifikovana Reformer Pilates instruktorka, fitnes trener
-          sa višegodišnjim iskustvom i jedna od osnovačica Baza pilates studija.
+          sa višegodišnjim iskustvom i jedna od osnivačica Baza pilates studija.
           Kao neko ko se bavi naukom i sportom, u pilatesu je našla savršen
           balans učenja i fizičke aktivnosti. Kombinujući prethodno iskustvo
           stečeno u oblasti fitnesa, vodeći grupne i personalne treninge, kao i
-          ljubav prema pokretu i edukaciji, Danica nastoji da vas provede kroz
+          ljubav prema pokretu i edukaciji, Danica nastoji da vas povede kroz
           vaše pilates putovanje sistematičnim i posvećenim radom.
         </span>
         <span>
@@ -43,20 +43,20 @@ const teamMembers: TeamMember[] = [
     image: '/snezana-kragovic.webp',
     imagePosition: 'object-center object-[center_10%]',
     excerpt:
-      'Serfitikovana pilates instruktorka metode "Balanced body" i iskustvo stiče već 18 godina kroz držanje MAT pilatesa a sada i pilatesa na reformeru.',
+      'Serfitikovana pilates instruktorka metode "Balanced body" i iskustvo stiče već 18 godina kroz držanje MAT pilatesa, a sada i pilatesa na reformeru.',
     description: (
       <>
         <span>
           Snežana je serfitikovana pilates instruktorka metode &quot;Balanced
-          body&quot; i iskustvo stiče već 18 godina kroz držanje MAT pilatesa a
+          body&quot; i iskustvo stiče već 18 godina kroz držanje MAT pilatesa, a
           sada i pilatesa na reformeru.
         </span>
         <span>
-          Kao neko čije je osnovno zanimanje viši fizioterapeut I čiji je cilj
+          Kao neko čije je osnovno zanimanje viši fizioterapeut i čiji je cilj
           da pomogne ljudima koji osećaju bol, u pilatesu je otkrila moć kojom
           to može i da ostvari. Kroz treninge pilatesa obuhvatila je ljubav
-          prema radu sa ljudima i posao fizioterapeuta. Topao osmeh, stručan I
-          temeljan rad I znanje koje se prenosi sa mnogo ljubavi su sastavni deo
+          prema radu sa ljudima i posao fizioterapeuta. Topao osmeh, stručan i
+          temeljan rad i znanje koje se prenosi sa mnogo ljubavi su sastavni deo
           Snežaninog pristupa.
         </span>
         <span>
@@ -64,13 +64,13 @@ const teamMembers: TeamMember[] = [
           poljima. Godinu dana je bila na poziciji rukovodioca dnevnog centra za
           stara lica pri Gerontoloskom centru Novi Sad (2007/2008), da bi
           kasnije uplivala i u preduzetničke vode gde se bavila kozmetičkim
-          uslugama i masažom, kao maserka ali I edukatorka.
+          uslugama i masažom, kao maserka i edukatorka.
         </span>
         <span>
-          Slobodno vreme provodi putujući I družeći se sa najmilijima a
+          Slobodno vreme provodi putujući i družeći se sa najmilijima, a
           kreativnost iskazuje kuvanjem jer veruje da &quot;U zdravom telu,
-          zdrav duh&quot; nije samo fraza već odlična BAZA čovečije dobrobiti.
-          Pilates je tu da bude baza funkcionalnog i snažnog tela a Snežana je
+          zdrav duh&quot; nije samo fraza već odlična Baza čovečije dobrobiti.
+          Pilates je tu da bude baza funkcionalnog i snažnog tela, a Snežana je
           tu da olakša put ka tome.
         </span>
       </>
@@ -95,8 +95,8 @@ const teamMembers: TeamMember[] = [
         </span>
         <span>
           Po zanimanju je master inženjer menadžmenta u oblasti ljudskih
-          resursa.Bogato iskustvo u podršci i razvoju ljudskih potencijala,
-          stekla je tokom 12 godina rada u HR-u Erste banke a potom 3 godine na
+          resursa. Bogato iskustvo u podršci i razvoju ljudskih potencijala,
+          stekla je tokom 12 godina rada u HR-u Erste banke, a potom 3 godine na
           Institutu za veštačku inteligenciju Srbije, gde trenutno radi kao
           Chief Operating Officer & HR.
         </span>
@@ -129,7 +129,7 @@ const teamMembers: TeamMember[] = [
         </span>
         <span>
           Ipak, njen najvažniji cilj u Bazi nije medalja, već da žene inspiriše
-          da pronadju svoju snagu, svoj ritam i svoj mir. Zato je danas ovde kao
+          da pronađu svoju snagu, svoj ritam i svoj mir. Zato je danas ovde kao
           jedna od osnivačica Baze i iskreni saveznik svake žene koja ulazi u
           studio.
         </span>
@@ -168,10 +168,10 @@ const teamMembers: TeamMember[] = [
           rukovodioca Razvojnog savetovališta za decu zbog čega ističe važnost
           sistematskog praćenja dece i sveobuhvatnog pristupa dečijem razvoju.
           Radila je u Dečjem dispanzeru, Domu zdravlja Novi Sad, Poliklinici
-          Perinatal a trenutno je možete pronaći u Health Medic poliklinici.
+          Perinatal, a trenutno je možete pronaći u Health Medic poliklinici.
         </span>
         <span>
-          Aktivna je u domaćim i međunarodnim udruženjima pedijatara i autor
+          Aktivna je u domaćim i međunarodnim udruženjima pedijatara i autor je
           više stručnih radova u oblasti praćenja dečijeg razvoja.
         </span>
       </>
@@ -187,24 +187,23 @@ const teamMembers: TeamMember[] = [
     description: (
       <>
         <span>
-          Olja je doktor medicine, sepcijalizant pedijatrije, sertifikovani
+          Olja je doktor medicine, specijalizant pedijatrije, sertifikovani
           nutricionista, sertifikovani lekar estetske i anti-aging medicine i
           takođe ponosna mama jedne devojčice.
         </span>
         <span>
-          Zaspolena je u Opštoj bolnici, a u svojoj karijeri radila je i kao
+          Zaposlena je u Opštoj bolnici, a u svojoj karijeri radila je i kao
           lekar doma zdravlja i profesor u srednjoj medicinskoj školi. Paralelno
           se bavi izradom personalizovanih planova ishrane i estetskom
           medicinom.
         </span>
         <span>
-          Obzirom na iskustvo u radu sa pacijentima svih starosnih uzrasta i
-          sopstveno iskustvo balansiranja između profesionalnih obaveza,
-          majčinstva i brige o sebi odlično razume izazove savremenog života i
-          potrebe ljudi.
+          Obzirom na iskustvo u radu sa pacijentima svih uzrasta i sopstveno
+          iskustvo balansiranja između profesionalnih obaveza, majčinstva i
+          brige o sebi odlično razume izazove savremenog života i potrebe ljudi.
         </span>
         <span>
-          Kao konsultant u BAZA pilates studiju individualnim , holstičkim
+          Kao konsultant u Baza pilates studiju individualnim, holističkim
           pristupom i stručnim vođenjem pruža klijentima podršku da oslušnu
           svoje telo i pronađu balans između poslovnih, porodičnih i ličnih
           obaveza koji je održiv i efikasan. U radu sa klijentima fokus stavlja
@@ -213,7 +212,7 @@ const teamMembers: TeamMember[] = [
           balans.
         </span>
         <span>
-          Veruje da zdravlja nije kratkoročan cilj, već način života, i da se
+          Veruje da zdravlje nije kratkoročan cilj, već način života, i da se
           prava transformacija dešava kad se znanje, disciplina i ljubav prema
           sebi spoje u jednu celinu.
         </span>

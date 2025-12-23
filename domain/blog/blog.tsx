@@ -55,56 +55,56 @@ const blogPosts: BlogPost[] = [
           za sve. Međutim, istina je potpuno drugačija: zdrava ishrana nije
           jedinstven plan, već individualni pristup zasnovan na našem telu,
           godinama, metabolizmu, životnim navikama i zdravstvenom stanju. Koliko
-          puta ste do sada čuli &quot;samo kalorisjki deficit, 2g proteina po
+          puta ste do sada čuli &quot;samo kalorijski deficit, 2g proteina po
           kilogramu telesne mase, 4-5 obroka u toku dana i sigurno ćeš dobiti
           rezultat&quot;? Da li je to nešto što zaista pomaže?
         </span>
         <span>
-          Ne posotoji univerzalna dijeta, postoji samo pravi pristup. Nekome
+          Ne postoji univerzalna dijeta, postoji samo pravi pristup. Nekome
           odgovara da jede 5 obroka u toku dana na svakih 2,5-3h, nekome
           odgovara 4 obroka na 4h. Nečije potrebe su 0,8g proteina po kilogramu
           telesne mase na dan nekome, a nekome 2g. Za nekoga je jedna namirnica
           lek dok je za druge toksin. Zašto ? Zato što nismo svi isti. Naše telo
           nema iste potrebe kada imamo 18, 29 ili 50 godina. Nisu iste potrebe
           kod osobe sa insulinskom rezistencijom, sportiste, trudnice ili nekog
-          ko radi noćne smene. Tu upravo počinje zdrava Ishrana - slušanje
-          spostvenog tela, a ne tuđeg režima. Njavažnije je imati holistički
+          ko radi noćne smene. Tu upravo počinje zdrava ishrana - slušanje
+          sopstvenog tela, a ne tuđeg režima. Najvažnije je imati holistički
           pristup, uzeti u obzir vaše emocije, san, broj radnih sati,
           zdravstveno stanje a ne brojati kalorije.
         </span>
         <span>
           Hrana oblikuje naše ponašanje i emocije, utiče na nivo energije tokom
-          dana, koncentraciju, produktivnost, utiče ma naše raspoloženje, nivo
+          dana, koncentraciju, produktivnost, utiče na naše raspoloženje, nivo
           tolerancije na stres , osećaj sreće, kvalitet sna, sposobnost oporavka
           i motivaciju. Hrana nije sve što unesemo na usta, hrana je ono što
           zapravo hrani naše telo.
         </span>
         <span>
           Ono što zapravo čini BAZU zdrave ishrane koja poboljšava varenje,
-          ubrzava metabolizam, smanjuje nadustost i povećava nivo eneregije u
-          toku dana jeste pravilno kombinovanje namirnica, raznovrsnost
-          namirnica, dovoljna količina vlakana, tečnosti, izbegavanje obrade
-          hrane kao i slušanje signala gladi i sitosti. Zlatno pravilo
-          kombinovanja namirnica jeste ne kombinovati tri vrste proteina u
-          jednom obroku (meso+jaja+mlečni prozivodi) jer zahrevaju različite
-          enzime i vreme razgradnje. Ne kombinovati meso sa namirnicama bogatim
-          skrobom i mahunarkama jer zahtevaju različite uslove u želucu što
-          dovodi do usporenog varenja, nadimanja i osećaja umora posle jela,
-          šećer u krvi brže skače, posledično dolazi do usporavanja matabolizma.
-          Menjanjem temrepature namirnica, zamrzavanjem ili prženjem, dolazi do
-          promena hemijskih strukutra pa tako ista namirnica pripremljena na
-          različite načine može se iz zdrave pretvoriti u toksičnu te je zato
-          bitan način pripreme određenih namirnica. Vlakna pomažu da se održi
-          dobra crevna flora, obezbeđuju pravilno varenje smanjuju holesterol u
-          krvi, usporavaju apsorpciju šećera u krvi i usporavaju oslobađanje
-          istog u krvotok. Raznovrsna ishrana je neophodna kako bismo uneli
-          dovoljnu količinu proteina, masti, ugljenih hidrata i vlakana.
+          ubrzava metabolizam, smanjuje nadutost i povećava nivo energije u toku
+          dana jeste pravilno kombinovanje namirnica, raznovrsnost namirnica,
+          dovoljna količina vlakana, tečnosti, izbegavanje obrade hrane kao i
+          slušanje signala gladi i sitosti. Zlatno pravilo kombinovanja
+          namirnica jeste ne kombinovati tri vrste proteina u jednom obroku
+          (meso+jaja+mlečni proizvodi) jer zahtevaju različite enzime i vreme
+          razgradnje. Ne kombinovati meso sa namirnicama bogatim skrobom i
+          mahunarkama jer zahtevaju različite uslove u želudcu što dovodi do
+          usporenog varenja, nadimanja i osećaja umora posle jela, šećer u krvi
+          brže skače, posledično dolazi do usporavanja metabolizma. Menjanjem
+          temperature namirnica, zamrzavanjem ili prženjem, dolazi do promena
+          hemijskih struktura pa tako ista namirnica pripremljena na različite
+          načine može se iz zdrave pretvoriti u toksičnu te je zato bitan način
+          pripreme određenih namirnica. Vlakna pomažu da se održi dobra crevna
+          flora, obezbeđuju pravilno varenje smanjuju holesterol u krvi,
+          usporavaju apsorpciju šećera u krvi i usporavaju oslobađanje istog u
+          krvotok. Raznovrsna ishrana je neophodna kako bismo uneli dovoljnu
+          količinu proteina, masti, ugljenih hidrata i vlakana.
         </span>
         <span>
-          Zdrava ishrana nije stroga dijeta , već životni stil koji poštuje vaše
-          telo .Najbolji plan ishrane je onaj koji vam daje energiju,
+          Zdrava ishrana nije stroga dijeta, već životni stil koji poštuje vaše
+          telo. Najbolji plan ishrane je onaj koji vam daje energiju,
           stabilizuje raspoloženje, održiv je dugoročno i uklapa se u vaš način
-          života. Pravo zdravlje podrzumeva ravnotežu u vašem telu, mislima i
+          života. Pravo zdravlje podrazumeva ravnotežu u vašem telu, mislima i
           tanjiru. Zdrava ishrana ne može podrazumevati restrikciju i brojanje
           kalorije, već balans između potreba tela, ciljeva i uživanja!
         </span>
