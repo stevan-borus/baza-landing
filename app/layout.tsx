@@ -14,7 +14,10 @@ import '@fontsource/metropolis/600.css';
 import '@fontsource/metropolis/700.css';
 
 export const metadata: Metadata = {
-  title: 'Baza Pilates',
+  title: {
+    default: 'Baza Pilates',
+    template: '%s | Baza Pilates',
+  },
   description:
     'Baza Pilates - centar za reformer pilates u Novom Sadu. Nudimo različite programe treninga, podršku fizioterapeuta i sveobuhvatan pristup wellness-u za žene svih uzrasta.',
   keywords: [
