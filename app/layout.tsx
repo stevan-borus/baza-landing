@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   publisher: 'Baza Pilates',
   metadataBase: new URL('https://bazapilates.com'),
   alternates: {
-    canonical: '/',
+    canonical: 'https://bazapilates.com',
   },
   robots: {
     index: true,
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
       'Baza Pilates - centar za reformer pilates u Novom Sadu. Nudimo različite programe treninga, podršku fizioterapeuta i sveobuhvatan pristup wellness-u za žene svih uzrasta.',
     images: [
       {
-        url: '/og.png',
+        url: 'https://bazapilates.com/og.png',
         width: 1200,
         height: 630,
         alt: 'Baza Pilates',
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
     title: 'Baza Pilates',
     description:
       'Baza Pilates - centar za reformer pilates u Novom Sadu. Nudimo različite programe treninga, podršku fizioterapeuta i sveobuhvatan pristup wellness-u za žene svih uzrasta.',
-    images: ['/og.png'],
+    images: ['https://bazapilates.com/og.png'],
   },
 };
 
