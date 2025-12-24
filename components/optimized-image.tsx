@@ -18,6 +18,7 @@ interface OptimizedImageProps {
   loading?: 'lazy' | 'eager';
   onLoad?: () => void;
   onError?: () => void;
+  hidePlaceholder?: boolean;
 }
 
 /**
@@ -36,6 +37,7 @@ export function OptimizedImage({
   loading = 'lazy',
   onLoad,
   onError,
+  hidePlaceholder = false,
 }: OptimizedImageProps) {
   const optimizedSrc = getOptimizedImageSrc(src);
   const srcset = getOptimizedImageSrcset(src);
@@ -67,7 +69,7 @@ export function OptimizedImage({
     return (
       <div className={cn('absolute inset-0', className)}>
         {/* Blur placeholder - shows while image loads */}
-        {!isLoaded && !hasError && (
+        {!isLoaded && !hasError && !hidePlaceholder && (
           <div className='bg-muted absolute inset-0 animate-pulse' />
         )}
         {/* Error fallback */}
@@ -99,7 +101,7 @@ export function OptimizedImage({
   return (
     <div className={cn('relative', className)}>
       {/* Blur placeholder - shows while image loads */}
-      {!isLoaded && !hasError && (
+      {!isLoaded && !hasError && !hidePlaceholder && (
         <div className='bg-muted absolute inset-0 animate-pulse' />
       )}
       {/* Error fallback */}

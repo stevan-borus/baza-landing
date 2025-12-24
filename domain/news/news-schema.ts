@@ -6,6 +6,7 @@ export const newsArticleSchema = z.object({
   excerpt: z.string(),
   date: z.string(),
   image: z.string(),
+  gallery: z.array(z.string()),
 });
 
 export interface NewsArticle extends z.infer<typeof newsArticleSchema> {
