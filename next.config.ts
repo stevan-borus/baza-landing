@@ -19,6 +19,10 @@ const nextConfig: NextConfig = {
         source: '/ingest/:path*',
         destination: 'https://eu.i.posthog.com/:path*',
       },
+      {
+        source: '/favicon.ico',
+        destination: '/favicon-32x32.png',
+      },
     ];
   },
   // This is required to support PostHog trailing slash API requests
