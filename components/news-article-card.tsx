@@ -43,7 +43,7 @@ export function NewsArticleCard({
               src={image}
               alt={title}
               fill
-              className='rounded-br-[50.5px] object-cover'
+              className='rounded-tl-[50.5px] object-cover'
               sizes='(max-width: 1280px) 100vw, 50vw'
             />
           </div>
@@ -77,7 +77,7 @@ export function NewsArticleCard({
             src={image}
             alt={title}
             fill
-            className='object-cover'
+            className='rounded-tl-[50.5px] object-cover'
             sizes='(max-width: 768px) 120px, 276px'
           />
         </div>
