@@ -116,7 +116,6 @@ export default async function ProgrammePage({
 
           <div className='flex flex-col gap-8'>
             {programme.schedule.map((scheduleItem, index) => {
-              // Find the maximum number of time slots across all days
               const maxTimeSlots = Math.max(
                 ...scheduleItem.days.map(day => day.timeSlots.length),
               );
@@ -126,17 +125,14 @@ export default async function ProgrammePage({
                   key={index}
                   className='flex flex-col gap-6 overflow-hidden'
                 >
-                  {/* Frequency Label */}
                   <div className='bg-background text-center'>
                     <h3 className='text-brand text-xl font-bold lg:text-3xl'>
                       {scheduleItem.frequency}
                     </h3>
                   </div>
 
-                  {/* Table */}
                   <div className='flex justify-center overflow-x-auto'>
                     <table>
-                      {/* Header */}
                       <thead>
                         <tr>
                           {scheduleItem.days.map((day, dayIndex) => (
@@ -153,7 +149,6 @@ export default async function ProgrammePage({
                         </tr>
                       </thead>
 
-                      {/* Body */}
                       <tbody>
                         {Array.from({ length: maxTimeSlots }).map(
                           (_, rowIndex) => (
@@ -168,7 +163,7 @@ export default async function ProgrammePage({
                               {scheduleItem.days.map((day, dayIndex) => (
                                 <td
                                   key={dayIndex}
-                                  className='border-border text-foreground border p-2 text-center text-xl lg:text-2xl'
+                                  className='border-border text-foreground border p-2 text-center text-sm lg:text-2xl'
                                 >
                                   {day.timeSlots[rowIndex] || ''}
                                 </td>
@@ -178,7 +173,6 @@ export default async function ProgrammePage({
                         )}
                       </tbody>
 
-                      {/* Footer */}
                       <tfoot>
                         <tr>
                           <td
@@ -214,7 +208,6 @@ export default async function ProgrammePage({
           </div>
           {programme.id !== 'moms-minis' && (
             <div className='bg-card flex max-w-275 flex-col items-center justify-center gap-6 rounded-lg p-3 lg:flex-row lg:gap-8 lg:px-20 lg:py-12'>
-              {/* Mobile Layout: Text -> Pricing -> Button */}
               <div className='flex flex-col gap-6 lg:hidden'>
                 <p className='text-foreground text-center text-lg'>
                   Za personalne i duo programe, slobodno nas kontaktirajte kako
@@ -252,7 +245,6 @@ export default async function ProgrammePage({
                 </div>
               </div>
 
-              {/* Desktop Layout: Pricing left, Contact right */}
               <div className='hidden flex-1 flex-col items-center justify-center gap-6 lg:flex lg:flex-row'>
                 <div className='flex flex-1 flex-col gap-6 lg:flex-row'>
                   <div className='flex flex-1 flex-col items-center gap-3 lg:gap-6'>
