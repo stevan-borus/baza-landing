@@ -57,28 +57,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  icons: {
-    icon: [
-      {
-        url: 'https://bazapilates.com/favicon-32x32.png',
-        sizes: '32x32',
-        type: 'image/png',
-      },
-      {
-        url: 'https://bazapilates.com/favicon-16x16.png',
-        sizes: '16x16',
-        type: 'image/png',
-      },
-    ],
-    shortcut: 'https://bazapilates.com/favicon-32x32.png',
-    apple: [
-      {
-        url: 'https://bazapilates.com/favicon-180x180.png',
-        sizes: '180x180',
-        type: 'image/png',
-      },
-    ],
-  },
   openGraph: {
     type: 'website',
     locale: 'sr_RS',

@@ -30,12 +30,7 @@ interface ImageStats {
 
 // Directories/files to skip
 const skipDirs = ['optimized'];
-const skipFiles = [
-  'favicon-16x16.png',
-  'favicon-32x32.png',
-  'favicon-180x180.png',
-  'og.png',
-];
+const skipFiles = ['og.png'];
 const skipExtensions = ['.gif', '.svg']; // Skip non-optimizable formats (PNG will be converted)
 
 /**
