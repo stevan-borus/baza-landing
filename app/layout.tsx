@@ -25,6 +25,8 @@ export const metadata: Metadata = {
     'reformer pilates',
     'Novi Sad',
     'Baza Pilates',
+    'Baza Pilates Studio Novi Sad',
+    'Baza Pilates Centar Novi Sad',
     'fitness',
     'trening',
     'energy pilates',
@@ -80,6 +82,17 @@ export const metadata: Metadata = {
     description:
       'Baza Pilates - centar za reformer pilates u Novom Sadu. Nudimo različite programe treninga, podršku fizioterapeuta i sveobuhvatan pristup wellness-u za žene svih uzrasta.',
     images: ['https://bazapilates.com/og.png'],
+  },
+  icons: {
+    icon: [
+      {
+        url: '/icon180.png',
+        sizes: '180x180',
+        type: 'image/png',
+      },
+    ],
+    apple: [{ url: '/apple-icon.png', sizes: '180x180', type: 'image/png' }],
+    shortcut: '/favicon.ico',
   },
 };
 
