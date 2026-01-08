@@ -4,10 +4,9 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: '*',
-      allow: '/',
+      allow: ['/', '/_next/static/', '/optimized/'],
       disallow: ['/api/', '/ingest/'],
     },
     sitemap: 'https://bazapilates.com/sitemap.xml',
   };
 }
-

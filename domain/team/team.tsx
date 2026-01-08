@@ -41,7 +41,7 @@ const teamMembers: TeamMember[] = [
     name: 'Snežana Kragović',
     role: 'Instruktorka',
     image: '/snezana-kragovic.webp',
-    imagePosition: 'object-center object-[center_10%]',
+    imagePosition: 'object-center object-[center_60%]',
     excerpt:
       'Sertifikovana pilates instruktorka metode "Balanced body" i iskustvo stiče već 18 godina kroz držanje MAT pilatesa, a sada i pilatesa na reformeru.',
     description: (

@@ -13,7 +13,8 @@ export default function Home() {
               alt='Naslovna slika'
               fill
               className='object-cover'
-              sizes='100vw'
+              sizes='(max-width: 640px) 640px, 640px'
+              fetchPriority='high'
               loading='eager'
             />
           </div>
@@ -25,6 +26,7 @@ export default function Home() {
               fill
               className='object-cover'
               sizes='100vw'
+              fetchPriority='high'
               loading='eager'
             />
           </div>

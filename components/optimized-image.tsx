@@ -7,18 +7,14 @@ import {
 import { cn } from '@/lib/utils';
 import { useState, useRef } from 'react';
 
-interface OptimizedImageProps {
+interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   src: string;
-  alt: string;
-  sizes?: string;
-  className?: string;
   fill?: boolean;
   width?: number;
   height?: number;
-  loading?: 'lazy' | 'eager';
+  hidePlaceholder?: boolean;
   onLoad?: () => void;
   onError?: () => void;
-  hidePlaceholder?: boolean;
 }
 
 /**
@@ -38,6 +34,7 @@ export function OptimizedImage({
   onLoad,
   onError,
   hidePlaceholder = false,
+  ...props
 }: OptimizedImageProps) {
   const optimizedSrc = getOptimizedImageSrc(src);
   const srcset = getOptimizedImageSrcset(src);
@@ -86,6 +83,7 @@ export function OptimizedImage({
           srcSet={srcset}
           sizes={sizes}
           loading={loading}
+          {...props}
           className={cn(
             'h-full w-full object-cover transition-opacity duration-300',
             isLoaded ? 'opacity-100' : 'opacity-0',
@@ -125,6 +123,7 @@ export function OptimizedImage({
         )}
         width={width}
         height={height}
+        {...props}
         onLoad={handleLoad}
         onError={handleError}
       />
