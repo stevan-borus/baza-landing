@@ -79,33 +79,31 @@ const teamMembers: TeamMember[] = [
   {
     id: 'tamara-basic',
     name: 'Tamara Bašić',
-    role: 'NTC saradnica',
+    role: 'Saradnica',
     image: '/tamara-basic.webp',
     excerpt:
       'Jedna od osnivačica BAZA pilates studija. Sertifikovana je saradnica NTC škole učenja, koja u svom radu sa decom primenjuje znanja iz neuronauke.',
     description: (
       <>
         <span>
-          Tamara je jedna od osnivačica BAZA pilates studija. Sertifikovana je
-          saradnica NTC škole učenja, koja u svom radu sa decom primenjuje
-          znanja iz neuronauke i pomaže im da dostignu svoje intelektualne
-          potencijale. Kroz radionice koje vodi nastoji da kroz igru i pokret
-          inspiriše decu da istražuju, uče i razvijaju svoje kognitivne i
-          motoričke veštine.
+          Tamara je jedna od osnivačica BAZA pilates studija. U svom radu sa
+          decom primenjuje stečena znanja iz domena podrške razvoju dece. Kroz
+          radionice koje vodi nastoji da kroz igru i pokret inspiriše decu da
+          istražuju, uče i razvijaju svoje kognitivne i motoričke veštine.
         </span>
         <span>
           Po zanimanju je master inženjer menadžmenta u oblasti ljudskih
-          resursa. Bogato iskustvo u podršci i razvoju ljudskih potencijala,
-          stekla je tokom 12 godina rada u HR-u Erste banke, a potom 3 godine na
-          Institutu za veštačku inteligenciju Srbije, gde trenutno radi kao
+          resursa. Bogato iskustvo u podršci i razvoju ljudskih potencijala
+          stekla je tokom 12 godina rada u HR-u Erste banke, a potom 3+ godine
+          na Institutu za veštačku inteligenciju Srbije, gde trenutno radi kao
           Chief Operating Officer & HR.
         </span>
         <span>
           Bavila se košarkom, a potom kik boksom. Višestruka je osvajačica
           medalja sa državnih i međunarodnih takmičenja, uključujući titulu vice
           šampiona sveta, kao član kik boks reprezentacije Srbije. Veliki je
-          zaljubljenik u konje i prirodu, off-road motore, snowboarding i
-          pecanje. Ponosna mama jedne devojčice.
+          zaljubljenik u konje i prirodu, off-road motore i snowboarding.
+          Ponosna mama jedne devojčice.
         </span>
       </>
     ),

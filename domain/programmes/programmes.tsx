@@ -172,22 +172,22 @@ const programmes: Programme[] = [
         </span>
         <span>
           Dok mame treniraju na reformerima, deca razvijaju svoje vijuge kroz
-          radionice koje prate NTC program učenja. Ovaj program za decu obuhvata
-          psihomotorne vežbe koje stimulišu kognitivni razvoj dece i odvijaju se
-          kroz igru. Na ovaj način, u Bazi, i mame i deca provode kvalitetno i
-          ispunjeno vreme radeći na fizičkom i psihološkom aspektu zdravlja.
+          pažljivo osmišljene radionice koje kroz igru i pokret podstiču razvoj
+          mišljenja, pažnje i povezivanja naučenog. Na ovaj način, u Bazi, i
+          mame i deca provode kvalitetno i ispunjeno vreme radeći na fizičkom i
+          psihološkom aspektu zdravlja.
         </span>
         <span>
-          Rad sa decom je poveren jednoj od osnivačica Baze koja je prošla obuku
-          NTC učenja i &quot;obuku roditeljstva&quot; što joj omogućava da
-          stečena znanja lako primeni u praksi.
+          Rad sa decom je poveren jednoj od osnivačica Baze koja je završila
+          edukaciju podrške razvoja detetu kao i &quot;obuku roditeljstva&quot;
+          što joj omogućava da stečena znanja lako primeni u praksi.
         </span>
       </>
     ),
     additionalInfo: (
       <>
         <span>
-          NTC radionice su uključene u paket. Cena ostaje nepromenjena bez
+          Radionice za decu su uključene u paket. Cena ostaje nepromenjena bez
           obzira da li dolazite sa jednim detetom ili sa više dece.
         </span>
       </>
