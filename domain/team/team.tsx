@@ -82,12 +82,12 @@ const teamMembers: TeamMember[] = [
     role: 'Saradnica',
     image: '/tamara-basic.webp',
     excerpt:
-      'Jedna od osnivačica BAZA pilates studija. Sertifikovana je saradnica NTC škole učenja, koja u svom radu sa decom primenjuje znanja iz neuronauke.',
+      'Tamara je jedna od osnivačica BAZA pilates studija. U svom radu sa decom primenjuje stečena znanja NTC sistema podrške razvoju dece.',
     description: (
       <>
         <span>
           Tamara je jedna od osnivačica BAZA pilates studija. U svom radu sa
-          decom primenjuje stečena znanja iz domena podrške razvoju dece. Kroz
+          decom primenjuje stečena znanja NTC sistema podrške razvoju dece. Kroz
           radionice koje vodi nastoji da kroz igru i pokret inspiriše decu da
           istražuju, uče i razvijaju svoje kognitivne i motoričke veštine.
         </span>
