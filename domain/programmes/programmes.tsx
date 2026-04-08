@@ -57,11 +57,11 @@ const programmes: Programme[] = [
         days: [
           {
             day: 'Utorak',
-            timeSlots: ['06:30 - 07:30', '17:00 - 18:00'],
+            timeSlots: ['06:30 - 07:30', '07:30 - 08:30', '17:00 - 18:00'],
           },
           {
             day: 'Četvrtak',
-            timeSlots: ['06:30 - 07:30', '17:00 - 18:00'],
+            timeSlots: ['06:30 - 07:30', '07:30 - 08:30', '17:00 - 18:00'],
           },
         ],
         terms: 8,
