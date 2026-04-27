@@ -1,6 +1,13 @@
 import { OptimizedImage } from '@/components/optimized-image';
+import type { Metadata } from 'next';
 
 export const dynamic = 'force-static';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+  },
+};
 
 export default function Home() {
   return (

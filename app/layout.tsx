@@ -45,9 +45,6 @@ export const metadata: Metadata = {
   creator: 'Baza Pilates',
   publisher: 'Baza Pilates',
   metadataBase: new URL('https://bazapilates.com'),
-  alternates: {
-    canonical: 'https://bazapilates.com',
-  },
   robots: {
     index: true,
     follow: true,
