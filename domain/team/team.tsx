@@ -79,31 +79,34 @@ const teamMembers: TeamMember[] = [
   {
     id: 'tamara-basic',
     name: 'Tamara Bašić',
-    role: 'Saradnica',
+    role: 'Trener',
     image: '/tamara-basic.webp',
     excerpt:
-      'Tamara je jedna od osnivačica BAZA pilates studija. U svom radu sa decom primenjuje stečena znanja NTC sistema podrške razvoju dece.',
+      'Tamara je jedna od osnivačica BAZA pilates studija. Vicešampionka sveta u kik boksu i HR stručnjak sa više od 15 godina iskustva.',
     description: (
       <>
         <span>
-          Tamara je jedna od osnivačica BAZA pilates studija. U svom radu sa
-          decom primenjuje stečena znanja NTC sistema podrške razvoju dece. Kroz
-          radionice koje vodi nastoji da kroz igru i pokret inspiriše decu da
-          istražuju, uče i razvijaju svoje kognitivne i motoričke veštine.
+          Tamara je jedna od osnivačica BAZA pilates studija. Godinama se
+          uspešno bavila košarkom i kik boksom, ponekad trenirajući oba sporta
+          paralelno. Kao članica reprezentacije Srbije u kik boksu osvajala je
+          medalje na domaćim i međunarodnim takmičenjima, među kojima se posebno
+          izdvaja titula vicešampionke sveta. Po profesiji je HR stručnjak sa
+          više od 15 godina iskustva, a danas radi kao People Controlling &
+          Insights Specialist u AIK Group.
         </span>
         <span>
-          Po zanimanju je master inženjer menadžmenta u oblasti ljudskih
-          resursa. Bogato iskustvo u podršci i razvoju ljudskih potencijala
-          stekla je tokom 12 godina rada u HR-u Erste banke, a potom 3+ godine
-          na Institutu za veštačku inteligenciju Srbije, gde trenutno radi kao
-          Chief Operating Officer & HR.
+          Veruje da se do snažnog i agilnog tela dolazi kombinovanjem različitih
+          vrsta treninga. U Bazi vodi treninge koji spajaju snagu, izdržljivost
+          i elemente kik boksa, stvarajući dinamičan i izazovan koncept
+          vežbanja. Za sebe u šali kaže da je &quot;facility manager&quot;
+          studija, i kada ne drži trening velike su šanse da ćete je zateći kako
+          servisira reformere, montira novu opremu, organizuje prostor ili
+          farba.
         </span>
         <span>
-          Bavila se košarkom, a potom kik boksom. Višestruka je osvajačica
-          medalja sa državnih i međunarodnih takmičenja, uključujući titulu vice
-          šampiona sveta, kao član kik boks reprezentacije Srbije. Veliki je
-          zaljubljenik u konje i prirodu, off-road motore i snowboarding.
-          Ponosna mama jedne devojčice.
+          Veliki je zaljubljenik u konje, prirodu, off-road motore i
+          snowboarding. Ponosna je mama jedne devojčice i dokaz da snaga može
+          imati mnogo različitih lica.
         </span>
       </>
     ),

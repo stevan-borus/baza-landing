@@ -116,9 +116,12 @@ export default async function ProgrammePage({
 
           <div className='flex flex-col gap-8'>
             {programme.schedule.map((scheduleItem, index) => {
-              const maxTimeSlots = Math.max(
-                ...scheduleItem.days.map(day => day.timeSlots.length),
-              );
+              // Rows are keyed by start time rather than by position, so a day
+              // missing a slot leaves a gap in place instead of shifting every
+              // later slot up a row and misaligning the column.
+              const rowTimeSlots = [
+                ...new Set(scheduleItem.days.flatMap(day => day.timeSlots)),
+              ].sort();
 
               return (
                 <div
@@ -150,27 +153,27 @@ export default async function ProgrammePage({
                       </thead>
 
                       <tbody>
-                        {Array.from({ length: maxTimeSlots }).map(
-                          (_, rowIndex) => (
-                            <tr
-                              key={rowIndex}
-                              className={
-                                rowIndex % 2 === 0 ?
-                                  'bg-card'
-                                : 'bg-muted rounded-br-[50px]'
-                              }
-                            >
-                              {scheduleItem.days.map((day, dayIndex) => (
-                                <td
-                                  key={dayIndex}
-                                  className='border-border text-foreground border p-2 text-center text-sm lg:text-2xl'
-                                >
-                                  {day.timeSlots[rowIndex] || ''}
-                                </td>
-                              ))}
-                            </tr>
-                          ),
-                        )}
+                        {rowTimeSlots.map((timeSlot, rowIndex) => (
+                          <tr
+                            key={timeSlot}
+                            className={
+                              rowIndex % 2 === 0 ?
+                                'bg-card'
+                              : 'bg-muted rounded-br-[50px]'
+                            }
+                          >
+                            {scheduleItem.days.map((day, dayIndex) => (
+                              <td
+                                key={dayIndex}
+                                className='border-border text-foreground border p-2 text-center text-sm lg:text-2xl'
+                              >
+                                {day.timeSlots.includes(timeSlot) ?
+                                  timeSlot
+                                : ''}
+                              </td>
+                            ))}
+                          </tr>
+                        ))}
                       </tbody>
 
                       <tfoot>
