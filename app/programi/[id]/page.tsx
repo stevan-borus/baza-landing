@@ -30,11 +30,18 @@ export async function generateMetadata({
     };
   }
 
+  // The qualifier is split out for typesetting, but search results still want
+  // the full name.
+  const fullTitle =
+    programme.subtitle ?
+      `${programme.title} ${programme.subtitle}`
+    : programme.title;
+
   return {
-    title: programme.title,
+    title: fullTitle,
     description:
       programme.excerpt ||
-      `Saznajte više o ${programme.title} programu u BAZA pilates studiju.`,
+      `Saznajte više o ${fullTitle} programu u BAZA pilates studiju.`,
   };
 }
 
@@ -102,7 +109,14 @@ export default async function ProgrammePage({
 
         <section className='flex flex-col gap-8 px-4 lg:gap-12 lg:px-20'>
           <ViewTransition>
-            <h1>{programme.title}</h1>
+            <h1>
+              {programme.title}
+              {programme.subtitle && (
+                <span className='block text-xl font-normal lg:text-3xl'>
+                  {programme.subtitle}
+                </span>
+              )}
+            </h1>
           </ViewTransition>
           <ViewTransition>
             <p className='text-foreground flex flex-col gap-8 text-center text-xl lg:gap-12'>
@@ -123,6 +137,18 @@ export default async function ProgrammePage({
                 ...new Set(scheduleItem.days.flatMap(day => day.timeSlots)),
               ].sort();
 
+              // Aligning by time only earns its keep once some day runs more
+              // than one slot, since that is the only way a column can shift
+              // out of step. When every day holds a single slot, keying by
+              // time would instead scatter them down a mostly empty diagonal,
+              // so pack them into one row.
+              const maxSlotsPerDay = Math.max(
+                ...scheduleItem.days.map(day => day.timeSlots.length),
+              );
+              const alignByTimeSlot = maxSlotsPerDay > 1;
+              const rowCount =
+                alignByTimeSlot ? rowTimeSlots.length : maxSlotsPerDay;
+
               return (
                 <div
                   key={index}
@@ -134,7 +160,49 @@ export default async function ProgrammePage({
                     </h3>
                   </div>
 
-                  <div className='flex justify-center overflow-x-auto'>
+                  {/* Below lg the grid runs out of room — four Serbian day
+                      names cannot fit a phone without clipping — so the same
+                      schedule reads as a list of sessions instead, one line
+                      per day. */}
+                  <div className='flex flex-col overflow-hidden rounded-tl-[50px] rounded-br-[50px] lg:hidden'>
+                    {scheduleItem.days.map((day, dayIndex) => (
+                      <div
+                        key={dayIndex}
+                        className={dayIndex % 2 === 0 ? 'bg-card' : 'bg-muted'}
+                      >
+                        <div
+                          className={cn(
+                            'border-border mx-4 flex items-baseline justify-between gap-4 py-3',
+                            dayIndex < scheduleItem.days.length - 1 &&
+                              'border-b',
+                          )}
+                        >
+                          <span className='text-brand shrink-0 text-base font-bold'>
+                            {day.day}
+                          </span>
+                          {/* Each slot is its own cell so a time never breaks
+                              across two lines the way a comma-joined string
+                              does once a day runs eight of them. */}
+                          <span className='flex flex-wrap justify-end gap-x-3 gap-y-1'>
+                            {day.timeSlots.map(timeSlot => (
+                              <span
+                                key={timeSlot}
+                                className='text-foreground text-base whitespace-nowrap tabular-nums'
+                              >
+                                {timeSlot}
+                              </span>
+                            ))}
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+
+                    <div className='bg-brand-light text-brand-foreground px-4 py-3 text-center text-lg font-bold'>
+                      {scheduleItem.terms} termina: {scheduleItem.price}
+                    </div>
+                  </div>
+
+                  <div className='hidden justify-center overflow-x-auto lg:flex'>
                     <table>
                       <thead>
                         <tr>
@@ -153,9 +221,9 @@ export default async function ProgrammePage({
                       </thead>
 
                       <tbody>
-                        {rowTimeSlots.map((timeSlot, rowIndex) => (
+                        {Array.from({ length: rowCount }, (_, rowIndex) => (
                           <tr
-                            key={timeSlot}
+                            key={rowIndex}
                             className={
                               rowIndex % 2 === 0 ?
                                 'bg-card'
@@ -167,9 +235,15 @@ export default async function ProgrammePage({
                                 key={dayIndex}
                                 className='border-border text-foreground border p-2 text-center text-sm lg:text-2xl'
                               >
-                                {day.timeSlots.includes(timeSlot) ?
-                                  timeSlot
-                                : ''}
+                                {alignByTimeSlot ?
+                                  (
+                                    day.timeSlots.includes(
+                                      rowTimeSlots[rowIndex],
+                                    )
+                                  ) ?
+                                    rowTimeSlots[rowIndex]
+                                  : ''
+                                : (day.timeSlots[rowIndex] ?? '')}
                               </td>
                             ))}
                           </tr>
