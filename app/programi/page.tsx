@@ -28,6 +28,7 @@ export default async function Programmes() {
                 key={programme.id}
                 id={programme.id}
                 title={programme.title}
+                subtitle={programme.subtitle}
                 image={programme.image}
                 imagePosition={programme.imagePosition}
               />

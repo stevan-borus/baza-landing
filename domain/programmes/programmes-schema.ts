@@ -16,6 +16,10 @@ export const programmeScheduleItemSchema = z.object({
 export const programmeSchema = z.object({
   id: z.string(),
   title: z.string(),
+  // A qualifier like "(funkcionalni trening)" is set apart from the title so
+  // it can be typeset smaller instead of wrapping the card heading onto a
+  // second, centred line.
+  subtitle: z.string().optional(),
   image: z.string(),
   mobileImage: z.string(),
   imagePosition: z.string(),

@@ -10,6 +10,7 @@ import posthog from 'posthog-js';
 interface ProgrammeCardProps {
   id: string;
   title: string;
+  subtitle?: string;
   image: string;
   imagePosition?: string;
 }
@@ -17,6 +18,7 @@ interface ProgrammeCardProps {
 export function ProgrammeCard({
   id,
   title,
+  subtitle,
   image,
   imagePosition,
 }: ProgrammeCardProps) {
@@ -44,8 +46,15 @@ export function ProgrammeCard({
       </ViewTransition>
       <div className='absolute right-0 bottom-0 left-0 flex items-center justify-between rounded-br-[50px] bg-white/90 px-5 py-1 pr-8 group-hover:bg-white sm:py-3 sm:pr-5'>
         <ViewTransition>
-          <h2 className='group-hover:text-brand-light transition-colors'>
+          {/* h2 is centred globally, which reads as a misalignment once a
+              title wraps, so the card heading is pinned left instead. */}
+          <h2 className='group-hover:text-brand-light text-left transition-colors'>
             {title}
+            {subtitle && (
+              <span className='block text-base font-normal sm:text-xl'>
+                {subtitle}
+              </span>
+            )}
           </h2>
         </ViewTransition>
         <ArrowRight

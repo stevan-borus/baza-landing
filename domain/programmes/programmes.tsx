@@ -248,16 +248,78 @@ const programmes: Programme[] = [
       </>
     ),
   },
+  {
+    id: 'strongher',
+    title: 'StrongHer',
+    subtitle: '(funkcionalni trening)',
+    image: '/strongher.webp',
+    mobileImage: '/strongher-mobile.webp',
+    imagePosition: 'object-center',
+    excerpt:
+      'Trening snage je neizostavni deo ženskog zdravlja! I zato u Bazi kroz program StrongHer, gradimo snažno i funkcionalno telo.',
+    schedule: [
+      {
+        frequency: '2 puta nedeljno',
+        days: [
+          {
+            day: 'Ponedeljak',
+            timeSlots: ['17:00 - 18:00'],
+          },
+          {
+            day: 'Utorak',
+            timeSlots: ['09:00 - 10:00'],
+          },
+          {
+            day: 'Četvrtak',
+            timeSlots: ['09:00 - 10:00'],
+          },
+          {
+            day: 'Petak',
+            timeSlots: ['16:00 - 17:00'],
+          },
+        ],
+        terms: 8,
+        price: '10.000RSD',
+      },
+    ],
+    description: (
+      <>
+        <span>
+          Trening snage je neizostavni deo ženskog zdravlja! I zato u Bazi kroz
+          program StrongHer, gradimo snažno i funkcionalno telo.
+        </span>
+        <span>
+          Trening se radi u malim grupama uz korišćenje tegova, kettelbella i
+          drugih rekvizita koji nam omogućavaju dodatno opterećenje. Učimo
+          pravilno izvođenje vežbi sa slobodnim tegovima i radimo na efikasnijim
+          obrascima kretanja. Pored snage radimo i na izdržljivosti i mobilnosti
+          kroz vežbe koje omogućavaju telu da se kreće slobodnije i da bolje
+          koristi snagu.
+        </span>
+        <span>
+          Kroz individualan pristup, opterećenje se prilagođava vašoj formi i
+          zajedno pratimo vaš napredak.
+        </span>
+        <span>
+          Cilj nije samo da budete snažnije, već da vaše telo bude
+          funkcionalnije, spremnije i sigurnije u svemu što radite.
+        </span>
+      </>
+    ),
+  },
 ];
 
 export async function getProgrammes() {
-  return programmes.map(({ id, title, image, imagePosition, excerpt }) => ({
-    id,
-    title,
-    image,
-    imagePosition,
-    excerpt,
-  }));
+  return programmes.map(
+    ({ id, title, subtitle, image, imagePosition, excerpt }) => ({
+      id,
+      title,
+      subtitle,
+      image,
+      imagePosition,
+      excerpt,
+    }),
+  );
 }
 
 export async function getProgrammeById(id: string) {
@@ -268,6 +330,7 @@ export async function getProgrammeById(id: string) {
   return {
     id: programme.id,
     title: programme.title,
+    subtitle: programme.subtitle,
     image: programme.image,
     mobileImage: programme.mobileImage,
     imagePosition: programme.imagePosition,
