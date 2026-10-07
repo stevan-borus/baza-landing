@@ -61,6 +61,7 @@ const programmes: Programme[] = [
           {
             day: 'Utorak',
             timeSlots: [
+              '06:30 - 07:30',
               '07:30 - 08:30',
               '17:00 - 18:00',
               '18:00 - 19:00',
@@ -70,6 +71,7 @@ const programmes: Programme[] = [
           {
             day: 'Četvrtak',
             timeSlots: [
+              '06:30 - 07:30',
               '07:30 - 08:30',
               '17:00 - 18:00',
               '18:00 - 19:00',
@@ -117,8 +119,8 @@ const programmes: Programme[] = [
         frequency: '3 puta nedeljno',
         days: [
           {
-            day: 'Ponedeljak',
-            timeSlots: ['17:00 - 18:00'],
+            day: 'Utorak',
+            timeSlots: ['18:00 - 19:00'],
           },
           {
             day: 'Sreda',
@@ -267,15 +269,11 @@ const programmes: Programme[] = [
           },
           {
             day: 'Utorak',
-            timeSlots: ['09:00 - 10:00'],
+            timeSlots: ['08:30 - 09:30'],
           },
           {
             day: 'Četvrtak',
-            timeSlots: ['09:00 - 10:00'],
-          },
-          {
-            day: 'Petak',
-            timeSlots: ['16:00 - 17:00'],
+            timeSlots: ['08:30 - 09:30', '18:00 - 19:00'],
           },
         ],
         terms: 8,
