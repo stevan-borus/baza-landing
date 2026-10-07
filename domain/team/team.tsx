@@ -77,6 +77,37 @@ const teamMembers: TeamMember[] = [
     ),
   },
   {
+    id: 'isidora-nikolic',
+    name: 'Isidora Nikolić',
+    role: 'Instruktorka',
+    image: '/isidora-nikolic.webp',
+    excerpt:
+      'Diplomirani fizioterapeut sa četiri godine iskustva u radu sa decom i odraslima, sa posebnim fokusom na zdravlje žena tokom trudnoće i nakon porođaja.',
+    description: (
+      <>
+        <span>
+          Isidora Nikolić je diplomirani fizioterapeut sa četiri godine iskustva
+          u radu sa decom i odraslima. Svoj pristup zasniva na stručnom
+          razumevanju kako pokreta tako i povreda, individualnim potrebama
+          klijenta i kreiranju prijatnog i bezbednog prostora za rad.
+        </span>
+        <span>
+          Posebno interesovanje usmerila je ka zdravlju žena, sa fokusom na
+          vežbanje tokom trudnoće i period nakon porođaja. Završila je stručne
+          edukacije iz oblasti vežbanja sa trudnicama, kao i programa namenjenih
+          ženama nakon porođaja, sa posebnim fokusom na dijastazu i postepeni
+          povratak snazi i funkcionalnosti.
+        </span>
+        <span>
+          Isidorin cilj je da kroz pokret, pravilno dozirano opterećenje, vežbe
+          disanja i individualan pristup pomogne ženama da se osećaju snažno i
+          sigurno u svom telu, da period trudnoće zaista bude jedan od
+          najlepših, a povratak nakon porođaja što lakši.
+        </span>
+      </>
+    ),
+  },
+  {
     id: 'tamara-basic',
     name: 'Tamara Bašić',
     role: 'Trener',
