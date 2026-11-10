@@ -269,3 +269,21 @@ describe('gallery', () => {
     }
   });
 });
+
+describe('gallery photo descriptions', () => {
+  const html = documentOf(htmlPathFor(`${baseUrl}/galerija`));
+  const galleryAlts = [
+    ...html.matchAll(/<img\b[^>]*\bsrc="[^"]*\/gal\/[^"]*"[^>]*>/g),
+  ].map(match => decode(match[0].match(/\balt="([^"]*)"/)?.[1] ?? ''));
+
+  test('every photo has its own description', () => {
+    expect(galleryAlts).toHaveLength(galleryPages.length);
+    expect(new Set(galleryAlts).size).toBe(galleryAlts.length);
+  });
+
+  test('no description is a numbered placeholder', () => {
+    for (const alt of galleryAlts) {
+      expect(alt).not.toMatch(/\d+$/);
+    }
+  });
+});
