@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Kontakt',
   description:
-    'Kontaktirajte BAZA pilates studio u Novom Sadu i zakažite probni trening.',
+    'Kontaktirajte Baza Pilates studio, Futoška 33, Novi Sad, i zakažite besplatan probni trening.',
   alternates: {
     canonical: '/kontakt',
   },

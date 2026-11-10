@@ -5,6 +5,8 @@ import { Toaster } from 'sonner';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { ContentWrapper } from '@/components/content-wrapper';
+import { JsonLd } from '@/components/json-ld';
+import { studio } from '@/domain/studio/studio';
 
 import './globals.css';
 
@@ -13,13 +15,44 @@ import '@fontsource/metropolis/500.css';
 import '@fontsource/metropolis/600.css';
 import '@fontsource/metropolis/700.css';
 
+const description =
+  'Baza Pilates - centar za reformer pilates u Novom Sadu. Nudimo različite programe treninga, podršku fizioterapeuta i sveobuhvatan pristup wellness-u za žene svih uzrasta.';
+
+const studioJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ExerciseGym',
+  '@id': `${studio.url}/#studio`,
+  name: studio.name,
+  description,
+  url: studio.url,
+  logo: `${studio.url}/og.png`,
+  image: `${studio.url}/og.png`,
+  telephone: studio.telephone,
+  email: studio.email,
+  address: {
+    '@type': 'PostalAddress',
+    ...studio.address,
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    ...studio.geo,
+  },
+  hasMap: studio.mapUrl,
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      ...studio.openingHours,
+    },
+  ],
+  sameAs: studio.sameAs,
+};
+
 export const metadata: Metadata = {
   title: {
     default: 'Baza Pilates',
     template: '%s | Baza Pilates',
   },
-  description:
-    'Baza Pilates - centar za reformer pilates u Novom Sadu. Nudimo različite programe treninga, podršku fizioterapeuta i sveobuhvatan pristup wellness-u za žene svih uzrasta.',
+  description,
   keywords: [
     'pilates',
     'reformer pilates',
@@ -61,8 +94,7 @@ export const metadata: Metadata = {
     locale: 'sr_RS',
     siteName: 'Baza Pilates',
     title: 'Baza Pilates',
-    description:
-      'Baza Pilates - centar za reformer pilates u Novom Sadu. Nudimo različite programe treninga, podršku fizioterapeuta i sveobuhvatan pristup wellness-u za žene svih uzrasta.',
+    description,
     images: [
       {
         url: 'https://bazapilates.com/og.png',
@@ -75,8 +107,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Baza Pilates',
-    description:
-      'Baza Pilates - centar za reformer pilates u Novom Sadu. Nudimo različite programe treninga, podršku fizioterapeuta i sveobuhvatan pristup wellness-u za žene svih uzrasta.',
+    description,
     images: ['https://bazapilates.com/og.png'],
   },
   icons: {
@@ -100,6 +131,7 @@ export default function RootLayout({
   return (
     <html lang='sr'>
       <body className='flex h-svh flex-col overflow-hidden font-sans antialiased'>
+        <JsonLd data={studioJsonLd} />
         <Header />
         <ContentWrapper>
           {children}
