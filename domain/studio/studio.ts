@@ -23,7 +23,6 @@ export const studio = {
     closes: '20:00',
   },
   sameAs: [
-    'https://www.facebook.com/people/Baza-Pilates-Studio/61584067745610/#',
     'https://www.instagram.com/bazapilates/',
     'https://www.tiktok.com/@bazapilates',
   ],

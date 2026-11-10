@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { OptimizedImage } from '@/components/optimized-image';
 import Instagram from '@/resources/icons/instagram';
 import Tiktok from '@/resources/icons/tiktok';
-import Facebook from '@/resources/icons/facebook';
 import { SocialLink, MapLink } from '@/components/tracked-external-links';
 
 export function Footer() {
@@ -24,12 +23,6 @@ export function Footer() {
         </div>
 
         <div className='flex justify-center gap-6 md:w-full md:justify-between md:px-11'>
-          <SocialLink
-            platform='facebook'
-            href='https://www.facebook.com/people/Baza-Pilates-Studio/61584067745610/#'
-          >
-            <Facebook className='text-brand-foreground size-6' />
-          </SocialLink>
           <SocialLink
             platform='instagram'
             href='https://www.instagram.com/bazapilates/'

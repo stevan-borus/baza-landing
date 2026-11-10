@@ -337,3 +337,20 @@ describe('map links', () => {
     );
   });
 });
+
+describe('social links', () => {
+  // The old Facebook URL opened an unrelated business ("Nail Studio NS"),
+  // so no page may link it, visibly or in structured data.
+  test.each(sitemapUrls)(
+    '%s does not link the unrelated Facebook page',
+    url => {
+      const html = documentOf(htmlPathFor(url));
+      expect(html).not.toContain('61584067745610');
+      const gym = jsonLdOfType(html, 'ExerciseGym')[0] as { sameAs: string[] };
+      expect(gym.sameAs).toEqual([
+        'https://www.instagram.com/bazapilates/',
+        'https://www.tiktok.com/@bazapilates',
+      ]);
+    },
+  );
+});
