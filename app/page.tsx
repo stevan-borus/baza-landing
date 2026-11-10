@@ -23,7 +23,6 @@ const programmeSummaries: Record<string, string> = {
     'najtraženiji trening, za snagu, balans i fokus na svaki pokret, dva ili tri puta nedeljno.',
   'energy-pilates':
     'za one koje vole dinamične i izazovne treninge, a i dalje teže preciznom pokretu i fleksibilnosti.',
-  'moms-minis': 'mame i deca treniraju u isto vreme, ali različite stvari.',
   'golden-age-pilates':
     'reformer pilates za zrelije godine, prilagođen povredama i bolovima koji neretko dolaze sa godinama.',
   strongher:
@@ -158,19 +157,15 @@ export default async function Home() {
           </h3>
 
           <ul className='mx-auto flex max-w-3xl list-disc flex-col gap-3 pl-6 text-xl'>
-            {programmes
-              .filter(programme => programme.id in programmeSummaries)
-              .map(programme => (
-                <li key={programme.id}>
-                  <Link
-                    href={`/programi/${programme.id}`}
-                    className='underline'
-                  >
-                    {programme.title}
-                  </Link>
-                  : {programmeSummaries[programme.id]}
-                </li>
-              ))}
+            {programmes.map(programme => (
+              <li key={programme.id}>
+                <Link href={`/programi/${programme.id}`} className='underline'>
+                  {programme.title}
+                </Link>
+                {programmeSummaries[programme.id] &&
+                  `: ${programmeSummaries[programme.id]}`}
+              </li>
+            ))}
           </ul>
 
           <p className='text-center text-xl'>

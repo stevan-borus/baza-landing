@@ -3,7 +3,7 @@ import { GalleryImage } from '@/domain/gallery/gallery-schema';
 // One description per photo, in the order of /gal/galerija-1..32.webp.
 const descriptions = [
   'Grupni trening Golden age pilatesa na reformerima uz instruktorku',
-  'Mama podiže ćerku na Moms&Minis treningu',
+  'Mama sa ćerkom u Baza Pilates studiju',
   'Četiri vežbačice kleče na reformerima u Baza Pilates studiju u Novom Sadu',
   'Vežbačica leži na reformeru sa stopalima u trakama',
   'Vežbačice stoje na reformerima i rade sa pilates obručem',
