@@ -9,6 +9,9 @@ export const dynamic = 'force-static';
 export const metadata: Metadata = {
   title: 'Novosti',
   description: 'Pratite najnovije vesti i događaje u BAZA pilates studiju.',
+  alternates: {
+    canonical: '/novosti',
+  },
 };
 
 export default async function News() {

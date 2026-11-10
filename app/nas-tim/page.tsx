@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: 'Naš tim',
   description:
     'Upoznajte naš tim iskusnih instruktora i saradnika u BAZA pilates studiju.',
+  alternates: {
+    canonical: '/nas-tim',
+  },
 };
 
 export default async function Team() {

@@ -9,6 +9,9 @@ export const dynamic = 'force-static';
 export const metadata: Metadata = {
   title: 'Blog',
   description: 'Dobrodošli na mesto gde briga o zdravlju postaje inspiracija.',
+  alternates: {
+    canonical: '/blog',
+  },
 };
 
 export default async function Blog() {

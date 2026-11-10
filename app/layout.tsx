@@ -59,7 +59,6 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'sr_RS',
-    url: 'https://bazapilates.com',
     siteName: 'Baza Pilates',
     title: 'Baza Pilates',
     description:

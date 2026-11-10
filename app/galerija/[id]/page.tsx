@@ -2,11 +2,27 @@ import Link from 'next/link';
 import { OptimizedImage } from '@/components/optimized-image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { ViewTransition } from 'react';
+import type { Metadata } from 'next';
 import { getGalleryImageIds, getGalleryImages } from '@/domain/gallery/gallery';
 import { redirect } from 'next/navigation';
 import { GalleryThumbnails } from '@/components/gallery-thumbnails';
 
 export const dynamic = 'force-static';
+
+// Each image page is a thin variant of /galerija, so keep it out of the index
+// while still letting crawlers follow its links. A child `robots` replaces the
+// layout's whole object, so googleBot has to be overridden explicitly.
+export const metadata: Metadata = {
+  title: 'Galerija',
+  robots: {
+    index: false,
+    follow: true,
+    googleBot: {
+      index: false,
+      follow: true,
+    },
+  },
+};
 
 export async function generateStaticParams() {
   const ids = await getGalleryImageIds();

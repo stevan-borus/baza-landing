@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: 'Programi',
   description:
     'Istražite naše raznovrsne pilates programe prilagođene različitim nivoima i potrebama.',
+  alternates: {
+    canonical: '/programi',
+  },
 };
 
 export default async function Programmes() {

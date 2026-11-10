@@ -8,6 +8,9 @@ export const dynamic = 'force-static';
 export const metadata: Metadata = {
   title: 'Vaša pitanja',
   description: 'Najčešća pitanja o reformer pilatesu i našim programima.',
+  alternates: {
+    canonical: '/vasa-pitanja',
+  },
 };
 
 export default async function FAQ() {
