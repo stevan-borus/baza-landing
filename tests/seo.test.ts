@@ -131,3 +131,141 @@ describe('gallery image pages', () => {
     expect(canonicalsOf(head)).toEqual([]);
   });
 });
+
+// Everything below parses the whole document: structured data and visible copy
+// live in the body, not the head.
+function documentOf(htmlPath: string) {
+  return readFileSync(htmlPath, 'utf8');
+}
+
+function textOf(html: string) {
+  return decode(html.replace(/<[^>]*>/g, '')).trim();
+}
+
+function jsonLdBlocksOf(html: string) {
+  return [
+    ...html.matchAll(
+      /<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g,
+    ),
+  ].map(match => match[1]);
+}
+
+function jsonLdOfType(html: string, type: string) {
+  return jsonLdBlocksOf(html)
+    .map(block => JSON.parse(block) as Record<string, unknown>)
+    .filter(data => data['@type'] === type);
+}
+
+function imgAltsOf(html: string) {
+  return [...html.matchAll(/<img\b[^>]*\balt="([^"]*)"/g)].map(match =>
+    decode(match[1]),
+  );
+}
+
+const homeHtml = documentOf(htmlPathFor(baseUrl));
+const programmeUrls = sitemapUrls.filter(url =>
+  url.startsWith(`${baseUrl}/programi/`),
+);
+
+describe('home page', () => {
+  test('targets reformer pilates in Novi Sad in its title', () => {
+    expect(titleOf(headOf(htmlPathFor(baseUrl)))).toBe(
+      'Reformer pilates Novi Sad | Baza Pilates studio',
+    );
+  });
+
+  test('has one H1 naming reformer pilates in Novi Sad', () => {
+    const h1s = [...homeHtml.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/g)].map(
+      match => textOf(match[1]),
+    );
+    expect(h1s).toEqual(['Reformer pilates u Novom Sadu']);
+  });
+
+  test('links to every programme in the sitemap', () => {
+    expect(programmeUrls.length).toBeGreaterThan(0);
+    for (const url of programmeUrls) {
+      expect(homeHtml).toContain(`href="${url.slice(baseUrl.length)}"`);
+    }
+  });
+
+  test('states the studio address', () => {
+    const main = homeHtml.match(/<main\b[\s\S]*?<\/main>/)?.[0] ?? '';
+    expect(textOf(main)).toContain('Futoška 33');
+  });
+
+  test('has no placeholder image alts', () => {
+    const alts = imgAltsOf(homeHtml);
+    expect(alts).not.toContain('Naslovna slika');
+    expect(alts).not.toContain('Donja slika');
+  });
+});
+
+describe('structured data', () => {
+  test.each(sitemapUrls)('%s has one ExerciseGym block', url => {
+    const html = documentOf(htmlPathFor(url));
+    const gyms = jsonLdOfType(html, 'ExerciseGym');
+    expect(gyms).toHaveLength(1);
+
+    const gym = gyms[0] as {
+      address: { streetAddress: string; addressLocality: string };
+      geo: { latitude: unknown; longitude: unknown };
+      telephone: unknown;
+      openingHoursSpecification: unknown;
+    };
+    expect(gym.address.streetAddress).toBe('Futoška 33');
+    expect(gym.address.addressLocality).toBe('Novi Sad');
+    expect(typeof gym.geo.latitude).toBe('number');
+    expect(typeof gym.geo.longitude).toBe('number');
+    expect(typeof gym.telephone).toBe('string');
+    expect(gym.openingHoursSpecification).toBeDefined();
+  });
+
+  test('FAQ page describes every question it shows', () => {
+    const html = documentOf(htmlPathFor(`${baseUrl}/vasa-pitanja`));
+    const main = html.match(/<main\b[\s\S]*?<\/main>/)?.[0] ?? '';
+    // Each question renders as an accordion trigger button.
+    const questions = [
+      ...main.matchAll(
+        /<button\b[^>]*aria-expanded="[^"]*"[^>]*>([\s\S]*?)<\/button>/g,
+      ),
+    ].map(match => textOf(match[1]));
+    expect(questions.length).toBeGreaterThan(0);
+
+    const pages = jsonLdOfType(html, 'FAQPage') as {
+      mainEntity: {
+        '@type': string;
+        name: string;
+        acceptedAnswer: { '@type': string; text: string };
+      }[];
+    }[];
+    expect(pages).toHaveLength(1);
+    expect(pages[0].mainEntity).toHaveLength(questions.length);
+    expect(pages[0].mainEntity.map(entity => entity.name)).toEqual(questions);
+    for (const entity of pages[0].mainEntity) {
+      expect(entity['@type']).toBe('Question');
+      expect(entity.acceptedAnswer['@type']).toBe('Answer');
+      expect(entity.acceptedAnswer.text.length).toBeGreaterThan(0);
+    }
+  });
+});
+
+describe('programme pages', () => {
+  test.each(programmeUrls)('%s title names Novi Sad', url => {
+    expect(titleOf(headOf(htmlPathFor(url)))).toEndWith(
+      'Novi Sad | Baza Pilates',
+    );
+  });
+});
+
+describe('gallery', () => {
+  test('image alts describe the studio, not a bare index', () => {
+    const html = documentOf(htmlPathFor(`${baseUrl}/galerija`));
+    const galleryAlts = [
+      ...html.matchAll(/<img\b[^>]*\bsrc="[^"]*\/gal\/[^"]*"[^>]*>/g),
+    ].map(match => decode(match[0].match(/\balt="([^"]*)"/)?.[1] ?? ''));
+    expect(galleryAlts.length).toBeGreaterThan(0);
+    for (const alt of galleryAlts) {
+      expect(alt).not.toMatch(/^Galerija \d+$/);
+    }
+  });
+});

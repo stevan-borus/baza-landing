@@ -3,7 +3,7 @@ import { GalleryImage } from '@/domain/gallery/gallery-schema';
 const galleryImages: GalleryImage[] = Array.from({ length: 32 }, (_, i) => ({
   id: `gallery-${i + 1}`,
   src: `/gal/galerija-${i + 1}.webp`,
-  alt: `Galerija ${i + 1}`,
+  alt: `Baza Pilates studio u Novom Sadu – fotografija ${i + 1}`,
 }));
 
 export async function getGalleryImages() {

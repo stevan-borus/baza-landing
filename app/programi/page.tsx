@@ -6,9 +6,9 @@ import { ProgrammeCard } from '@/components/programme-card';
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: 'Programi',
+  title: 'Pilates programi u Novom Sadu',
   description:
-    'Istražite naše raznovrsne pilates programe prilagođene različitim nivoima i potrebama.',
+    'Reformer pilates, Energy pilates, Golden age pilates, Moms&Minis i StrongHer programi u Baza Pilates studiju u Novom Sadu.',
   alternates: {
     canonical: '/programi',
   },

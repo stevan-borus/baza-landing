@@ -2,6 +2,7 @@ import { ViewTransition } from 'react';
 import type { Metadata } from 'next';
 import { getFAQs } from '@/domain/faq/faq';
 import { FAQAccordion } from '@/components/faq-accordion';
+import { JsonLd } from '@/components/json-ld';
 
 export const dynamic = 'force-static';
 
@@ -15,6 +16,18 @@ export const metadata: Metadata = {
 
 export default async function FAQ() {
   const faqs = await getFAQs();
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
 
   return (
     <ViewTransition>
@@ -25,6 +38,7 @@ export default async function FAQ() {
           </div>
 
           <FAQAccordion faqs={faqs} />
+          <JsonLd data={faqJsonLd} />
         </section>
       </main>
     </ViewTransition>

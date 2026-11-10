@@ -38,7 +38,7 @@ export async function generateMetadata({
     : programme.title;
 
   return {
-    title: fullTitle,
+    title: `${fullTitle} Novi Sad`,
     description:
       programme.excerpt ||
       `Saznajte više o ${fullTitle} programu u BAZA pilates studiju.`,
