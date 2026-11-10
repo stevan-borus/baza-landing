@@ -45,7 +45,7 @@ export function Footer() {
         </div>
 
         <MapLink
-          href='https://maps.app.goo.gl/ZptCRSMK9J5bjAYR9'
+          href='https://maps.google.com/?cid=11764108408070187275'
           className='text-brand-foreground hidden text-center text-base hover:underline md:block'
         >
           Prikaži na mapi
@@ -63,7 +63,7 @@ export function Footer() {
             <div className='flex flex-col'>
               <p className='text-sm font-bold'>Adresa:</p>
               <a
-                href='https://maps.app.goo.gl/ZptCRSMK9J5bjAYR9'
+                href='https://maps.google.com/?cid=11764108408070187275'
                 target='_blank'
                 className='text-brand-foreground text-base hover:underline'
               >
@@ -137,7 +137,7 @@ export function Footer() {
           <div className='flex flex-col'>
             <p className='text-sm font-bold'>Adresa:</p>
             <a
-              href='https://maps.app.goo.gl/ZptCRSMK9J5bjAYR9'
+              href='https://maps.google.com/?cid=11764108408070187275'
               target='_blank'
               className='text-brand-foreground text-base hover:underline'
             >
@@ -204,7 +204,7 @@ export function Footer() {
       {/* Mobile: Show on Map at bottom */}
       <div className='order-3 flex justify-center md:hidden'>
         <MapLink
-          href='https://maps.app.goo.gl/ZptCRSMK9J5bjAYR9'
+          href='https://maps.google.com/?cid=11764108408070187275'
           className='text-brand-foreground text-center text-base hover:underline'
         >
           Prikaži na mapi

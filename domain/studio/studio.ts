@@ -15,7 +15,7 @@ export const studio = {
     latitude: 45.2489331,
     longitude: 19.8304764,
   },
-  mapUrl: 'https://maps.app.goo.gl/ZptCRSMK9J5bjAYR9',
+  mapUrl: 'https://maps.google.com/?cid=11764108408070187275',
   // The earliest and latest sessions across every programme schedule.
   openingHours: {
     dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],

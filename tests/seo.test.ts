@@ -321,3 +321,19 @@ describe('home page copy', () => {
     expect(mainText).toContain('Prvi, probni trening je besplatan.');
   });
 });
+
+describe('map links', () => {
+  test('point at the BAZA pilates studio place, not the bare street address', () => {
+    const mapLinks = [
+      ...homeHtml.matchAll(/href="(https:\/\/maps[^"]*)"/g),
+    ].map(match => decode(match[1]));
+    expect(mapLinks.length).toBeGreaterThan(0);
+    for (const link of mapLinks) {
+      expect(link).toBe('https://maps.google.com/?cid=11764108408070187275');
+    }
+    const gym = jsonLdOfType(homeHtml, 'ExerciseGym')[0] as { hasMap: string };
+    expect(gym.hasMap).toBe(
+      'https://maps.google.com/?cid=11764108408070187275',
+    );
+  });
+});
