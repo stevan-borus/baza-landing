@@ -287,3 +287,37 @@ describe('gallery photo descriptions', () => {
     }
   });
 });
+
+describe('home page copy', () => {
+  const main = homeHtml.match(/<main\b[\s\S]*?<\/main>/)?.[0] ?? '';
+  const mainText = textOf(main);
+
+  test('has enough copy about reformer pilates', () => {
+    // Tags are word boundaries here: textOf joins `</h2><p>` neighbours.
+    const words = decode(main.replace(/<[^>]*>/g, ' '))
+      .split(/\s+/)
+      .filter(word => /[\p{L}\p{N}]/u.test(word));
+    expect(words.length).toBeGreaterThanOrEqual(450);
+    const reformerMentions = mainText.match(/reformer/gi) ?? [];
+    expect(reformerMentions.length).toBeGreaterThanOrEqual(8);
+  });
+
+  test('links to the instructors, the team and the FAQ', () => {
+    for (const href of [
+      '/nas-tim/snezana-kragovic',
+      '/nas-tim/danica-piper',
+      '/nas-tim',
+      '/vasa-pitanja',
+    ]) {
+      expect(main).toContain(`href="${href}"`);
+    }
+  });
+
+  test('has the reformer section heading and the free trial line', () => {
+    const h2s = [...main.matchAll(/<h2\b[^>]*>([\s\S]*?)<\/h2>/g)].map(match =>
+      textOf(match[1]),
+    );
+    expect(h2s).toContain('Reformer pilates u Bazi');
+    expect(mainText).toContain('Prvi, probni trening je besplatan.');
+  });
+});

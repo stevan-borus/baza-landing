@@ -5,6 +5,7 @@ import { TrackedExternalLink } from '@/components/tracked-external-links';
 import { getProgrammes } from '@/domain/programmes/programmes';
 import { studio } from '@/domain/studio/studio';
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 export const dynamic = 'force-static';
 
@@ -15,6 +16,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
+};
+
+const programmeSummaries: Record<string, string> = {
+  'reformer-pilates':
+    'najtraženiji trening, za snagu, balans i fokus na svaki pokret, dva ili tri puta nedeljno.',
+  'energy-pilates':
+    'za one koje vole dinamične i izazovne treninge, a i dalje teže preciznom pokretu i fleksibilnosti.',
+  'moms-minis': 'mame i deca treniraju u isto vreme, ali različite stvari.',
+  'golden-age-pilates':
+    'reformer pilates za zrelije godine, prilagođen povredama i bolovima koji neretko dolaze sa godinama.',
+  strongher:
+    'funkcionalni trening snage, jer je snaga neizostavni deo ženskog zdravlja.',
 };
 
 export default async function Home() {
@@ -105,6 +118,72 @@ export default async function Home() {
               />
             ))}
           </div>
+        </section>
+
+        <section className='flex flex-col gap-8 px-4 lg:gap-12 lg:px-20'>
+          <h2>Reformer pilates u Bazi</h2>
+
+          <p className='text-center text-xl'>
+            Reformer je sprava sa pokretnom platformom, oprugama i trakama koja
+            omogućava veliki broj kontrolisanih i preciznih vežbi. Instruktorka
+            jačinu opruga i položaj tela prilagođava svakoj vežbačici, zato je
+            reformer pilates pogodan i za potpune početnike i za one koji se
+            oporavljaju od povrede. Polaznice ističu da se rezultati vide i van
+            studija: bolje držanje, pravilnije disanje i smireniji, fokusiraniji
+            um.
+          </p>
+
+          <p className='text-center text-xl'>
+            Treninge u Baza Pilates studiju u Novom Sadu vode sertifikovane
+            instruktorke reformer pilatesa, a tim upotpunjuju
+            fizioterapeutkinje, nutricionistkinja i pedijatarka.{' '}
+            <Link href='/nas-tim/snezana-kragovic' className='underline'>
+              Snežana Kragović
+            </Link>
+            , viši fizioterapeut i sertifikovana instruktorka metode Balanced
+            Body, pilates drži već 18 godina.{' '}
+            <Link href='/nas-tim/danica-piper' className='underline'>
+              Danica Piper
+            </Link>{' '}
+            je sertifikovana instruktorka reformer pilatesa i jedna od
+            osnivačica studija. Upoznajte{' '}
+            <Link href='/nas-tim' className='underline'>
+              ceo tim
+            </Link>
+            .
+          </p>
+
+          <h3 className='text-brand text-center text-xl font-bold lg:text-3xl'>
+            Koji program je za vas
+          </h3>
+
+          <ul className='mx-auto flex max-w-3xl list-disc flex-col gap-3 pl-6 text-xl'>
+            {programmes
+              .filter(programme => programme.id in programmeSummaries)
+              .map(programme => (
+                <li key={programme.id}>
+                  <Link
+                    href={`/programi/${programme.id}`}
+                    className='underline'
+                  >
+                    {programme.title}
+                  </Link>
+                  : {programmeSummaries[programme.id]}
+                </li>
+              ))}
+          </ul>
+
+          <p className='text-center text-xl'>
+            Treninzi se održavaju od ponedeljka do petka, od{' '}
+            {studio.openingHours.opens} do {studio.openingHours.closes}. Termini
+            i cene paketa za svaki program nalaze se na stranici programa, a
+            odgovore na najčešća pitanja, od toga koliko često trenirati do toga
+            da li je reformer bezbedan uz povredu, naći ćete na stranici{' '}
+            <Link href='/vasa-pitanja' className='underline'>
+              Vaša pitanja
+            </Link>
+            . Prvi, probni trening je besplatan.
+          </p>
         </section>
 
         <section className='flex flex-col items-center gap-8 px-4 lg:gap-12 lg:px-20'>
