@@ -13,7 +13,8 @@
     "clean": "rm -rf .next",
     "dev:clean": "npm run clean && next dev",
     "build:clean": "npm run clean && next build",
-    "process:images": "bun scripts/process-images.ts"
+    "process:images": "bun scripts/process-images.ts",
+    "test": "bun run build && bun test tests"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",

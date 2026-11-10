@@ -42,6 +42,9 @@ export async function generateMetadata({
     description:
       programme.excerpt ||
       `Saznajte više o ${fullTitle} programu u BAZA pilates studiju.`,
+    alternates: {
+      canonical: `/programi/${id}`,
+    },
   };
 }
 

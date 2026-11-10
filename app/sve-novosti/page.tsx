@@ -10,6 +10,9 @@ export const dynamic = 'force-static';
 export const metadata: Metadata = {
   title: 'Sve Novosti',
   description: 'Pregled svih vesti i događaja u BAZA pilates studiju.',
+  alternates: {
+    canonical: '/sve-novosti',
+  },
 };
 
 export default async function AllNews() {

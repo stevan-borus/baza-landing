@@ -1,9 +1,18 @@
 import { ViewTransition } from 'react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { OptimizedImage } from '@/components/optimized-image';
 import { getGalleryImages } from '@/domain/gallery/gallery';
 
 export const dynamic = 'force-static';
+
+export const metadata: Metadata = {
+  title: 'Galerija',
+  description: 'Pogledajte fotografije iz BAZA pilates studija u Novom Sadu.',
+  alternates: {
+    canonical: '/galerija',
+  },
+};
 
 export default async function Gallery() {
   const images = await getGalleryImages();

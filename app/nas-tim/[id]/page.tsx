@@ -48,6 +48,9 @@ export async function generateMetadata({
     description:
       member.excerpt ||
       `Upoznajte ${fullNameWithU}, ${member.role} u BAZA pilates studiju.`,
+    alternates: {
+      canonical: `/nas-tim/${id}`,
+    },
   };
 }
 
