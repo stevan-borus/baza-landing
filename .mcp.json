@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "sentry-baza": {
+      "type": "http",
+      "url": "https://mcp.sentry.dev/mcp/baza-pilates"
+    }
+  }
+}

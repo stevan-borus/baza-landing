@@ -1,0 +1,10 @@
+[mcp_servers.sentry-baza]
+url = "https://mcp.sentry.dev/mcp/baza-pilates"
+enabled = true
+
+[mcp_servers.sentry-vylit]
+url = "https://mcp.sentry.dev/mcp/vylit-inc/javascript-react"
+enabled = false
+
+[plugins."sentry@claude-plugins-official".mcp_servers.sentry]
+enabled = false
