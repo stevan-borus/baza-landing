@@ -1,5 +1,8 @@
 {
   "enabledPlugins": {
     "sentry@claude-plugins-official": false
-  }
+  },
+  "enabledMcpjsonServers": [
+    "sentry-baza"
+  ]
 }
