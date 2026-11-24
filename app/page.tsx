@@ -106,7 +106,8 @@ export default async function Home() {
           <h2>Naši programi</h2>
 
           <p className='text-center text-xl'>
-            U Bazi treniramo na reformerima, uz instruktore i fizioterapeuta.
+            U Bazi treniramo na reformerima, uz stručne instruktore i
+            fizioterapeute.
           </p>
 
           <div className='grid grid-cols-1 gap-6 sm:grid-cols-2'>

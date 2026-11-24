@@ -731,3 +731,31 @@ describe('programme list descriptions', () => {
     expect(description.length).toBeLessThanOrEqual(160);
   });
 });
+
+describe('programme photos', () => {
+  test('StrongHer 50+ uses the StrongHer photos, not reformer shots', async () => {
+    const strongher = await getProgrammeById('strongher');
+    const strongher50 = await getProgrammeById('strongher-50');
+    expect(strongher50?.image).toBe(strongher?.image);
+    expect(strongher50?.mobileImage).toBe(strongher?.mobileImage);
+  });
+
+  test('Prenatal uses its own photos, not gallery shots', async () => {
+    const prenatal = await getProgrammeById('prenatal-pilates');
+    expect(prenatal?.image).toBe('/prenatal.webp');
+    expect(prenatal?.mobileImage).toBe('/prenatal-mobile.webp');
+    const html = documentOf(
+      htmlPathFor(`${baseUrl}/programi/prenatal-pilates`),
+    );
+    expect(html).toContain('/optimized/prenatal-1920w.webp');
+    expect(html).toContain('/optimized/prenatal-mobile-640w.webp');
+  });
+});
+
+describe('home programmes intro', () => {
+  test('credits trained instructors and physiotherapists', () => {
+    expect(textOf(mainOf(documentOf(htmlPathFor(baseUrl))))).toContain(
+      'uz stručne instruktore i fizioterapeute',
+    );
+  });
+});

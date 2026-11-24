@@ -542,9 +542,9 @@ const programmes: Programme[] = [
     id: 'strongher-50',
     title: 'StrongHer 50+',
     subtitle: '(funkcionalni trening)',
-    image: '/gal/galerija-5.webp',
-    mobileImage: '/gal/galerija-30.webp',
-    imagePosition: 'object-center lg:object-[center_20%]',
+    image: '/strongher.webp',
+    mobileImage: '/strongher-mobile.webp',
+    imagePosition: 'object-center',
     excerpt:
       'StrongHer 50+ je funkcionalni trening snage za žene od 50 i više godina, jer je snaga važan deo ženskog zdravlja u svakom dobu.',
     // Two fixed groups: a member trains on both days of one pair, so the
@@ -604,9 +604,9 @@ const programmes: Programme[] = [
     id: 'prenatal-pilates',
     title: 'Prenatal',
     subtitle: '(pilates za trudnice)',
-    image: '/gal/galerija-20.webp',
-    mobileImage: '/gal/galerija-4.webp',
-    imagePosition: 'object-center lg:object-[center_20%]',
+    image: '/prenatal.webp',
+    mobileImage: '/prenatal-mobile.webp',
+    imagePosition: 'object-center lg:object-[center_35%]',
     excerpt:
       'Prenatal je reformer pilates prilagođen trudnoći, za buduće mame koje žele da i tokom trudnoće ostanu aktivne uz stručno vođen trening.',
     // Two fixed groups, listed separately for the same reason as StrongHer 50+.
