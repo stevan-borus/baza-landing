@@ -63,7 +63,6 @@ export const metadata: Metadata = {
     'fitness',
     'trening',
     'energy pilates',
-    'moms and minis',
     'golden age pilates',
     'pilates studio',
     'pilates centar',

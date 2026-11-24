@@ -777,3 +777,33 @@ describe('hidden StrongHer 50+', () => {
     }
   });
 });
+
+describe('retired Moms&Minis and paediatrics', () => {
+  test('home page no longer mentions a paediatrician or children', () => {
+    const text = textOf(mainOf(documentOf(htmlPathFor(baseUrl))));
+    expect(text).not.toMatch(/pedijat/i);
+    expect(text).not.toMatch(/mališan/i);
+  });
+
+  test('Moms&Minis is gone from the programmes, sitemap and listings', async () => {
+    expect(await getProgrammeById('moms-minis')).toBeNull();
+    expect(sitemapUrls).not.toContain(`${baseUrl}/programi/moms-minis`);
+    expect(existsSync(htmlPathFor(`${baseUrl}/programi/moms-minis`))).toBe(
+      false,
+    );
+    for (const url of [baseUrl, `${baseUrl}/programi`]) {
+      const html = documentOf(htmlPathFor(url));
+      expect(html).not.toContain('/programi/moms-minis');
+      expect(html).not.toMatch(/moms\s*(&|&amp;|and)\s*minis/i);
+    }
+  });
+
+  test('every programme page offers duo and personal training', async () => {
+    for (const programme of await getProgrammes()) {
+      const text = textOf(
+        mainOf(documentOf(htmlPathFor(`${baseUrl}/programi/${programme.id}`))),
+      );
+      expect(text).toContain('PERSONALNI');
+    }
+  });
+});

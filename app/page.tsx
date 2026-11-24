@@ -78,11 +78,10 @@ export default async function Home() {
             želimo da vam pružimo više od treninga i da vreme provedeno kod nas
             bude poklon vama, vašem telu i umu. Oslanjajući se na naše potrebe,
             kao profesionalne sportiskinje, majke, savremene žene, otvorile smo
-            mesto gde možete odvojiti vreme samo za sebe ili doći sa vašim
-            mališanima, jer znamo koliko to nekada znači, kao i mesto gde možete
-            naučiti kako da pomognete svom telu kroz ishranu, posavetovati se
-            nutricionistom, pedijatrom ili fizioterapeutom. Nastojimo da vam
-            kroz sveobuhvatni pristup pomognemo da osvestite svoju snagu i
+            mesto gde možete odvojiti vreme samo za sebe, kao i mesto gde možete
+            naučiti kako da pomognete svom telu kroz ishranu i posavetovati se
+            sa nutricionistom ili fizioterapeutom. Nastojimo da vam kroz
+            sveobuhvatni pristup pomognemo da osvestite svoju snagu i
             iskoristite svoje potencijale. Ideja o Bazi je nastala iz jednog
             prijateljstva tri žene, dugogodišnjeg, snažnog i ispunjenog
             podrškom. Kroz život, sport, majčinstvo i karijeru uvidele smo
@@ -140,8 +139,8 @@ export default async function Home() {
 
           <p className='text-center text-xl'>
             Treninge u Baza Pilates studiju u Novom Sadu vode sertifikovane
-            instruktorke reformer pilatesa, a tim upotpunjuju
-            fizioterapeutkinje, nutricionistkinja i pedijatarka.{' '}
+            instruktorke reformer pilatesa, a tim upotpunjuju fizioterapeutkinje
+            i nutricionistkinja.{' '}
             <Link href='/nas-tim/snezana-kragovic' className='underline'>
               Snežana Kragović
             </Link>

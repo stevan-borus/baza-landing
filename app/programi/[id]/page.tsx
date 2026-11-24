@@ -300,101 +300,91 @@ export default async function ProgrammePage({
               programmeTitle={programme.title}
             />
           </div>
-          {programme.id !== 'moms-minis' && (
-            <div className='bg-card flex max-w-275 flex-col items-center justify-center gap-6 rounded-lg p-3 lg:flex-row lg:gap-8 lg:px-20 lg:py-12'>
-              <div className='flex flex-col gap-6 lg:hidden'>
-                <p className='text-foreground text-center text-lg'>
+          <div className='bg-card flex max-w-275 flex-col items-center justify-center gap-6 rounded-lg p-3 lg:flex-row lg:gap-8 lg:px-20 lg:py-12'>
+            <div className='flex flex-col gap-6 lg:hidden'>
+              <p className='text-foreground text-center text-lg'>
+                Za personalne i duo programe, slobodno nas kontaktirajte kako
+                bismo zajedno pronašli idealan termin.
+              </p>
+
+              <div className='flex gap-4'>
+                <div className='flex flex-1 flex-col items-center gap-2'>
+                  <h3 className='text-brand text-lg font-bold'>DUO</h3>
+                  <p className='text-foreground text-3xl font-bold'>
+                    {privatePackages.duo.terms}
+                  </p>
+                  <p className='text-foreground text-base font-bold'>TERMINA</p>
+                  <p className='text-foreground text-base'>
+                    {privatePackages.duo.price}
+                  </p>
+                </div>
+
+                <div className='my-3 h-auto w-px bg-black' />
+
+                <div className='flex flex-1 flex-col items-center gap-2'>
+                  <h3 className='text-brand text-lg font-bold'>PERSONALNI</h3>
+                  <p className='text-foreground text-3xl font-bold'>
+                    {privatePackages.personal.terms}
+                  </p>
+                  <p className='text-foreground text-base font-bold'>TERMINA</p>
+                  <p className='text-foreground text-base'>
+                    {privatePackages.personal.price}
+                  </p>
+                </div>
+              </div>
+
+              <div className='flex justify-center'>
+                <ContactUsButton
+                  programmeId={programme.id}
+                  programmeTitle={programme.title}
+                  className='w-full sm:w-75'
+                />
+              </div>
+            </div>
+
+            <div className='hidden flex-1 flex-col items-center justify-center gap-6 lg:flex lg:flex-row'>
+              <div className='flex flex-1 flex-col gap-6 lg:flex-row'>
+                <div className='flex flex-1 flex-col items-center gap-3 lg:gap-6'>
+                  <h3 className='text-brand text-xl font-bold lg:text-3xl'>
+                    DUO
+                  </h3>
+                  <p className='text-foreground text-4xl font-bold lg:text-6xl'>
+                    {privatePackages.duo.terms}
+                  </p>
+                  <p className='text-foreground text-xl lg:text-2xl'>TERMINA</p>
+                  <p className='text-foreground text-xl lg:text-2xl'>
+                    {privatePackages.duo.price}
+                  </p>
+                </div>
+
+                <div className='my-3 hidden h-auto w-px bg-black lg:block' />
+
+                <div className='flex flex-1 flex-col items-center gap-3 lg:gap-6'>
+                  <h3 className='text-brand text-xl font-bold lg:text-2xl'>
+                    PERSONALNI
+                  </h3>
+                  <p className='text-foreground text-4xl font-bold lg:text-6xl'>
+                    {privatePackages.personal.terms}
+                  </p>
+                  <p className='text-foreground text-xl lg:text-2xl'>TERMINA</p>
+                  <p className='text-foreground text-xl lg:text-2xl'>
+                    {privatePackages.personal.price}
+                  </p>
+                </div>
+              </div>
+
+              <div className='flex flex-1 flex-col items-center justify-center gap-6 lg:gap-12'>
+                <p className='text-foreground text-center text-xl lg:text-3xl'>
                   Za personalne i duo programe, slobodno nas kontaktirajte kako
                   bismo zajedno pronašli idealan termin.
                 </p>
-
-                <div className='flex gap-4'>
-                  <div className='flex flex-1 flex-col items-center gap-2'>
-                    <h3 className='text-brand text-lg font-bold'>DUO</h3>
-                    <p className='text-foreground text-3xl font-bold'>
-                      {privatePackages.duo.terms}
-                    </p>
-                    <p className='text-foreground text-base font-bold'>
-                      TERMINA
-                    </p>
-                    <p className='text-foreground text-base'>
-                      {privatePackages.duo.price}
-                    </p>
-                  </div>
-
-                  <div className='my-3 h-auto w-px bg-black' />
-
-                  <div className='flex flex-1 flex-col items-center gap-2'>
-                    <h3 className='text-brand text-lg font-bold'>PERSONALNI</h3>
-                    <p className='text-foreground text-3xl font-bold'>
-                      {privatePackages.personal.terms}
-                    </p>
-                    <p className='text-foreground text-base font-bold'>
-                      TERMINA
-                    </p>
-                    <p className='text-foreground text-base'>
-                      {privatePackages.personal.price}
-                    </p>
-                  </div>
-                </div>
-
-                <div className='flex justify-center'>
-                  <ContactUsButton
-                    programmeId={programme.id}
-                    programmeTitle={programme.title}
-                    className='w-full sm:w-75'
-                  />
-                </div>
-              </div>
-
-              <div className='hidden flex-1 flex-col items-center justify-center gap-6 lg:flex lg:flex-row'>
-                <div className='flex flex-1 flex-col gap-6 lg:flex-row'>
-                  <div className='flex flex-1 flex-col items-center gap-3 lg:gap-6'>
-                    <h3 className='text-brand text-xl font-bold lg:text-3xl'>
-                      DUO
-                    </h3>
-                    <p className='text-foreground text-4xl font-bold lg:text-6xl'>
-                      {privatePackages.duo.terms}
-                    </p>
-                    <p className='text-foreground text-xl lg:text-2xl'>
-                      TERMINA
-                    </p>
-                    <p className='text-foreground text-xl lg:text-2xl'>
-                      {privatePackages.duo.price}
-                    </p>
-                  </div>
-
-                  <div className='my-3 hidden h-auto w-px bg-black lg:block' />
-
-                  <div className='flex flex-1 flex-col items-center gap-3 lg:gap-6'>
-                    <h3 className='text-brand text-xl font-bold lg:text-2xl'>
-                      PERSONALNI
-                    </h3>
-                    <p className='text-foreground text-4xl font-bold lg:text-6xl'>
-                      {privatePackages.personal.terms}
-                    </p>
-                    <p className='text-foreground text-xl lg:text-2xl'>
-                      TERMINA
-                    </p>
-                    <p className='text-foreground text-xl lg:text-2xl'>
-                      {privatePackages.personal.price}
-                    </p>
-                  </div>
-                </div>
-
-                <div className='flex flex-1 flex-col items-center justify-center gap-6 lg:gap-12'>
-                  <p className='text-foreground text-center text-xl lg:text-3xl'>
-                    Za personalne i duo programe, slobodno nas kontaktirajte
-                    kako bismo zajedno pronašli idealan termin.
-                  </p>
-                  <ContactUsButton
-                    programmeId={programme.id}
-                    programmeTitle={programme.title}
-                  />
-                </div>
+                <ContactUsButton
+                  programmeId={programme.id}
+                  programmeTitle={programme.title}
+                />
               </div>
             </div>
-          )}
+          </div>
         </section>
 
         {programme.faqs && (
