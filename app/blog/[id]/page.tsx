@@ -92,9 +92,9 @@ export default async function BlogPostPage({
             </ViewTransition>
           </div>
           <ViewTransition>
-            <p className='text-foreground flex flex-col gap-8 text-center text-xl lg:gap-12'>
+            <div className='text-foreground flex flex-col gap-8 text-center text-xl lg:gap-12'>
               {post.content}
-            </p>
+            </div>
           </ViewTransition>
         </section>
       </main>

@@ -89,9 +89,10 @@ export const privatePackages = {
   personal: { terms: 12, price: '30.000 RSD' },
 };
 
-// The timetable writes "15.000RSD"; running text reads "15.000 RSD".
+// The timetable writes "15.000RSD"; running text reads "15.000 RSD", with a
+// non-breaking space so a narrow line never strands "RSD" on its own.
 function spacedPrice(price: string) {
-  return price.replace(/(\d)RSD$/, '$1 RSD');
+  return price.replace(/(\d)RSD$/, '$1 RSD');
 }
 
 function priceValue(price: string) {
@@ -141,8 +142,8 @@ const reformerGuide = (
         dok učite pokret;
       </li>
       <li>
-        onima koji se oporavljaju od povrede ili imaju bol u leđima, uz procenu
-        i nadzor fizioterapeuta. U Bazi je to{' '}
+        onima koji se oporavljaju od povrede ili imaju bol u leđima, uz
+        prethodnu procenu stanja i vežbe prilagođene njima. U timu Baze je{' '}
         <Link href='/nas-tim/snezana-kragovic' className='underline'>
           Snežana Kragović
         </Link>
@@ -151,10 +152,10 @@ const reformerGuide = (
       </li>
       <li>
         sportistima i aktivnima, jer uz njihov osnovni trening jača duboke
-        mišiće trupa i radi na pokretljivosti;
+        mišiće trupa i pomaže im da poboljšaju pokretljivost;
       </li>
       <li>
-        zrelijim godinama: program{' '}
+        osobama u zrelijim godinama: program{' '}
         <Link href='/programi/golden-age-pilates' className='underline'>
           Golden age pilates
         </Link>{' '}
@@ -230,9 +231,9 @@ const reformerGuide = (
     </ul>
     <p className='text-center text-xl'>
       Raspored svih grupnih termina nalazi se u{' '}
-      <a href='#cenovnik' className='underline'>
+      <Link href='#cenovnik' className='underline'>
         cenovniku
-      </a>{' '}
+      </Link>{' '}
       ispod. Za duo i personalni trening kontaktirajte nas, pa ćemo zajedno
       pronaći termin. Prvi, probni trening je besplatan, tako da reformer možete
       da isprobate pre nego što izaberete paket. Odgovore na opšta pitanja o
@@ -272,7 +273,7 @@ const reformerFaqs: FAQItem[] = [
   {
     question: 'Mogu li da treniram ako imam povredu ili bol u leđima?',
     answer:
-      'Možete, uz procenu i nadzor instruktorke i fizioterapeuta. U timu Baze je Snežana Kragović, viši fizioterapeut i sertifikovana instruktorka metode Balanced Body. Za zrelije godine postoji i program Golden age pilates, prilagođen povredama i bolovima.',
+      'Uz povredu ili bol važno je da se stanje prethodno proceni i da se vežbe prilagode. Recite instruktorki za povredu pre prvog treninga. U timu Baze je Snežana Kragović, viši fizioterapeut i sertifikovana instruktorka metode Balanced Body, a za zrelije godine postoji i program Golden age pilates, prilagođen povredama i bolovima.',
   },
   {
     question: 'Da li je bolje trenirati 2 ili 3 puta nedeljno?',

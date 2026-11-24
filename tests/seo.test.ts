@@ -435,15 +435,24 @@ describe('reformer pilates page', () => {
     expect(description.length).toBeLessThanOrEqual(160);
   });
 
-  test('shows every group, duo and personal package price', () => {
-    const text = withoutSpaces(textOf(main));
-    const prices = [
-      ...reformerSchedule.map(item => item.price),
-      privatePackages.duo.price,
-      privatePackages.personal.price,
+  test('lists every package with its terms and price in the price section', () => {
+    // Only the guide's price section counts: the timetable and the duo and
+    // personal cards elsewhere on the page show the same prices.
+    const start = main.search(
+      /<h2\b[^>]*>Koliko košta reformer pilates u Novom Sadu<\/h2>/,
+    );
+    expect(start).toBeGreaterThan(-1);
+    const end = main.indexOf('<h2', start + 1);
+    const section = withoutSpaces(
+      textOf(main.slice(start, end === -1 ? undefined : end)),
+    );
+    const packages = [
+      ...reformerSchedule,
+      privatePackages.duo,
+      privatePackages.personal,
     ];
-    for (const price of prices) {
-      expect(text).toContain(withoutSpaces(price));
+    for (const { terms, price } of packages) {
+      expect(section).toContain(withoutSpaces(`${terms} termina za ${price}`));
     }
   });
 
@@ -559,5 +568,26 @@ describe('FAQ answers', () => {
     for (const entity of pages[0].mainEntity) {
       expect(visible).toContain(entity.acceptedAnswer.text);
     }
+  });
+});
+
+describe('reformer pilates article headings', () => {
+  const html = () =>
+    mainOf(documentOf(htmlPathFor(`${baseUrl}/blog/sta-je-reformer-pilates`)));
+
+  test('section titles are h2 headings', () => {
+    const h2s = h2sOf(html());
+    for (const heading of [
+      'Kako izgleda i kako radi reformer',
+      'Kratka istorija',
+      'Reformer ili mat pilates',
+    ]) {
+      expect(h2s).toContain(heading);
+    }
+  });
+
+  test('no paragraph contains a heading', () => {
+    // A <p> cannot hold an <h2>; the browser would close the paragraph early.
+    expect(html()).not.toMatch(/<p\b[^>]*>(?:(?!<\/p>)[\s\S])*?<h2\b/);
   });
 });

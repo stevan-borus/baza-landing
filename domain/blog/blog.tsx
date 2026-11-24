@@ -4,14 +4,14 @@ import { BlogPost } from '@/domain/blog/blog-schema';
 import { reformerSchedule, weekdaysOf } from '@/domain/programmes/programmes';
 import { studio } from '@/domain/studio/studio';
 
-// Post content renders inside a <p>, so a section is a bold lead span over its
-// body spans rather than a heading element.
+// A section title reads as a bold lead at body size: the global h2 is sized
+// for page headings, which would compete with the post title.
 function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <span className='flex flex-col gap-4'>
-      <span className='font-bold'>{title}</span>
+    <div className='flex flex-col gap-4'>
+      <h2 className='text-xl font-bold'>{title}</h2>
       {children}
-    </span>
+    </div>
   );
 }
 
@@ -73,8 +73,8 @@ const blogPosts: BlogPost[] = [
             tela: vi ste istovremeno i opterećenje i oslonac. Reformer tome
             dodaje opruge. Trening zato može da bude izazovniji, a u isto vreme
             daje više podrške tamo gde je potrebna. Kontrola pokreta je
-            preciznija, jer kolica vode telo kroz putanju vežbe, a jačina opruga
-            određuje koliko će pokret biti težak. Oba načina imaju svoje mesto,
+            preciznija, a instruktorka jačinom opruga određuje koliko će pokret
+            biti težak i koliko podrške dobijate. Oba načina imaju svoje mesto,
             a razlika je u tome koliko izazova i podrške vam sprava daje.
           </span>
           <span>
@@ -114,9 +114,9 @@ const blogPosts: BlogPost[] = [
             odgovara različitim telima i ciljevima. Početnicima ne treba
             prethodno iskustvo, jer opruge daju podršku dok uče pokret. Onima
             koji se oporavljaju od povrede ili imaju bol u leđima reformer može
-            da pomogne, uz procenu i nadzor instruktorke ili fizioterapeuta:
-            trening ne zamenjuje lečenje, ali se vežbe prilagođavaju stanju.
-            Sportistima i aktivnima je dobra dopuna osnovnom treningu.
+            da pomogne, uz prethodnu procenu stanja: trening ne zamenjuje
+            lečenje, ali se vežbe prilagođavaju stanju. Sportistima i aktivnima
+            je dobra dopuna osnovnom treningu.
           </span>
           <span>
             Za zrelije godine u Bazi postoji program{' '}
@@ -137,8 +137,8 @@ const blogPosts: BlogPost[] = [
             Idealno je trenirati 2 do 3 puta nedeljno. Prvi efekti, poput boljeg
             držanja i pokretljivosti, često se osete posle nekoliko treninga, a
             vidljive promene obično dolaze posle 6 do 10 nedelja redovnog
-            vežbanja. Redovan trening je ključ napretka, pa je bolje dolaziti iz
-            nedelje u nedelju nego retko i naporno.
+            vežbanja. Redovan trening je ključ napretka: bolje je vežbati
+            redovno nego povremeno trenirati visokim intenzitetom.
           </span>
           <span>
             Grupni paketi reformer pilatesa u Bazi prate taj ritam:{' '}
@@ -156,10 +156,10 @@ const blogPosts: BlogPost[] = [
           <span>
             Na prvi čas dođite u sportskoj odeći koja ne sputava pokret. Na
             reformeru se trenira bos ili u pilates čarapama, pa vam patike nisu
-            potrebne. Instruktorka vam objašnjava delove sprave, podešava opruge
-            i položaj tela i vodi vas kroz vežbe korak po korak. Ako imate
-            povredu ili bol, recite joj to pre početka, kako bi vežbe
-            prilagodila vama. Grupni trening traje sat vremena.
+            potrebne. Instruktorka vam podešava opruge i položaj tela i vodi vas
+            kroz vežbe korak po korak. Ako imate povredu ili bol, recite joj to
+            pre početka, kako bi vežbe prilagodila vama. Grupni trening traje
+            sat vremena.
           </span>
           <span>
             Prvi, probni trening je besplatan, a termin zakazujete preko{' '}
