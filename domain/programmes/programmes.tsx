@@ -99,10 +99,6 @@ function priceValue(price: string) {
   return Number(price.replace(/\D/g, ''));
 }
 
-export function weekdaysOf(item: ProgrammeScheduleItem) {
-  return item.days.map(day => day.day.toLowerCase()).join(', ');
-}
-
 const lowestReformerPackage = [...reformerSchedule].sort(
   (a, b) => priceValue(a.price) - priceValue(b.price),
 )[0];
@@ -220,12 +216,10 @@ const reformerGuide = (
     </p>
     <p className='text-center text-xl'>
       Zato grupne termine nudimo u dva ritma:{' '}
-      {reformerThreeTimesWeekly.frequency} (
-      {weekdaysOf(reformerThreeTimesWeekly)}) i {reformerTwiceWeekly.frequency}{' '}
-      ({weekdaysOf(reformerTwiceWeekly)}). Treninzi se održavaju od ponedeljka
-      do petka, od {opens} do {closes}, pa termin možete da uklopite pre posla,
-      preko dana ili uveče. Ako niste sigurni koji ritam vam odgovara, pitajte
-      instruktorku na probnom treningu.
+      {reformerThreeTimesWeekly.frequency} i {reformerTwiceWeekly.frequency}.
+      Treninzi se održavaju od ponedeljka do petka, od {opens} do {closes}, pa
+      termin možete da uklopite pre posla, preko dana ili uveče. Ako niste
+      sigurni koji ritam vam odgovara, pitajte instruktorku na probnom treningu.
     </p>
 
     <h2>Koliko košta reformer pilates u Novom Sadu</h2>
@@ -236,8 +230,8 @@ const reformerGuide = (
     <ul className='mx-auto flex max-w-3xl list-disc flex-col gap-3 pl-6 text-xl'>
       {reformerSchedule.map(item => (
         <li key={item.frequency}>
-          grupni trening {item.frequency} ({weekdaysOf(item)}): {item.terms}{' '}
-          termina za {spacedPrice(item.price)};
+          grupni trening {item.frequency}: {item.terms} termina za{' '}
+          {spacedPrice(item.price)};
         </li>
       ))}
       <li>
@@ -278,7 +272,7 @@ const reformerFaqs: FAQItem[] = [
   },
   {
     question: 'U koje dane i u koliko sati su termini?',
-    answer: `Treninzi se održavaju od ponedeljka do petka, od ${opens} do ${closes}. Paket ${reformerThreeTimesWeekly.frequency} (${weekdaysOf(reformerThreeTimesWeekly)}) i paket ${reformerTwiceWeekly.frequency} (${weekdaysOf(reformerTwiceWeekly)}) imaju i jutarnje i večernje termine, a tačan raspored je u cenovniku na ovoj stranici.`,
+    answer: `Treninzi se održavaju od ponedeljka do petka, od ${opens} do ${closes}. Paket ${reformerThreeTimesWeekly.frequency} i paket ${reformerTwiceWeekly.frequency} imaju i jutarnje i večernje termine, a tačan raspored je u cenovniku na ovoj stranici.`,
   },
   {
     question: 'Koliko traje jedan trening?',
@@ -484,70 +478,63 @@ const programmes: Programme[] = [
       </>
     ),
   },
-  // StrongHer 50+ is hidden until the studio agrees its copy. Uncomment to
-  // show it again (and add it back to the home and /programi descriptions).
-  // {
-  //   id: 'strongher-50',
-  //   title: 'StrongHer 50+',
-  //   subtitle: '(funkcionalni trening)',
-  //   image: '/strongher.webp',
-  //   mobileImage: '/strongher-mobile.webp',
-  //   imagePosition: 'object-center',
-  //   excerpt:
-  //     'StrongHer 50+ je funkcionalni trening snage za žene od 50 i više godina, jer je snaga važan deo ženskog zdravlja u svakom dobu.',
-  //   // Two fixed groups: a member trains on both days of one pair, so the
-  //   // pairs are listed separately rather than as one pick-any-two timetable.
-  //   schedule: [
-  //     {
-  //       frequency: '2 puta nedeljno, prepodne',
-  //       days: [
-  //         { day: 'Ponedeljak', timeSlots: ['10:00 - 11:00'] },
-  //         { day: 'Četvrtak', timeSlots: ['10:00 - 11:00'] },
-  //       ],
-  //       terms: 8,
-  //       price: '10.000RSD',
-  //     },
-  //     {
-  //       frequency: '2 puta nedeljno, uveče',
-  //       days: [
-  //         { day: 'Ponedeljak', timeSlots: ['18:00 - 19:00'] },
-  //         { day: 'Sreda', timeSlots: ['18:00 - 19:00'] },
-  //       ],
-  //       terms: 8,
-  //       price: '10.000RSD',
-  //     },
-  //   ],
-  //   description: (
-  //     <>
-  //       <span>
-  //         StrongHer 50+ je funkcionalni trening snage za žene od 50 i više
-  //         godina, jer je snaga važan deo ženskog zdravlja u svakom dobu.
-  //       </span>
-  //       <span>
-  //         To je program{' '}
-  //         <Link href='/programi/strongher' className='underline'>
-  //           StrongHer
-  //         </Link>{' '}
-  //         prilagođen ženama 50+. Trening se radi u malim grupama, uz tegove,
-  //         kettlebell i druge rekvizite, a opterećenje se prilagođava formi svake
-  //         od vas.
-  //       </span>
-  //       <span>
-  //         Radimo na snazi, izdržljivosti i pokretljivosti, kako bi vam
-  //         svakodnevni pokreti, poput penjanja uz stepenice, nošenja kesa ili
-  //         ustajanja sa poda, bili lakši i sigurniji.
-  //       </span>
-  //       <span>
-  //         Program vodi{' '}
-  //         <Link href='/nas-tim/isidora-nikolic' className='underline'>
-  //           Isidora Nikolić
-  //         </Link>
-  //         , diplomirani fizioterapeut, koja trening prilagođava vašim potrebama
-  //         i zajedno sa vama prati vaš napredak.
-  //       </span>
-  //     </>
-  //   ),
-  // },
+  {
+    id: 'strongher-50',
+    title: 'StrongHer 50+',
+    subtitle: '(funkcionalni trening)',
+    image: '/strongher-50.webp',
+    mobileImage: '/strongher-50-mobile.webp',
+    imagePosition: 'object-center',
+    excerpt:
+      'StrongHer 50+ je funkcionalni trening snage za žene od 50 i više godina, jer je snaga važan deo ženskog zdravlja u svakom dobu.',
+    // Two fixed groups: a member trains on both days of one pair, so the
+    // pairs are listed separately rather than as one pick-any-two timetable.
+    schedule: [
+      {
+        frequency: '2 puta nedeljno, prepodne',
+        days: [
+          { day: 'Ponedeljak', timeSlots: ['10:00 - 11:00'] },
+          { day: 'Četvrtak', timeSlots: ['10:00 - 11:00'] },
+        ],
+        terms: 8,
+        price: '10.000RSD',
+      },
+      {
+        frequency: '2 puta nedeljno, uveče',
+        days: [
+          { day: 'Ponedeljak', timeSlots: ['18:00 - 19:00'] },
+          { day: 'Sreda', timeSlots: ['18:00 - 19:00'] },
+        ],
+        terms: 8,
+        price: '10.000RSD',
+      },
+    ],
+    description: (
+      <>
+        <span>
+          StrongHer 50+ je funkcionalni trening snage za žene od 50 i više
+          godina, jer je snaga važan deo ženskog zdravlja u svakom dobu.
+        </span>
+        <span>
+          Trening se radi u malim grupama, uz tegove, kettlebell i druge
+          rekvizite, a opterećenje se prilagođava formi svake od vas.
+        </span>
+        <span>
+          Radimo na snazi, izdržljivosti i pokretljivosti, kako bi vam
+          svakodnevni pokreti, poput penjanja uz stepenice, nošenja kesa ili
+          ustajanja sa poda, bili lakši i sigurniji.
+        </span>
+        <span>
+          Program vodi{' '}
+          <Link href='/nas-tim/isidora-nikolic' className='underline'>
+            Isidora Nikolić
+          </Link>
+          , diplomirani fizioterapeut, koja trening prilagođava vašim potrebama
+          i zajedno sa vama prati vaš napredak.
+        </span>
+      </>
+    ),
+  },
   {
     id: 'prenatal-pilates',
     title: 'Prenatal',
