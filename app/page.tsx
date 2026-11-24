@@ -138,8 +138,8 @@ export default async function Home() {
 
           <p className='text-center text-xl'>
             Treninge u Baza Pilates studiju u Novom Sadu vode sertifikovane
-            instruktorke reformer pilatesa, a tim upotpunjuju fizioterapeutkinje
-            i nutricionistkinja.{' '}
+            instruktorke reformer pilatesa, a tim upotpunjuju edukovane
+            fizioterapeutkinje i nutricionistkinje.{' '}
             <Link href='/nas-tim/snezana-kragovic' className='underline'>
               Snežana Kragović
             </Link>

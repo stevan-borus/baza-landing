@@ -107,25 +107,6 @@ const { opens, closes } = studio.openingHours;
 
 const reformerGuide = (
   <>
-    <h2>Šta je reformer pilates</h2>
-    <p className='text-center text-xl'>
-      Reformer pilates je pilates koji se radi na reformeru, spravi sa pokretnom
-      platformom (kolicima), oprugama različite jačine, trakama i šipkom za
-      stopala. Spravu je osmislio Džozef Pilates (Joseph Pilates) u prvoj
-      polovini 20. veka. Opruge istovremeno daju otpor i podršku, pa ista vežba
-      može da bude zahtevna za iskusnu vežbačicu i bezbedna za nekoga ko tek
-      počinje.
-    </p>
-    <p className='text-center text-xl'>
-      Za razliku od mat pilatesa, koji se radi na prostirci sa težinom
-      sopstvenog tela, reformer daje više izazova, više podrške i precizniju
-      kontrolu pokreta. Kako sprava radi, odakle potiče i šta možete da
-      očekujete od prvog časa, opisali smo u tekstu{' '}
-      <Link href='/blog/sta-je-reformer-pilates' className='underline'>
-        Šta je reformer pilates?
-      </Link>
-    </p>
-
     <h2>Kome odgovara reformer pilates</h2>
     <p className='text-center text-xl'>
       Instruktorka za svaku vežbu podešava jačinu opruga i položaj tela, pa se
@@ -190,36 +171,12 @@ const reformerGuide = (
         .
       </li>
     </ul>
-
-    <h2>Kako izgleda prvi trening u Bazi</h2>
     <p className='text-center text-xl'>
-      Prvi, probni trening je besplatan. Termin zakazujete preko{' '}
-      <Link href='/kontakt' className='underline'>
-        stranice za kontakt
+      Kako reformer radi, šta možete da očekujete od prvog časa i koliko često
+      trenirati, opisali smo u tekstu{' '}
+      <Link href='/blog/sta-je-reformer-pilates' className='underline'>
+        Šta je reformer pilates?
       </Link>
-      .
-    </p>
-    <p className='text-center text-xl'>
-      Ponesite sportsku odeću koja ne sputava pokret. Na reformeru se trenira
-      bos ili u pilates čarapama, pa vam patike nisu potrebne. Grupni trening
-      traje sat vremena. Pre vežbe instruktorka vam podešava opruge i pokazuje
-      položaj tela, a tokom treninga vas vodi kroz svaki pokret. Ako imate
-      povredu ili bol, recite joj to pre početka, kako bi vežbe prilagodila
-      vama.
-    </p>
-
-    <h2>Koliko često trenirati</h2>
-    <p className='text-center text-xl'>
-      Idealno je trenirati 2 do 3 puta nedeljno. Prvi efekti, poput boljeg
-      držanja i pokretljivosti, često se osete posle nekoliko treninga, a
-      vidljive promene obično dolaze posle 6 do 10 nedelja redovnog vežbanja.
-    </p>
-    <p className='text-center text-xl'>
-      Zato grupne termine nudimo u dva ritma:{' '}
-      {reformerThreeTimesWeekly.frequency} i {reformerTwiceWeekly.frequency}.
-      Treninzi se održavaju od ponedeljka do petka, od {opens} do {closes}, pa
-      termin možete da uklopite pre posla, preko dana ili uveče. Ako niste
-      sigurni koji ritam vam odgovara, pitajte instruktorku na probnom treningu.
     </p>
 
     <h2>Koliko košta reformer pilates u Novom Sadu</h2>
@@ -248,10 +205,13 @@ const reformerGuide = (
       <Link href='#cenovnik' className='underline'>
         cenovniku
       </Link>{' '}
-      ispod. Za duo i personalni trening kontaktirajte nas, pa ćemo zajedno
-      pronaći termin. Prvi, probni trening je besplatan, tako da reformer možete
-      da isprobate pre nego što izaberete paket. Odgovore na opšta pitanja o
-      pilatesu naći ćete i na stranici{' '}
+      ispod. Za duo i personalni trening{' '}
+      <Link href='/kontakt' className='underline'>
+        kontaktirajte nas
+      </Link>
+      , pa ćemo zajedno pronaći termin. Prvi, probni trening je besplatan, tako
+      da reformer možete da isprobate pre nego što izaberete paket. Odgovore na
+      opšta pitanja o pilatesu naći ćete i na stranici{' '}
       <Link href='/vasa-pitanja' className='underline'>
         Vaša pitanja
       </Link>
@@ -541,7 +501,7 @@ const programmes: Programme[] = [
     subtitle: '(pilates za trudnice)',
     image: '/prenatal.webp',
     mobileImage: '/prenatal-mobile.webp',
-    imagePosition: 'object-center lg:object-[center_35%]',
+    imagePosition: 'object-center lg:object-[center_30%]',
     excerpt:
       'Prenatal je reformer pilates prilagođen trudnoći, za buduće mame koje žele da i tokom trudnoće ostanu aktivne uz stručno vođen trening.',
     // Two fixed groups, listed separately for the same reason as StrongHer 50+.
