@@ -12,7 +12,7 @@ export const dynamic = 'force-static';
 export const metadata: Metadata = {
   title: { absolute: 'Reformer pilates Novi Sad | Baza Pilates studio' },
   description:
-    'Baza Pilates je studio za reformer pilates u Novom Sadu, u Futoškoj 33. Reformer, Energy, Golden age i Moms&Minis programi, podrška fizioterapeuta i besplatan probni trening.',
+    'Reformer pilates u Novom Sadu, Futoška 33: Reformer, Energy, Golden age, StrongHer, StrongHer 50+ i Prenatal, uz fizioterapeute i besplatan probni trening.',
   alternates: {
     canonical: '/',
   },

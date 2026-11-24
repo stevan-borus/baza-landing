@@ -8,7 +8,7 @@ export const dynamic = 'force-static';
 export const metadata: Metadata = {
   title: 'Pilates programi u Novom Sadu',
   description:
-    'Reformer pilates, Energy pilates, Golden age pilates, Moms&Minis i StrongHer programi u Baza Pilates studiju u Novom Sadu.',
+    'Reformer pilates, Energy pilates, Golden age pilates, StrongHer, StrongHer 50+, Prenatal i Moms&Minis u Baza Pilates studiju u Novom Sadu.',
   alternates: {
     canonical: '/programi',
   },
