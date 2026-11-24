@@ -1,6 +1,6 @@
 import { ViewTransition } from 'react';
 import type { Metadata } from 'next';
-import { getFAQs } from '@/domain/faq/faq';
+import { faqPageJsonLd, getFAQs } from '@/domain/faq/faq';
 import { FAQAccordion } from '@/components/faq-accordion';
 import { JsonLd } from '@/components/json-ld';
 
@@ -16,19 +16,6 @@ export const metadata: Metadata = {
 
 export default async function FAQ() {
   const faqs = await getFAQs();
-  const faqJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map(faq => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer,
-      },
-    })),
-  };
-
   return (
     <ViewTransition>
       <main className='flex flex-1 flex-col justify-center gap-8 lg:gap-12'>
@@ -38,7 +25,7 @@ export default async function FAQ() {
           </div>
 
           <FAQAccordion faqs={faqs} />
-          <JsonLd data={faqJsonLd} />
+          <JsonLd data={faqPageJsonLd(faqs)} />
         </section>
       </main>
     </ViewTransition>

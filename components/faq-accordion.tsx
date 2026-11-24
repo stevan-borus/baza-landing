@@ -40,8 +40,11 @@ export function FAQAccordion({ faqs }: FAQAccordionProps) {
               <ChevronDown className='text-foreground h-5 w-5 transition-transform duration-200 group-data-panel-open:rotate-180' />
             </Accordion.Trigger>
           </Accordion.Header>
-          <Accordion.Panel className='pt-2'>
-            <p className='text-foreground'>{faq.answer}</p>
+          {/* hiddenUntilFound keeps closed answers in the HTML, so crawlers and
+              find-in-page see them. The spacing sits on the answer, because a
+              closed panel's own padding would still take up room. */}
+          <Accordion.Panel hiddenUntilFound>
+            <p className='text-foreground pt-2'>{faq.answer}</p>
           </Accordion.Panel>
         </Accordion.Item>
       ))}
