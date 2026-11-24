@@ -591,3 +591,23 @@ describe('reformer pilates article headings', () => {
     expect(html()).not.toMatch(/<p\b[^>]*>(?:(?!<\/p>)[\s\S])*?<h2\b/);
   });
 });
+
+describe('physiotherapists', () => {
+  // Snežana, Isidora and Suzana are all physiotherapists; copy that names
+  // only one of them undersells the team.
+  const physiotherapists = [
+    '/nas-tim/snezana-kragovic',
+    '/nas-tim/isidora-nikolic',
+    '/nas-tim/suzana-bosnjakovic',
+  ];
+
+  test.each([
+    `${baseUrl}/programi/reformer-pilates`,
+    `${baseUrl}/blog/sta-je-reformer-pilates`,
+  ])('%s links to every physiotherapist', url => {
+    const hrefs = hrefsOf(mainOf(documentOf(htmlPathFor(url))));
+    for (const href of physiotherapists) {
+      expect(hrefs).toContain(href);
+    }
+  });
+});

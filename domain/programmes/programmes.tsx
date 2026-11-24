@@ -143,16 +143,28 @@ const reformerGuide = (
       </li>
       <li>
         onima koji se oporavljaju od povrede ili imaju bol u leđima, uz
-        prethodnu procenu stanja i vežbe prilagođene njima. U timu Baze je{' '}
+        prethodnu procenu stanja i vežbe prilagođene njima. U timu Baze su tri
+        fizioterapeutkinje:{' '}
         <Link href='/nas-tim/snezana-kragovic' className='underline'>
           Snežana Kragović
         </Link>
         , viši fizioterapeut i sertifikovana instruktorka metode Balanced Body,
-        koja pilates drži 18 godina;
+        koja pilates drži 18 godina,{' '}
+        <Link href='/nas-tim/isidora-nikolic' className='underline'>
+          Isidora Nikolić
+        </Link>
+        , diplomirani fizioterapeut i instruktorka, posebno usmerena na zdravlje
+        žena tokom trudnoće i nakon porođaja, i{' '}
+        <Link href='/nas-tim/suzana-bosnjakovic' className='underline'>
+          Suzana Bošnjaković
+        </Link>
+        , diplomirani fizioterapeut;
       </li>
       <li>
         sportistima i aktivnima, jer uz njihov osnovni trening jača duboke
-        mišiće trupa i pomaže im da poboljšaju pokretljivost;
+        mišiće trupa i pomaže im da poboljšaju pokretljivost. Suzana Bošnjaković
+        je posebnu stručnost razvila upravo u radu sa profesionalnim
+        sportistima;
       </li>
       <li>
         osobama u zrelijim godinama: program{' '}
@@ -273,7 +285,7 @@ const reformerFaqs: FAQItem[] = [
   {
     question: 'Mogu li da treniram ako imam povredu ili bol u leđima?',
     answer:
-      'Uz povredu ili bol važno je da se stanje prethodno proceni i da se vežbe prilagode. Recite instruktorki za povredu pre prvog treninga. U timu Baze je Snežana Kragović, viši fizioterapeut i sertifikovana instruktorka metode Balanced Body, a za zrelije godine postoji i program Golden age pilates, prilagođen povredama i bolovima.',
+      'Uz povredu ili bol važno je da se stanje prethodno proceni i da se vežbe prilagode. Recite instruktorki za povredu pre prvog treninga. U timu Baze su tri fizioterapeutkinje: Snežana Kragović, Isidora Nikolić i Suzana Bošnjaković, a za zrelije godine postoji i program Golden age pilates, prilagođen povredama i bolovima.',
   },
   {
     question: 'Da li je bolje trenirati 2 ili 3 puta nedeljno?',
@@ -291,7 +303,7 @@ const programmes: Programme[] = [
     excerpt:
       'Sigurno najtraženiji trening danas, pilates na reformeru je trening koji će probuditi svaki vaš mišić i podsetiti vas koliko je telo snažno i moćno.',
     seoTitle: 'Reformer pilates Novi Sad: cene i termini',
-    metaDescription: `Reformer pilates u Novom Sadu, Futoška 33: grupni treninzi 2 ili 3 puta nedeljno, paketi od ${spacedPrice(lowestReformerPackage.price)}, uz fizioterapeuta. Probni trening je besplatan.`,
+    metaDescription: `Reformer pilates u Novom Sadu, Futoška 33: grupni treninzi 2 ili 3 puta nedeljno, paketi od ${spacedPrice(lowestReformerPackage.price)}, uz tim fizioterapeuta. Probni trening je besplatan.`,
     schedule: reformerSchedule,
     guide: reformerGuide,
     faqHeading: 'Česta pitanja o reformer pilatesu',

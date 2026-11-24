@@ -175,18 +175,29 @@ const blogPosts: BlogPost[] = [
             U Baza Pilates studiju u Futoškoj 33 u Novom Sadu reformer pilates
             se trenira od ponedeljka do petka, od {studio.openingHours.opens} do{' '}
             {studio.openingHours.closes}. Treninge vode sertifikovane
-            instruktorke reformer pilatesa, a u timu je i{' '}
+            instruktorke reformer pilatesa, a u timu su i tri
+            fizioterapeutkinje:{' '}
             <Link href='/nas-tim/snezana-kragovic' className='underline'>
               Snežana Kragović
             </Link>
             , viši fizioterapeut i sertifikovana instruktorka metode Balanced
-            Body, koja pilates drži 18 godina. Jedna od osnivačica studija,{' '}
+            Body, koja pilates drži 18 godina,{' '}
+            <Link href='/nas-tim/isidora-nikolic' className='underline'>
+              Isidora Nikolić
+            </Link>
+            , koja se posebno bavi zdravljem žena tokom trudnoće i nakon
+            porođaja, i{' '}
+            <Link href='/nas-tim/suzana-bosnjakovic' className='underline'>
+              Suzana Bošnjaković
+            </Link>
+            , sa posebnom stručnošću u radu sa profesionalnim sportistima. Jedna
+            od osnivačica studija,{' '}
             <Link href='/nas-tim/danica-piper' className='underline'>
               Danica Piper
             </Link>
             , takođe je sertifikovana instruktorka reformer pilatesa. Tim
-            upotpunjuju fizioterapeutkinje, nutricionistkinja i pedijatarka, a
-            sve ih možete upoznati na stranici{' '}
+            upotpunjuju nutricionistkinja i pedijatarka, a sve ih možete
+            upoznati na stranici{' '}
             <Link href='/nas-tim' className='underline'>
               Naš tim
             </Link>
