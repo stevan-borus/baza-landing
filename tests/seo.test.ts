@@ -688,3 +688,21 @@ describe('Prenatal and StrongHer 50+ programmes', () => {
     expect(hrefsOf(main)).toContain('/programi/prenatal-pilates');
   });
 });
+
+describe('fixed training groups', () => {
+  // Prenatal and StrongHer 50+ run as two fixed pairs of days. Each pair is
+  // its own timetable, so nobody reads the four days as pick-any-two.
+  test.each(['prenatal-pilates', 'strongher-50'])(
+    '%s shows each fixed pair of days as its own group',
+    async id => {
+      const programme = await getProgrammeById(id);
+      if (!programme) throw new Error(`No programme with id ${id}`);
+      expect(programme.schedule).toHaveLength(2);
+      const main = mainOf(documentOf(htmlPathFor(`${baseUrl}/programi/${id}`)));
+      for (const group of programme.schedule) {
+        expect(group.days).toHaveLength(2);
+        expect(textOf(main)).toContain(group.frequency);
+      }
+    },
+  );
+});

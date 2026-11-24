@@ -544,25 +544,26 @@ const programmes: Programme[] = [
     subtitle: '(funkcionalni trening)',
     image: '/gal/galerija-5.webp',
     mobileImage: '/gal/galerija-30.webp',
-    imagePosition: 'object-center',
+    imagePosition: 'object-center lg:object-[center_20%]',
     excerpt:
       'StrongHer 50+ je funkcionalni trening snage za žene od 50 i više godina, jer je snaga važan deo ženskog zdravlja u svakom dobu.',
+    // Two fixed groups: a member trains on both days of one pair, so the
+    // pairs are listed separately rather than as one pick-any-two timetable.
     schedule: [
       {
-        frequency: '2 puta nedeljno',
+        frequency: '2 puta nedeljno, prepodne',
         days: [
-          {
-            day: 'Ponedeljak',
-            timeSlots: ['10:00 - 11:00', '18:00 - 19:00'],
-          },
-          {
-            day: 'Sreda',
-            timeSlots: ['18:00 - 19:00'],
-          },
-          {
-            day: 'Četvrtak',
-            timeSlots: ['10:00 - 11:00'],
-          },
+          { day: 'Ponedeljak', timeSlots: ['10:00 - 11:00'] },
+          { day: 'Četvrtak', timeSlots: ['10:00 - 11:00'] },
+        ],
+        terms: 8,
+        price: '10.000RSD',
+      },
+      {
+        frequency: '2 puta nedeljno, uveče',
+        days: [
+          { day: 'Ponedeljak', timeSlots: ['18:00 - 19:00'] },
+          { day: 'Sreda', timeSlots: ['18:00 - 19:00'] },
         ],
         terms: 8,
         price: '10.000RSD',
@@ -584,9 +585,9 @@ const programmes: Programme[] = [
           od vas.
         </span>
         <span>
-          Radimo na snazi, stabilnosti i ravnoteži, kao i na pokretljivosti,
-          kako bi vam svakodnevni pokreti, poput penjanja uz stepenice, nošenja
-          kesa ili ustajanja sa poda, bili lakši i sigurniji.
+          Radimo na snazi, izdržljivosti i pokretljivosti, kako bi vam
+          svakodnevni pokreti, poput penjanja uz stepenice, nošenja kesa ili
+          ustajanja sa poda, bili lakši i sigurniji.
         </span>
         <span>
           Program vodi{' '}
@@ -605,29 +606,25 @@ const programmes: Programme[] = [
     subtitle: '(pilates za trudnice)',
     image: '/gal/galerija-20.webp',
     mobileImage: '/gal/galerija-4.webp',
-    imagePosition: 'object-center',
+    imagePosition: 'object-center lg:object-[center_20%]',
     excerpt:
       'Prenatal je reformer pilates prilagođen trudnoći, za buduće mame koje žele da i tokom trudnoće ostanu aktivne uz stručno vođen trening.',
+    // Two fixed groups, listed separately for the same reason as StrongHer 50+.
     schedule: [
       {
-        frequency: '2 puta nedeljno',
+        frequency: '2 puta nedeljno, prepodne',
         days: [
-          {
-            day: 'Ponedeljak',
-            timeSlots: ['16:00 - 17:00'],
-          },
-          {
-            day: 'Utorak',
-            timeSlots: ['09:00 - 10:00'],
-          },
-          {
-            day: 'Sreda',
-            timeSlots: ['16:00 - 17:00'],
-          },
-          {
-            day: 'Četvrtak',
-            timeSlots: ['09:00 - 10:00'],
-          },
+          { day: 'Utorak', timeSlots: ['09:00 - 10:00'] },
+          { day: 'Četvrtak', timeSlots: ['09:00 - 10:00'] },
+        ],
+        terms: 8,
+        price: '11.000RSD',
+      },
+      {
+        frequency: '2 puta nedeljno, popodne',
+        days: [
+          { day: 'Ponedeljak', timeSlots: ['16:00 - 17:00'] },
+          { day: 'Sreda', timeSlots: ['16:00 - 17:00'] },
         ],
         terms: 8,
         price: '11.000RSD',
@@ -642,9 +639,8 @@ const programmes: Programme[] = [
         <span>
           Opruge reformera daju podršku tokom pokreta, a opterećenje se podešava
           prema tome kako se osećate i u kojoj ste fazi trudnoće. Radimo na
-          držanju i disanju, na aktivaciji dubokih mišića trupa i osvešćivanju
-          karličnog dna, kao i na pokretljivosti, kako biste se kroz promene
-          koje trudnoća donosi kretale lakše i sa više poverenja u svoje telo.
+          držanju, disanju i pokretljivosti, kako biste se kroz promene koje
+          trudnoća donosi kretale lakše i sa više poverenja u svoje telo.
         </span>
         <span>
           Program vodi{' '}
