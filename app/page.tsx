@@ -12,7 +12,7 @@ export const dynamic = 'force-static';
 export const metadata: Metadata = {
   title: { absolute: 'Reformer pilates Novi Sad | Baza Pilates studio' },
   description:
-    'Reformer pilates u Novom Sadu, Futoška 33: Reformer, Energy, Golden age, StrongHer, StrongHer 50+ i Prenatal, uz fizioterapeute i besplatan probni trening.',
+    'Reformer pilates u Novom Sadu, Futoška 33: Reformer, Energy, Golden age, StrongHer i Prenatal, uz fizioterapeute i besplatan probni trening.',
   alternates: {
     canonical: '/',
   },
@@ -27,8 +27,9 @@ const programmeSummaries: Record<string, string> = {
     'reformer pilates za zrelije godine, prilagođen povredama i bolovima koji neretko dolaze sa godinama.',
   strongher:
     'funkcionalni trening snage, jer je snaga neizostavni deo ženskog zdravlja.',
-  'strongher-50':
-    'funkcionalni trening snage za žene od 50 i više godina, za lakše i sigurnije kretanje u svakodnevici.',
+  // Hidden with the StrongHer 50+ programme until its copy is agreed.
+  // 'strongher-50':
+  //   'funkcionalni trening snage za žene od 50 i više godina, za lakše i sigurnije kretanje u svakodnevici.',
   'prenatal-pilates':
     'reformer pilates prilagođen trudnoći, koji vodi fizioterapeutkinja Isidora Nikolić.',
 };
@@ -106,7 +107,8 @@ export default async function Home() {
           <h2>Naši programi</h2>
 
           <p className='text-center text-xl'>
-            U Bazi treniramo na reformerima, uz instruktore i fizioterapeuta.
+            U Bazi treniramo na reformerima, uz stručne instruktore i
+            fizioterapeute.
           </p>
 
           <div className='grid grid-cols-1 gap-6 sm:grid-cols-2'>
