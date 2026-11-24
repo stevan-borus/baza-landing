@@ -3,6 +3,7 @@ import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import {
   getProgrammeById,
+  getProgrammes,
   privatePackages,
   reformerSchedule,
 } from '../domain/programmes/programmes';
@@ -705,4 +706,28 @@ describe('fixed training groups', () => {
       }
     },
   );
+});
+
+describe('programme list descriptions', () => {
+  function descriptionOf(url: string) {
+    const head = headOf(htmlPathFor(url));
+    return decode(
+      head.match(/<meta name="description" content="([^"]*)"/)?.[1] ?? '',
+    );
+  }
+
+  test('/programi description names every programme', async () => {
+    const description = descriptionOf(`${baseUrl}/programi`);
+    for (const programme of await getProgrammes()) {
+      expect(description).toContain(programme.title);
+    }
+    expect(description.length).toBeLessThanOrEqual(160);
+  });
+
+  test('home description names the new Prenatal and StrongHer 50+', () => {
+    const description = descriptionOf(baseUrl);
+    expect(description).toContain('Prenatal');
+    expect(description).toContain('StrongHer 50+');
+    expect(description.length).toBeLessThanOrEqual(160);
+  });
 });
