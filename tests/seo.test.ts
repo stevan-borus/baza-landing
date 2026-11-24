@@ -461,7 +461,6 @@ describe('reformer pilates page', () => {
   test('has the guide headings', () => {
     const h2s = h2sOf(main);
     for (const heading of [
-      'Šta je reformer pilates',
       'Kome odgovara reformer pilates',
       'Koliko košta reformer pilates u Novom Sadu',
     ]) {
@@ -469,8 +468,22 @@ describe('reformer pilates page', () => {
     }
   });
 
-  test('has at least 1000 words of copy', () => {
-    expect(wordsOf(main).length).toBeGreaterThanOrEqual(1000);
+  test('leaves the long explanations to the article', () => {
+    // The owner wanted the programme page closer in length to the others;
+    // "what it is", the first class and how often to train live in
+    // /blog/sta-je-reformer-pilates, which this page links to.
+    const h2s = h2sOf(main);
+    for (const heading of [
+      'Šta je reformer pilates',
+      'Kako izgleda prvi trening u Bazi',
+      'Koliko često trenirati',
+    ]) {
+      expect(h2s).not.toContain(heading);
+    }
+  });
+
+  test('still has enough copy to rank for prices in Novi Sad', () => {
+    expect(wordsOf(main).length).toBeGreaterThanOrEqual(600);
   });
 
   test('links to the article, the FAQ, the physiotherapist, Golden age and contact', () => {
@@ -798,5 +811,13 @@ describe('day lists', () => {
   ])('%s has no weekdays in parentheses', url => {
     const text = textOf(mainOf(documentOf(htmlPathFor(url))));
     expect(text).not.toMatch(/\((ponedeljak|utorak|sreda|četvrtak|petak)\b/i);
+  });
+});
+
+describe('home team sentence', () => {
+  test('credits trained physiotherapists and nutritionists, both plural', () => {
+    expect(textOf(mainOf(documentOf(htmlPathFor(baseUrl))))).toContain(
+      'tim upotpunjuju edukovane fizioterapeutkinje i nutricionistkinje',
+    );
   });
 });
