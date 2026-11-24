@@ -27,6 +27,10 @@ const programmeSummaries: Record<string, string> = {
     'reformer pilates za zrelije godine, prilagođen povredama i bolovima koji neretko dolaze sa godinama.',
   strongher:
     'funkcionalni trening snage, jer je snaga neizostavni deo ženskog zdravlja.',
+  'strongher-50':
+    'funkcionalni trening snage za žene od 50 i više godina, za lakše i sigurnije kretanje u svakodnevici.',
+  'prenatal-pilates':
+    'reformer pilates prilagođen trudnoći, koji vodi fizioterapeutkinja Isidora Nikolić.',
 };
 
 export default async function Home() {

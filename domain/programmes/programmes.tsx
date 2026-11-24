@@ -167,6 +167,14 @@ const reformerGuide = (
         sportistima;
       </li>
       <li>
+        trudnicama: u programu{' '}
+        <Link href='/programi/prenatal-pilates' className='underline'>
+          Prenatal
+        </Link>{' '}
+        reformer pilates se prilagođava trudnoći, a vodi ga fizioterapeutkinja
+        Isidora Nikolić;
+      </li>
+      <li>
         osobama u zrelijim godinama: program{' '}
         <Link href='/programi/golden-age-pilates' className='underline'>
           Golden age pilates
@@ -527,6 +535,126 @@ const programmes: Programme[] = [
           Cilj nije samo da budete snažnije, već da vaše telo bude
           funkcionalnije, spremnije i sigurnije u svemu što radite.
         </span>
+      </>
+    ),
+  },
+  {
+    id: 'strongher-50',
+    title: 'StrongHer 50+',
+    subtitle: '(funkcionalni trening)',
+    image: '/gal/galerija-5.webp',
+    mobileImage: '/gal/galerija-30.webp',
+    imagePosition: 'object-center lg:object-[center_20%]',
+    excerpt:
+      'StrongHer 50+ je funkcionalni trening snage za žene od 50 i više godina, jer je snaga važan deo ženskog zdravlja u svakom dobu.',
+    // Two fixed groups: a member trains on both days of one pair, so the
+    // pairs are listed separately rather than as one pick-any-two timetable.
+    schedule: [
+      {
+        frequency: '2 puta nedeljno, prepodne',
+        days: [
+          { day: 'Ponedeljak', timeSlots: ['10:00 - 11:00'] },
+          { day: 'Četvrtak', timeSlots: ['10:00 - 11:00'] },
+        ],
+        terms: 8,
+        price: '10.000RSD',
+      },
+      {
+        frequency: '2 puta nedeljno, uveče',
+        days: [
+          { day: 'Ponedeljak', timeSlots: ['18:00 - 19:00'] },
+          { day: 'Sreda', timeSlots: ['18:00 - 19:00'] },
+        ],
+        terms: 8,
+        price: '10.000RSD',
+      },
+    ],
+    description: (
+      <>
+        <span>
+          StrongHer 50+ je funkcionalni trening snage za žene od 50 i više
+          godina, jer je snaga važan deo ženskog zdravlja u svakom dobu.
+        </span>
+        <span>
+          To je program{' '}
+          <Link href='/programi/strongher' className='underline'>
+            StrongHer
+          </Link>{' '}
+          prilagođen ženama 50+. Trening se radi u malim grupama, uz tegove,
+          kettlebell i druge rekvizite, a opterećenje se prilagođava formi svake
+          od vas.
+        </span>
+        <span>
+          Radimo na snazi, izdržljivosti i pokretljivosti, kako bi vam
+          svakodnevni pokreti, poput penjanja uz stepenice, nošenja kesa ili
+          ustajanja sa poda, bili lakši i sigurniji.
+        </span>
+        <span>
+          Program vodi{' '}
+          <Link href='/nas-tim/isidora-nikolic' className='underline'>
+            Isidora Nikolić
+          </Link>
+          , diplomirani fizioterapeut, koja trening prilagođava vašim potrebama
+          i zajedno sa vama prati vaš napredak.
+        </span>
+      </>
+    ),
+  },
+  {
+    id: 'prenatal-pilates',
+    title: 'Prenatal',
+    subtitle: '(pilates za trudnice)',
+    image: '/gal/galerija-20.webp',
+    mobileImage: '/gal/galerija-4.webp',
+    imagePosition: 'object-center lg:object-[center_20%]',
+    excerpt:
+      'Prenatal je reformer pilates prilagođen trudnoći, za buduće mame koje žele da i tokom trudnoće ostanu aktivne uz stručno vođen trening.',
+    // Two fixed groups, listed separately for the same reason as StrongHer 50+.
+    schedule: [
+      {
+        frequency: '2 puta nedeljno, prepodne',
+        days: [
+          { day: 'Utorak', timeSlots: ['09:00 - 10:00'] },
+          { day: 'Četvrtak', timeSlots: ['09:00 - 10:00'] },
+        ],
+        terms: 8,
+        price: '11.000RSD',
+      },
+      {
+        frequency: '2 puta nedeljno, popodne',
+        days: [
+          { day: 'Ponedeljak', timeSlots: ['16:00 - 17:00'] },
+          { day: 'Sreda', timeSlots: ['16:00 - 17:00'] },
+        ],
+        terms: 8,
+        price: '11.000RSD',
+      },
+    ],
+    description: (
+      <>
+        <span>
+          Prenatal je reformer pilates prilagođen trudnoći, za buduće mame koje
+          žele da i tokom trudnoće ostanu aktivne uz stručno vođen trening.
+        </span>
+        <span>
+          Opruge reformera daju podršku tokom pokreta, a opterećenje se podešava
+          prema tome kako se osećate i u kojoj ste fazi trudnoće. Radimo na
+          držanju, disanju i pokretljivosti, kako biste se kroz promene koje
+          trudnoća donosi kretale lakše i sa više poverenja u svoje telo.
+        </span>
+        <span>
+          Program vodi{' '}
+          <Link href='/nas-tim/isidora-nikolic' className='underline'>
+            Isidora Nikolić
+          </Link>
+          , diplomirani fizioterapeut sa četiri godine iskustva u radu sa decom
+          i odraslima. Završila je stručne edukacije iz vežbanja sa trudnicama i
+          iz programa za žene nakon porođaja, sa posebnim fokusom na dijastazu i
+          postepeni povratak snazi. Njen cilj je da vam kroz pokret, pravilno
+          dozirano opterećenje, vežbe disanja i individualan pristup pomogne da
+          se tokom trudnoće osećate snažno i sigurno u svom telu.
+        </span>
+        <span>Pre početka treninga posavetujte se sa svojim ginekologom.</span>
       </>
     ),
   },
