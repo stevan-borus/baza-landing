@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import { ReactNode } from 'react';
+import { FAQItem } from '@/domain/faq/faq-schema';
 
 export const programmeScheduleDaySchema = z.object({
   day: z.string(),
@@ -25,6 +26,11 @@ export const programmeSchema = z.object({
   imagePosition: z.string(),
   schedule: z.array(programmeScheduleItemSchema),
   excerpt: z.string(),
+  // Search snippet overrides for a programme page that targets its own
+  // queries; without them the page falls back to its title and excerpt.
+  seoTitle: z.string().optional(),
+  metaDescription: z.string().optional(),
+  faqHeading: z.string().optional(),
 });
 
 export type ProgrammeScheduleDay = z.infer<typeof programmeScheduleDaySchema>;
@@ -32,4 +38,6 @@ export type ProgrammeScheduleItem = z.infer<typeof programmeScheduleItemSchema>;
 export interface Programme extends z.infer<typeof programmeSchema> {
   description: ReactNode;
   additionalInfo?: ReactNode;
+  guide?: ReactNode;
+  faqs?: FAQItem[];
 }

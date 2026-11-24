@@ -6,6 +6,7 @@ import type { Metadata } from 'next';
 import {
   getProgrammeById,
   getProgrammeIds,
+  privatePackages,
 } from '@/domain/programmes/programmes';
 import { redirect } from 'next/navigation';
 import { cn } from '@/lib/utils';
@@ -13,6 +14,9 @@ import {
   BookTrialButton,
   ContactUsButton,
 } from '@/components/programme-cta-buttons';
+import { FAQAccordion } from '@/components/faq-accordion';
+import { JsonLd } from '@/components/json-ld';
+import { faqPageJsonLd } from '@/domain/faq/faq';
 
 export const dynamic = 'force-static';
 
@@ -38,10 +42,11 @@ export async function generateMetadata({
     : programme.title;
 
   return {
-    title: `${fullTitle} Novi Sad`,
+    title: programme.seoTitle ?? `${fullTitle} Novi Sad`,
     description:
-      programme.excerpt ||
-      `Saznajte više o ${fullTitle} programu u BAZA pilates studiju.`,
+      programme.metaDescription ??
+      (programme.excerpt ||
+        `Saznajte više o ${fullTitle} programu u BAZA pilates studiju.`),
     alternates: {
       canonical: `/programi/${id}`,
     },
@@ -128,7 +133,16 @@ export default async function ProgrammePage({
           </ViewTransition>
         </section>
 
-        <section className='flex flex-col gap-8 px-4 lg:gap-12 lg:px-20'>
+        {programme.guide && (
+          <section className='flex flex-col gap-8 px-4 lg:gap-12 lg:px-20'>
+            {programme.guide}
+          </section>
+        )}
+
+        <section
+          id='cenovnik'
+          className='flex scroll-mt-24 flex-col gap-8 px-4 lg:gap-12 lg:px-20'
+        >
           <h2>Termini i cenovnik</h2>
 
           <div className='flex flex-col gap-8'>
@@ -297,22 +311,30 @@ export default async function ProgrammePage({
                 <div className='flex gap-4'>
                   <div className='flex flex-1 flex-col items-center gap-2'>
                     <h3 className='text-brand text-lg font-bold'>DUO</h3>
-                    <p className='text-foreground text-3xl font-bold'>12</p>
+                    <p className='text-foreground text-3xl font-bold'>
+                      {privatePackages.duo.terms}
+                    </p>
                     <p className='text-foreground text-base font-bold'>
                       TERMINA
                     </p>
-                    <p className='text-foreground text-base'>23.000 RSD</p>
+                    <p className='text-foreground text-base'>
+                      {privatePackages.duo.price}
+                    </p>
                   </div>
 
                   <div className='my-3 h-auto w-px bg-black' />
 
                   <div className='flex flex-1 flex-col items-center gap-2'>
                     <h3 className='text-brand text-lg font-bold'>PERSONALNI</h3>
-                    <p className='text-foreground text-3xl font-bold'>12</p>
+                    <p className='text-foreground text-3xl font-bold'>
+                      {privatePackages.personal.terms}
+                    </p>
                     <p className='text-foreground text-base font-bold'>
                       TERMINA
                     </p>
-                    <p className='text-foreground text-base'>30.000 RSD</p>
+                    <p className='text-foreground text-base'>
+                      {privatePackages.personal.price}
+                    </p>
                   </div>
                 </div>
 
@@ -332,13 +354,13 @@ export default async function ProgrammePage({
                       DUO
                     </h3>
                     <p className='text-foreground text-4xl font-bold lg:text-6xl'>
-                      12
+                      {privatePackages.duo.terms}
                     </p>
                     <p className='text-foreground text-xl lg:text-2xl'>
                       TERMINA
                     </p>
                     <p className='text-foreground text-xl lg:text-2xl'>
-                      23.000 RSD
+                      {privatePackages.duo.price}
                     </p>
                   </div>
 
@@ -349,13 +371,13 @@ export default async function ProgrammePage({
                       PERSONALNI
                     </h3>
                     <p className='text-foreground text-4xl font-bold lg:text-6xl'>
-                      12
+                      {privatePackages.personal.terms}
                     </p>
                     <p className='text-foreground text-xl lg:text-2xl'>
                       TERMINA
                     </p>
                     <p className='text-foreground text-xl lg:text-2xl'>
-                      30.000 RSD
+                      {privatePackages.personal.price}
                     </p>
                   </div>
                 </div>
@@ -374,6 +396,14 @@ export default async function ProgrammePage({
             </div>
           )}
         </section>
+
+        {programme.faqs && (
+          <section className='flex flex-col gap-8 px-4 lg:gap-12 lg:px-20'>
+            {programme.faqHeading && <h2>{programme.faqHeading}</h2>}
+            <FAQAccordion faqs={programme.faqs} />
+            <JsonLd data={faqPageJsonLd(programme.faqs)} />
+          </section>
+        )}
       </main>
     </ViewTransition>
   );
