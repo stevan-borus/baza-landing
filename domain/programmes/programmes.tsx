@@ -83,7 +83,7 @@ const reformerTwiceWeekly: ProgrammeScheduleItem = {
 export const reformerSchedule = [reformerThreeTimesWeekly, reformerTwiceWeekly];
 
 // Duo and personal training are booked with the studio rather than from a
-// timetable; every programme page except Moms&Minis offers them.
+// timetable; every programme page offers them.
 export const privatePackages = {
   duo: { terms: 12, price: '23.000 RSD' },
   personal: { terms: 12, price: '30.000 RSD' },
@@ -382,60 +382,6 @@ const programmes: Programme[] = [
           mišića, ovaj program pažljivo osmišljenih intenzivnih treninga će vam
           omogućiti da testirate i pomerite svoje granice. Instruktori su tu da
           vam pomognu da otkrijete svoju snagu.
-        </span>
-      </>
-    ),
-  },
-  {
-    id: 'moms-minis',
-    title: 'Moms&Minis',
-    image: '/moms-minis.webp',
-    mobileImage: '/moms-minis-mobile.webp',
-    imagePosition: 'object-center xl:object-[center_20%]',
-    excerpt:
-      'Osluškujući potrebe roditelja, Moms and Minis je program osmišljen tako da u isto vreme mame i deca treniraju, ali različite stvari!',
-    schedule: [
-      {
-        frequency: '2 puta nedeljno',
-        days: [
-          {
-            day: 'Utorak',
-            timeSlots: ['18:00 - 19:00', '19:00 - 20:00'],
-          },
-          {
-            day: 'Četvrtak',
-            timeSlots: ['18:00 - 19:00', '19:00 - 20:00'],
-          },
-        ],
-        terms: 8,
-        price: '15.000RSD',
-      },
-    ],
-    description: (
-      <>
-        <span>
-          Osluškujući potrebe roditelja, Moms and Minis je program osmišljen
-          tako da u isto vreme mame i deca treniraju, ali različite stvari!
-        </span>
-        <span>
-          Dok mame treniraju na reformerima, deca razvijaju svoje vijuge kroz
-          pažljivo osmišljene radionice koje kroz igru i pokret podstiču razvoj
-          mišljenja, pažnje i povezivanja naučenog. Na ovaj način, u Bazi, i
-          mame i deca provode kvalitetno i ispunjeno vreme radeći na fizičkom i
-          psihološkom aspektu zdravlja.
-        </span>
-        <span>
-          Rad sa decom je poveren jednoj od osnivačica Baze koja je završila
-          edukaciju podrške razvoja detetu kao i &quot;obuku roditeljstva&quot;
-          što joj omogućava da stečena znanja lako primeni u praksi.
-        </span>
-      </>
-    ),
-    additionalInfo: (
-      <>
-        <span>
-          Radionice za decu su uključene u paket. Cena ostaje nepromenjena bez
-          obzira da li dolazite sa jednim detetom ili sa više dece.
         </span>
       </>
     ),
