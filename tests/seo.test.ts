@@ -2,6 +2,7 @@ import { describe, expect, test } from 'bun:test';
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import {
+  getProgrammeById,
   privatePackages,
   reformerSchedule,
 } from '../domain/programmes/programmes';
@@ -609,5 +610,81 @@ describe('physiotherapists', () => {
     for (const href of physiotherapists) {
       expect(hrefs).toContain(href);
     }
+  });
+});
+
+describe('Prenatal and StrongHer 50+ programmes', () => {
+  const newProgrammes = ['prenatal-pilates', 'strongher-50'];
+  const urlOf = (id: string) => `${baseUrl}/programi/${id}`;
+  // Read lazily so a missing page fails these tests, not the whole file.
+  const mainOfProgramme = (id: string) =>
+    mainOf(documentOf(htmlPathFor(urlOf(id))));
+
+  async function programmeOf(id: string) {
+    const programme = await getProgrammeById(id);
+    if (!programme) throw new Error(`No programme with id ${id}`);
+    return programme;
+  }
+
+  test.each(newProgrammes)('%s is in the sitemap', id => {
+    expect(sitemapUrls).toContain(urlOf(id));
+  });
+
+  test.each(newProgrammes)(
+    '%s shows every time slot and package of its schedule',
+    async id => {
+      const { schedule } = await programmeOf(id);
+      expect(schedule.length).toBeGreaterThan(0);
+      const text = textOf(mainOfProgramme(id));
+      for (const item of schedule) {
+        for (const day of item.days) {
+          expect(text).toContain(day.day);
+          for (const timeSlot of day.timeSlots) {
+            expect(text).toContain(timeSlot);
+          }
+        }
+        expect(withoutSpaces(text)).toContain(
+          withoutSpaces(`${item.terms} termina: ${item.price}`),
+        );
+      }
+    },
+  );
+
+  test.each(newProgrammes)('%s links to its instructor, Isidora', id => {
+    expect(hrefsOf(mainOfProgramme(id))).toContain('/nas-tim/isidora-nikolic');
+  });
+
+  test('Prenatal advises consulting a gynaecologist', () => {
+    expect(textOf(mainOfProgramme('prenatal-pilates'))).toContain('ginekolog');
+  });
+
+  test('StrongHer 50+ links to StrongHer', () => {
+    expect(hrefsOf(mainOfProgramme('strongher-50'))).toContain(
+      '/programi/strongher',
+    );
+  });
+
+  test.each(newProgrammes)(
+    'home page links to %s and summarises it',
+    async id => {
+      const { title } = await programmeOf(id);
+      const main = mainOf(homeHtml);
+      expect(hrefsOf(main)).toContain(`/programi/${id}`);
+      const items = [...main.matchAll(/<li\b[^>]*>([\s\S]*?)<\/li>/g)]
+        .map(match => match[1])
+        .filter(item => item.includes(`href="/programi/${id}"`))
+        .map(textOf);
+      expect(items).toHaveLength(1);
+      expect(items[0]).toStartWith(`${title}: `);
+      expect(items[0].length).toBeGreaterThan(`${title}: `.length + 20);
+      expect(items[0]).toEndWith('.');
+    },
+  );
+
+  test('reformer guide points pregnant women to Prenatal', () => {
+    const main = mainOf(
+      documentOf(htmlPathFor(`${baseUrl}/programi/reformer-pilates`)),
+    );
+    expect(hrefsOf(main)).toContain('/programi/prenatal-pilates');
   });
 });
