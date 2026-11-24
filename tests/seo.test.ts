@@ -615,9 +615,7 @@ describe('physiotherapists', () => {
 });
 
 describe('Prenatal and StrongHer 50+ programmes', () => {
-  // StrongHer 50+ is hidden until its copy is agreed; add 'strongher-50'
-  // back here when its entry is restored in domain/programmes.
-  const newProgrammes = ['prenatal-pilates'];
+  const newProgrammes = ['prenatal-pilates', 'strongher-50'];
   const urlOf = (id: string) => `${baseUrl}/programi/${id}`;
   // Read lazily so a missing page fails these tests, not the whole file.
   const mainOfProgramme = (id: string) =>
@@ -661,9 +659,9 @@ describe('Prenatal and StrongHer 50+ programmes', () => {
     expect(textOf(mainOfProgramme('prenatal-pilates'))).toContain('ginekolog');
   });
 
-  test.skip('StrongHer 50+ links to StrongHer (hidden for now)', () => {
-    expect(hrefsOf(mainOfProgramme('strongher-50'))).toContain(
-      '/programi/strongher',
+  test('StrongHer 50+ no longer calls itself StrongHer adapted for 50+', () => {
+    expect(textOf(mainOfProgramme('strongher-50'))).not.toContain(
+      'To je program StrongHer',
     );
   });
 
@@ -695,7 +693,7 @@ describe('Prenatal and StrongHer 50+ programmes', () => {
 describe('fixed training groups', () => {
   // Prenatal and StrongHer 50+ run as two fixed pairs of days. Each pair is
   // its own timetable, so nobody reads the four days as pick-any-two.
-  test.each(['prenatal-pilates'])(
+  test.each(['prenatal-pilates', 'strongher-50'])(
     '%s shows each fixed pair of days as its own group',
     async id => {
       const programme = await getProgrammeById(id);
@@ -726,21 +724,19 @@ describe('programme list descriptions', () => {
     expect(description.length).toBeLessThanOrEqual(160);
   });
 
-  test('home description names Prenatal and not the hidden StrongHer 50+', () => {
+  test('home description names Prenatal and StrongHer 50+', () => {
     const description = descriptionOf(baseUrl);
     expect(description).toContain('Prenatal');
-    expect(description).not.toContain('StrongHer 50+');
-    expect(descriptionOf(`${baseUrl}/programi`)).not.toContain('StrongHer 50+');
+    expect(description).toContain('StrongHer 50+');
     expect(description.length).toBeLessThanOrEqual(160);
   });
 });
 
 describe('programme photos', () => {
-  test.skip('StrongHer 50+ uses the StrongHer photos (hidden for now)', async () => {
-    const strongher = await getProgrammeById('strongher');
+  test('StrongHer 50+ uses its own photos, cropped above the reformers', async () => {
     const strongher50 = await getProgrammeById('strongher-50');
-    expect(strongher50?.image).toBe(strongher?.image);
-    expect(strongher50?.mobileImage).toBe(strongher?.mobileImage);
+    expect(strongher50?.image).toBe('/strongher-50.webp');
+    expect(strongher50?.mobileImage).toBe('/strongher-50-mobile.webp');
   });
 
   test('Prenatal uses its own photos, not gallery shots', async () => {
@@ -760,21 +756,6 @@ describe('home programmes intro', () => {
     expect(textOf(mainOf(documentOf(htmlPathFor(baseUrl))))).toContain(
       'uz stručne instruktore i fizioterapeute',
     );
-  });
-});
-
-describe('hidden StrongHer 50+', () => {
-  test('is not a programme page, not in the sitemap and not linked', async () => {
-    expect(await getProgrammeById('strongher-50')).toBeNull();
-    expect(sitemapUrls).not.toContain(`${baseUrl}/programi/strongher-50`);
-    expect(existsSync(htmlPathFor(`${baseUrl}/programi/strongher-50`))).toBe(
-      false,
-    );
-    for (const url of [baseUrl, `${baseUrl}/programi`]) {
-      const html = documentOf(htmlPathFor(url));
-      expect(html).not.toContain('/programi/strongher-50');
-      expect(textOf(mainOf(html))).not.toContain('StrongHer 50+');
-    }
   });
 });
 
@@ -805,5 +786,17 @@ describe('retired Moms&Minis and paediatrics', () => {
       );
       expect(text).toContain('PERSONALNI');
     }
+  });
+});
+
+describe('day lists', () => {
+  // Group days are shown only in each programme's timetable, never repeated
+  // in parentheses in running text.
+  test.each([
+    `${baseUrl}/programi/reformer-pilates`,
+    `${baseUrl}/blog/sta-je-reformer-pilates`,
+  ])('%s has no weekdays in parentheses', url => {
+    const text = textOf(mainOf(documentOf(htmlPathFor(url))));
+    expect(text).not.toMatch(/\((ponedeljak|utorak|sreda|četvrtak|petak)\b/i);
   });
 });

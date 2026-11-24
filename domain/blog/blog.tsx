@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { BlogPost } from '@/domain/blog/blog-schema';
-import { reformerSchedule, weekdaysOf } from '@/domain/programmes/programmes';
+import { reformerSchedule } from '@/domain/programmes/programmes';
 import { studio } from '@/domain/studio/studio';
 
 // A section title reads as a bold lead at body size: the global h2 is sized
@@ -145,7 +145,7 @@ const blogPosts: BlogPost[] = [
             {reformerSchedule
               .map(
                 item =>
-                  `${item.frequency} (${weekdaysOf(item)}) sa ${item.terms} termina`,
+                  `${item.frequency} sa ${item.terms} termina`,
               )
               .join(' ili ')}
             .
